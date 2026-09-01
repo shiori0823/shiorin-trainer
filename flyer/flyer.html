@@ -7,22 +7,24 @@
   @page { size: A4; margin: 0; }
 
   :root{
-    --ink:      #33352f;
-    --ink-soft: #5c5f55;
-    --sage:     #6f7f6a;
-    --sage-dk:  #4d5a49;
-    --clay:     #b9755a;
-    --cream:    #faf6ef;
-    --cream-dp: #f2ece1;
-    --line:     #ddd5c6;
+    --cream:    #fdf9f4;
+    --cream2:   #f9f1e8;
+    --pink:     #dd8a7b;
+    --pink-dp:  #c9705f;
+    --pink-lt:  #f8ddd5;
+    --pink-bg:  #fdf0eb;
+    --sage:     #849a7c;
+    --sage-lt:  #e8efe3;
+    --ink:      #504740;
+    --ink-soft: #7f7268;
+    --line:     #eadecf;
   }
 
   *{ box-sizing:border-box; margin:0; padding:0; }
-
   html,body{ width:210mm; height:297mm; }
 
   body{
-    font-family:"Noto Sans JP", sans-serif;
+    font-family:"Zen Maru Gothic", sans-serif;
     color:var(--ink);
     background:var(--cream);
     -webkit-print-color-adjust:exact;
@@ -33,239 +35,261 @@
   .page{
     position:relative;
     width:210mm; height:297mm;
-    padding:11mm 13mm 9mm;
+    padding:10mm 12mm 7mm;
     display:flex; flex-direction:column;
     overflow:hidden;
   }
-
-  .blob{ position:absolute; border-radius:50%; z-index:0; }
-  .blob-a{ width:84mm; height:84mm; right:-32mm; top:-32mm; background:#ece5d6; }
-  .blob-b{ width:46mm; height:46mm; left:-22mm; top:118mm; background:#e9eee4; }
   .page > *{ position:relative; z-index:1; }
 
+  /* ---------- soft decorations ---------- */
+  .deco{ position:absolute; z-index:0; border-radius:50%; }
+  .d1{ width:66mm; height:66mm; right:-24mm; top:-22mm; background:var(--pink-lt); opacity:.55; }
+  .d2{ width:40mm; height:40mm; left:-16mm; top:26mm;  background:var(--sage-lt); opacity:.55; }
+  .d3{ width:52mm; height:52mm; left:-20mm; bottom:44mm; background:var(--pink-lt); opacity:.4; }
+  .d4{ width:30mm; height:30mm; right:-11mm; bottom:74mm; background:var(--sage-lt); opacity:.7; }
+  .dot{ position:absolute; z-index:0; border-radius:50%; background:var(--pink); }
+
   /* ---------- header ---------- */
-  header{ text-align:center; padding-bottom:4mm; }
+  header{ text-align:center; padding-bottom:1.6mm; }
 
   .eyebrow{
     display:inline-block;
-    font-size:8.2pt; font-weight:500; letter-spacing:.32em;
-    color:var(--sage-dk);
-    border:1px solid var(--sage);
+    font-size:8.4pt; font-weight:500; letter-spacing:.16em;
+    color:#fff; background:var(--pink);
     border-radius:99px;
-    padding:1.4mm 5.4mm 1.4mm 5.7mm;
-    margin-bottom:4.6mm;
+    padding:1.4mm 6mm;
+    margin-bottom:4mm;
   }
 
   h1{
-    font-family:"Zen Old Mincho", serif;
-    font-size:30pt; font-weight:700; line-height:1.3;
-    letter-spacing:.045em;
-    color:var(--sage-dk);
+    font-size:27pt; font-weight:700; line-height:1.3;
+    letter-spacing:.03em; color:var(--ink);
   }
-  h1 .dot{ color:var(--clay); }
+  h1 .dot-c{ color:var(--pink); }
 
-  .rule{ width:15mm; height:1.3px; background:var(--clay); margin:4mm auto 3.4mm; }
+  .wave{ display:block; margin:2.6mm auto 2.4mm; }
 
   .lead{
-    font-size:11.6pt; font-weight:500; letter-spacing:.08em;
-    line-height:1.6; color:var(--ink-soft);
+    font-family:"Klee One SemiBold", serif;
+    font-size:12.4pt; letter-spacing:.06em; line-height:1.55;
+    color:var(--pink-dp);
   }
 
-  /* ---------- section titles ---------- */
-  .sec-title{
-    display:flex; align-items:center; gap:2.8mm;
-    font-family:"Zen Old Mincho", serif;
-    font-size:11.8pt; font-weight:700; letter-spacing:.14em;
-    color:var(--sage-dk);
-    margin-bottom:2.8mm;
+  /* ---------- section heading ---------- */
+  .sec-title{ display:flex; align-items:center; gap:3mm; margin-bottom:2.6mm; }
+  .sec-title .tag{
+    display:inline-flex; align-items:center; gap:1.8mm;
+    background:var(--sage); color:#fff;
+    font-size:9.6pt; font-weight:700; letter-spacing:.12em;
+    border-radius:99px; padding:1.3mm 5mm 1.3mm 4mm;
   }
-  .sec-title::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .sec-title .tag svg{ width:3.4mm; height:3.4mm; fill:#fff; opacity:.9; }
   .sec-title .en{
-    font-family:"Noto Sans JP", sans-serif;
-    font-size:6.6pt; font-weight:400; letter-spacing:.22em;
-    color:var(--clay);
+    font-size:6.6pt; font-weight:500; letter-spacing:.2em; color:var(--pink);
+  }
+  .sec-title::after{
+    content:""; flex:1; height:0;
+    border-top:1.4px dotted var(--line);
   }
 
-  /* ---------- concern block ---------- */
+  /* ---------- concern ---------- */
   .concern p{
-    font-size:9.4pt; line-height:1.8; letter-spacing:.02em;
-    color:var(--ink-soft);
+    font-size:9.3pt; line-height:1.75; letter-spacing:.02em; color:var(--ink-soft);
   }
 
-  .voices{
-    display:grid; grid-template-columns:1fr 1fr;
-    gap:1.4mm 2.6mm;
-    margin:2.8mm 0;
-  }
+  .voices{ display:grid; grid-template-columns:1fr 1fr; gap:1.5mm 2.6mm; margin:2.6mm 0; }
   .voice{
+    display:flex; align-items:center; gap:2.2mm;
     background:#fff;
-    border:1px solid var(--line);
-    border-radius:1.8mm;
-    padding:1.8mm 2.6mm;
+    border:1.2px solid var(--pink-lt);
+    border-radius:99px;
+    padding:1.6mm 4mm;
     font-size:8.9pt; font-weight:500; letter-spacing:.01em;
-    color:var(--sage-dk);
+    color:var(--ink);
+  }
+  .voice::before{
+    content:""; flex:0 0 auto;
+    width:2.2mm; height:2.2mm; border-radius:50%;
+    background:var(--pink); opacity:.6;
   }
 
+  /* flow */
   .flow{
-    display:flex; align-items:center; justify-content:center;
-    gap:3mm;
-    background:var(--cream-dp);
-    border-radius:2.2mm;
-    padding:2.8mm 3mm;
-    margin:2.8mm 0;
+    display:flex; align-items:center; justify-content:center; gap:3mm;
+    margin:3mm 0 2.6mm;
   }
-  .flow .step{
-    font-family:"Zen Old Mincho", serif;
-    font-size:13pt; font-weight:700; letter-spacing:.09em;
-    color:var(--sage-dk);
+  .circle{
+    width:20.5mm; height:20.5mm; border-radius:50%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    font-size:9.4pt; font-weight:700; letter-spacing:.01em;
+    line-height:1.2;
   }
-  .flow .arrow{ font-size:10pt; color:var(--clay); }
+  .circle .no{
+    font-size:6pt; font-weight:500; letter-spacing:.14em;
+    opacity:.75; margin-bottom:.7mm;
+  }
+  .c1{ background:var(--sage-lt); color:#5c7054; }
+  .c2{ background:var(--pink-lt); color:var(--pink-dp); }
+  .c3{ background:var(--cream2); color:#96794f; }
+  .flow .arw{ font-size:9pt; color:var(--pink); opacity:.8; }
 
-  .note{
-    font-size:9pt; font-weight:500; letter-spacing:.04em;
-    color:var(--clay);
+  .gentle{
+    display:flex; align-items:center; gap:2.4mm;
+    background:var(--sage-lt);
+    border-radius:99px;
+    padding:1.9mm 5mm;
+    font-size:9.1pt; font-weight:500; letter-spacing:.03em;
+    color:#5c7054;
   }
+  .gentle svg{ width:3.6mm; height:3.6mm; fill:var(--sage); flex:0 0 auto; }
 
   .takeaways{
     list-style:none;
-    margin:2.4mm 0 2.6mm;
+    background:#fff;
+    border:1.2px dashed var(--pink-lt);
+    border-radius:3.4mm;
+    padding:2.7mm 5mm;
+    margin:2.5mm 0;
     display:flex; flex-direction:column; gap:1.2mm;
   }
   .takeaways li{
-    position:relative; padding-left:5.6mm;
-    font-size:9.4pt; line-height:1.5; letter-spacing:.02em;
-    color:var(--ink);
+    display:flex; align-items:center; gap:2.4mm;
+    font-size:9.3pt; line-height:1.45; letter-spacing:.02em; color:var(--ink);
   }
-  .takeaways li::before{
-    content:""; position:absolute; left:1.2mm; top:1.7mm;
-    width:2.2mm; height:2.2mm; border-radius:50%;
-    background:var(--clay); opacity:.75;
-  }
+  .takeaways li svg{ width:3.4mm; height:3.4mm; fill:var(--pink); flex:0 0 auto; opacity:.85; }
 
   /* ---------- instructor ---------- */
-  .instructor{ margin-top:4.4mm; }
+  .instructor{ margin-top:3mm; }
+  .ins-body{ display:flex; gap:6mm; align-items:flex-start; }
 
-  .ins-body{ display:flex; gap:5.5mm; align-items:flex-start; }
-
-  .photo{ flex:0 0 46mm; }
+  .photo{ flex:0 0 46mm; padding-top:.6mm; }
+  .photo .frame{
+    transform:rotate(-1.4deg);
+    background:#fff;
+    padding:1.7mm;
+    border-radius:4mm;
+    box-shadow:0 1.2mm 3mm rgba(120,100,85,.14);
+  }
   .photo img{
-    display:block;
-    width:46mm; height:54mm;
-    object-fit:cover;
-    object-position:50% 62%;   /* 縦位置の微調整はこの値で */
-    border-radius:2.2mm;
-    border:1px solid var(--line);
+    display:block; width:100%; height:50mm;
+    object-fit:cover; object-position:50% 50%;
+    border-radius:2.6mm;
   }
   .photo figcaption{
-    margin-top:1.4mm;
-    font-size:5.6pt; letter-spacing:.06em;
-    color:#9a9587; text-align:right;
+    margin-top:1.8mm;
+    font-size:5.6pt; letter-spacing:.05em;
+    color:#a9a094; text-align:center;
   }
 
-  .ins-text{ flex:1; padding-top:.4mm; }
-
+  .ins-text{ flex:1; }
   .profile-head{ display:flex; align-items:baseline; gap:2.8mm; margin-bottom:2.4mm; }
-  .profile-name{
-    font-family:"Zen Old Mincho", serif;
-    font-size:14.5pt; font-weight:700; letter-spacing:.06em;
-    color:var(--ink);
+  .profile-name{ font-size:14pt; font-weight:700; letter-spacing:.05em; color:var(--ink); }
+  .profile-role{
+    font-size:7.8pt; font-weight:500; letter-spacing:.08em;
+    color:var(--pink-dp);
+    background:var(--pink-lt); border-radius:99px; padding:.9mm 3.2mm;
   }
-  .profile-role{ font-size:7.8pt; letter-spacing:.12em; color:var(--clay); }
-
-  .ins-text p{
-    font-size:9pt; line-height:1.8; letter-spacing:.02em;
-    color:var(--ink-soft);
-  }
+  .ins-text p{ font-size:9pt; line-height:1.8; letter-spacing:.02em; color:var(--ink-soft); }
   .ins-text p + p{ margin-top:2.2mm; }
 
-  /* ---------- info band ---------- */
+  /* ---------- info card ---------- */
   .info{
-    display:flex; align-items:stretch; min-height:22mm;
-    background:var(--sage-dk);
-    color:#fff;
-    border-radius:2.6mm;
-    padding:4.6mm 6mm;
-    margin-top:5mm;
+    display:flex; align-items:stretch;
+    background:#fff;
+    border:1.6px dashed var(--pink-lt);
+    border-radius:4.5mm;
+    padding:4mm 6mm;
+    margin-top:4mm;
+    min-height:21.5mm;
   }
   .info-label{
-    flex:0 0 30mm;
-    display:flex; flex-direction:column; justify-content:center;
-    border-right:1px solid rgba(255,255,255,.26);
+    flex:0 0 29mm;
+    display:flex; flex-direction:column; justify-content:center; gap:1mm;
   }
   .info-label .ja{
-    font-family:"Zen Old Mincho", serif;
-    font-size:11.5pt; font-weight:700; letter-spacing:.16em;
+    display:inline-block; align-self:flex-start;
+    background:var(--pink); color:#fff;
+    font-size:9.6pt; font-weight:700; letter-spacing:.12em;
+    border-radius:99px; padding:1.2mm 4.4mm;
   }
-  .info-label .en{
-    font-size:6.2pt; letter-spacing:.24em; color:#d8c6ac; margin-top:1mm;
-  }
+  .info-label .en{ font-size:6pt; letter-spacing:.2em; color:var(--pink); padding-left:1mm; }
 
-  .info-items{
-    flex:1; display:flex; align-items:flex-start;
-    padding-left:6mm; gap:6mm;
-  }
+  .info-items{ flex:1; display:flex; align-items:flex-start; gap:5.5mm; padding-left:5.5mm; }
   .item{ align-self:stretch; }
-  .item + .item{ border-left:1px solid rgba(255,255,255,.18); padding-left:6mm; }
+  .item + .item{ border-left:1.4px dotted var(--line); padding-left:5.5mm; }
   .item .k{
-    font-size:7.4pt; font-weight:500; letter-spacing:.14em;
-    color:#cfd8c8; margin-bottom:1.4mm;
+    font-size:7.4pt; font-weight:700; letter-spacing:.12em;
+    color:var(--sage); margin-bottom:1.4mm;
   }
-  .item .v{ font-size:9.6pt; font-weight:500; letter-spacing:.03em; line-height:1.45; }
-  .item .v .big{ font-size:12.5pt; font-weight:700; letter-spacing:.01em; }
-  .item .v small{
-    display:block; font-size:8pt; font-weight:400;
-    color:#cfd8c8; margin-top:.6mm; letter-spacing:.04em;
-  }
+  .item .v{ font-size:9.4pt; font-weight:500; letter-spacing:.02em; line-height:1.5; color:var(--ink); }
+  .item .v .big{ font-size:12.5pt; font-weight:700; color:var(--pink-dp); letter-spacing:.01em; }
+  .item .v small{ display:block; font-size:8pt; font-weight:400; color:var(--ink-soft); margin-top:.6mm; }
 
   /* ---------- footer ---------- */
-  footer{ margin-top:auto; text-align:center; padding-top:5mm; }
+  footer{ margin-top:auto; text-align:center; padding-top:3.8mm; }
   .closing{
-    font-family:"Zen Old Mincho", serif;
-    font-size:15pt; font-weight:700; letter-spacing:.13em;
-    color:var(--sage-dk);
+    display:inline-flex; align-items:center; gap:3.2mm;
+    font-family:"Klee One SemiBold", serif;
+    font-size:15pt; letter-spacing:.08em; color:var(--pink-dp);
   }
-  .closing-line{ width:28mm; height:1px; background:var(--line); margin:3.4mm auto 0; }
+  .closing svg{ width:4.2mm; height:4.2mm; fill:var(--pink); opacity:.45; }
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="blob blob-a"></div>
-  <div class="blob blob-b"></div>
+  <div class="deco d1"></div>
+  <div class="deco d2"></div>
+  <div class="deco d3"></div>
+  <div class="deco d4"></div>
+  <div class="dot" style="width:2.6mm;height:2.6mm;left:24mm;top:15mm;opacity:.35"></div>
+  <div class="dot" style="width:2.2mm;height:2.2mm;right:26mm;top:34mm;opacity:.3"></div>
 
   <header>
-    <div class="eyebrow">身体を整える 60分 ワークショップ</div>
-    <h1>私の身体、おつかれさま<span class="dot">。</span></h1>
-    <div class="rule"></div>
+    <div class="eyebrow">身体を整える 60分ワークショップ</div>
+    <h1>私の身体、おつかれさま<span class="dot-c">。</span></h1>
+    <svg class="wave" width="86" height="10" viewBox="0 0 86 10" fill="none">
+      <path d="M2 6C8 1 14 1 20 6s12 5 18 0 12-5 18 0 12 5 18 0" stroke="#dd8a7b" stroke-width="1.7" stroke-linecap="round" opacity=".55"/>
+    </svg>
     <p class="lead">ゆるめて、動いて、身体を整える60分。</p>
   </header>
 
   <section class="concern">
-    <div class="sec-title">こんな方へ<span class="en">FOR YOU</span></div>
+    <div class="sec-title">
+      <span class="tag">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 8 3.4C20 15.8 12 21 12 21z"/></svg>
+        こんな方へ
+      </span>
+      <span class="en">FOR YOU</span>
+    </div>
+
     <p>毎日、大きいお腹で過ごしたり、家事や育児に追われていると、<br>自分の身体のことはつい後回しになりがち。</p>
 
     <div class="voices">
-      <div class="voice">「なんとなく身体が重い」</div>
-      <div class="voice">「運動不足が気になる」</div>
-      <div class="voice">「身体が使いづらい」</div>
-      <div class="voice">「自分のための時間がなかなか取れない」</div>
+      <div class="voice">なんとなく身体が重い</div>
+      <div class="voice">運動不足が気になる</div>
+      <div class="voice">身体が使いづらい</div>
+      <div class="voice">自分のための時間がなかなか取れない</div>
     </div>
 
     <p>そんな方へ。今回は、今の自分の身体を感じながら、<br>シンプルな流れで身体を整えていきます。</p>
 
     <div class="flow">
-      <span class="step">ゆるめる</span>
-      <span class="arrow">▶</span>
-      <span class="step">動く</span>
-      <span class="arrow">▶</span>
-      <span class="step">立ってみる</span>
+      <div class="circle c1"><span class="no">STEP 1</span>ゆるめる</div>
+      <span class="arw">❯</span>
+      <div class="circle c2"><span class="no">STEP 2</span>動く</div>
+      <span class="arw">❯</span>
+      <div class="circle c3"><span class="no">STEP 3</span>立ってみる</div>
     </div>
 
-    <p class="note">激しい運動ではありません。60分の中で、</p>
+    <div class="gentle">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 8 3.4C20 15.8 12 21 12 21z"/></svg>
+      激しい運動ではありません。60分の中で、
+    </div>
 
     <ul class="takeaways">
-      <li>「私、こんなふうに立っていたんだ」</li>
-      <li>「ここに力が入っていたんだ」</li>
-      <li>「これなら家でもできそう」</li>
+      <li><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 8 3.4C20 15.8 12 21 12 21z"/></svg>「私、こんなふうに立っていたんだ」</li>
+      <li><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 8 3.4C20 15.8 12 21 12 21z"/></svg>「ここに力が入っていたんだ」</li>
+      <li><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 8 3.4C20 15.8 12 21 12 21z"/></svg>「これなら家でもできそう」</li>
     </ul>
 
     <p>そんな気づきをひとつ持ち帰ってもらえたらと思っています。<br>
@@ -273,10 +297,16 @@
   </section>
 
   <section class="instructor">
-    <div class="sec-title">講師<span class="en">INSTRUCTOR</span></div>
+    <div class="sec-title">
+      <span class="tag">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 8 3.4C20 15.8 12 21 12 21z"/></svg>
+        講師
+      </span>
+      <span class="en">INSTRUCTOR</span>
+    </div>
     <div class="ins-body">
       <figure class="photo">
-        <img src="images/shiori.jpg" alt="バーベルスクワットをする佐藤栞">
+        <div class="frame"><img src="images/shiori-crop.jpg" alt="バーベルスクワットをする佐藤栞"></div>
         <figcaption>Photo: SAMURAI POWERLIFTING MEDIA</figcaption>
       </figure>
       <div class="ins-text">
@@ -312,8 +342,11 @@
   </div>
 
   <footer>
-    <p class="closing">身体のために、60分だけ自分の時間を。</p>
-    <div class="closing-line"></div>
+    <p class="closing">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 8 3.4C20 15.8 12 21 12 21z"/></svg>
+      身体のために、60分だけ自分の時間を。
+      <svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 8 3.4C20 15.8 12 21 12 21z"/></svg>
+    </p>
   </footer>
 </div>
 </body>

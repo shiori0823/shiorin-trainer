@@ -3,21 +3,34 @@
 A4 1枚のワークショップ告知チラシです。
 
 - `flyer/flyer.html` … 原稿（HTML/CSS）。文言・日時の修正はこちらを編集します。
-- `flyer/images/shiori.jpg` … 講師紹介の写真。**現在は仮画像（グレーのプレースホルダ）が入っています。**
 - `flyer/flyer.pdf` … 印刷・配布用のA4 1ページPDF。
+- `flyer/images/佐藤 栞-3 2.JPEG` … 講師写真の元データ（4000×5000）。
+- `flyer/images/shiori-crop.jpg` … チラシに使っているトリミング済みの写真。
 
-## 写真の差し替え
+## デザインの方針
 
-講師欄の写真は `flyer/images/shiori.jpg` を読み込んでいます。
-同じファイル名で本番の写真を上書きし、PDFを再生成すれば差し替わります。
+妊娠中・産後の方が見て安心できるよう、丸ゴシック（Zen Maru Gothic）と
+手書き風（Klee One）、生成り・やさしいピンク・セージグリーンの配色で
+角の丸い柔らかいレイアウトにしています。
 
-縦位置が思ったところで切れていない場合は、`flyer.html` の
-`.photo img { object-position: 50% 62%; }` の数値（2つめ）を調整します。
-値を小さくすると上寄り、大きくすると下寄りのトリミングになります。
+## 写真の差し替え・トリミングの調整
+
+チラシは `flyer/images/shiori-crop.jpg`（縦横比 0.92）を読み込んでいます。
+別の写真に変える場合は、元データを `flyer/images/` に置いて、
+下のスクリプトの切り取り範囲を調整して作り直します。
+
+```python
+from PIL import Image
+im = Image.open('元の写真.JPEG'); W, H = im.size
+# 左, 上, 右, 下 を全体に対する割合で指定（縦横比 0.92 になるように）
+c = im.crop((int(.195*W), int(.335*H), int(.770*W), int(.835*H)))
+c.resize((1380, int(1380*c.size[1]/c.size[0])), Image.LANCZOS) \
+ .save('shiori-crop.jpg', quality=88, optimize=True)
+```
 
 ## PDFの再生成
 
-日本語フォント（Noto Sans JP / Zen Old Mincho）をインストールしたうえで、
+日本語フォント（Zen Maru Gothic / Klee One）をインストールしたうえで、
 Chromium のヘッドレス印刷でHTMLからPDFを書き出します。
 
 ```sh
