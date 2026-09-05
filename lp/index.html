@@ -234,13 +234,15 @@ section{position:relative}
   grid-template-columns:minmax(0,1fr)}
 .case__media .ph{aspect-ratio:4/5;border-radius:3px}
 .case__media img{object-position:50% 34%}
-.big{
-  font-family:var(--num);font-size:clamp(52px,13vw,120px);font-weight:700;line-height:.88;
-  color:var(--wine);letter-spacing:-.01em;margin:0 0 .12em;
+.case__deny{font-size:clamp(14px,2vw,16.5px);font-weight:500;color:var(--muted);
+  margin:0 0 .75em;letter-spacing:.02em;line-height:1.9}
+.case__deny s{text-decoration-color:rgba(122,21,36,.75);text-decoration-thickness:2px}
+.case__aff{
+  font-family:var(--serif);font-weight:700;font-size:clamp(23px,4.4vw,40px);line-height:1.55;
+  color:var(--wine);letter-spacing:.01em;margin:0 0 1.5em;
 }
-.big .u{font-size:.34em;letter-spacing:.06em;margin-left:.14em;font-weight:600}
-.case__x{font-size:clamp(15px,2.2vw,18px);font-weight:700;color:var(--muted);margin:0 0 1.5em;letter-spacing:.02em}
-.case__x s{text-decoration-color:var(--wine);text-decoration-thickness:2px}
+.case__aff::after{content:"";display:block;width:56px;height:3px;background:var(--wine);
+  margin-top:.6em;border-radius:2px}
 .case__b{font-size:clamp(14.5px,1.95vw,16.2px);line-height:2.15}
 .case__b .mk{background:linear-gradient(transparent 62%,rgba(122,21,36,.18) 62%);font-weight:700}
 .voice{
@@ -528,7 +530,7 @@ section{position:relative}
   </div>
 </section>
 
-<!-- ============ 05 CASE 710 ============ -->
+<!-- ============ 05 CASE ============ -->
 <section class="sec sec--warm" id="case">
   <div class="wrap">
     <p class="eyebrow rv">05 &nbsp;Case</p>
@@ -537,12 +539,12 @@ section{position:relative}
         <div class="ph" data-label="images/case.jpg&#10;ラックアウトの一枚"><img src="images/case.jpg" alt="バーをラックアウトするパワーリフター"></div>
       </div>
       <div class="rv">
-        <p class="big">710<span class="u">kg</span></p>
-        <p class="case__x"><s>「700kgを取れるだろうか」ではなく、</s><br>「710kgを余裕で挙げる自分をつくる」</p>
-        <p class="case__b">実際に、700kgという大きな目標を持つ選手から、こんな相談がありました。</p>
+        <p class="case__deny"><s>「全国大会に出場できるだろうか」</s>ではなく、</p>
+        <p class="case__aff">「余裕で全国大会にいける<br>自分をつくる」</p>
+        <p class="case__b">実際に、全国大会出場という大きな目標を持つ選手から、こんな相談がありました。</p>
         <div class="voice">スクワット3本目を失敗したら、その後のメンタルが崩れてしまいそう。</div>
         <p class="case__b">そこで考えたのは、「失敗しないようにしよう」でも、「自信を持とう」でもありません。</p>
-        <p class="case__b"><span class="mk">余裕で710kgを挙げられる選手なら、今日何をするのか。</span></p>
+        <p class="case__b"><span class="mk">余裕で全国大会にいける選手なら、今日何をするのか。</span></p>
         <p class="case__b">そこから、「やること」だけではなく「やらないこと」まで具体的に決めていく。<br>これが、この講座で大切にしている考え方です。</p>
       </div>
     </div>
