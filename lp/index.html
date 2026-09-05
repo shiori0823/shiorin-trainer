@@ -741,6 +741,8 @@ if ('IntersectionObserver' in window) {
 } else {
   rv.forEach(function(el){ el.classList.add('in'); });
 }
+// 保険：何らかの理由で表示処理が動かなかった場合も本文を必ず出す
+setTimeout(function(){ rv.forEach(function(el){ el.classList.add('in'); }); }, 1500);
 
 // 追従CTA（ヒーローを過ぎたら表示 / 最終CTAでは隠す）
 var sticky = document.getElementById('sticky');
