@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ja">
+<script>document.documentElement.className+=" js";</script>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>パワーリフターのための実践メンタルトレーニング｜しおりん</title>
+<meta name="description" content="絶対に取りたい記録、勝ちたい試合があるパワーリフターへ。プレッシャーがあっても、自分がやるべきことを理解し、実践できる選手になる。1対1オンラインの実践メンタルトレーニング。まずは無料個別相談から。">
+<meta property="og:title" content="パワーリフターのための実践メンタルトレーニング">
+<meta property="og:description" content="「もっとメンタルを強くしなきゃ」ではなく、プレッシャーがあっても、自分がやるべきことを理解し、実践できる選手になる。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/hero.jpg">
+<meta name="theme-color" content="#0E0E10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Old+Mincho:wght@600;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#7A1524;
+  --wine-deep:#540E19;
+  --wine-bright:#A02236;
+  --ink:#141416;
+  --ink-soft:#2A2A2E;
+  --paper:#FFFFFF;
+  --paper-warm:#F6F3F2;
+  --line:#E2DCDB;
+  --muted:#6B6663;
+  --sans:"Noto Sans JP",system-ui,-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
+  --serif:"Zen Old Mincho","Hiragino Mincho ProN",serif;
+  --num:"Oswald",var(--sans);
+  --maxw:1080px;
+  --pad:clamp(20px,5vw,40px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);
+  font-size:16px;line-height:1.95;font-weight:400;letter-spacing:.02em;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+p{margin:0 0 1.4em}
+p:last-child{margin-bottom:0}
+
+/* ---------- layout ---------- */
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+.wrap--narrow{max-width:820px}
+section{position:relative}
+.sec{padding:clamp(72px,11vw,132px) 0}
+.sec--dark{background:var(--ink);color:#fff}
+.sec--warm{background:var(--paper-warm)}
+.sec--wine{background:var(--wine-deep);color:#fff}
+
+/* ---------- section heading ---------- */
+.eyebrow{
+  font-family:var(--num);font-size:12px;letter-spacing:.34em;font-weight:600;
+  color:var(--wine);text-transform:uppercase;margin:0 0 18px;
+  display:flex;align-items:center;gap:12px;
+}
+.eyebrow::after{content:"";flex:0 0 44px;height:1px;background:currentColor;opacity:.5}
+.sec--dark .eyebrow,.sec--wine .eyebrow{color:#D9A0AB}
+.h2{
+  font-size:clamp(24px,4.4vw,38px);line-height:1.5;font-weight:900;
+  letter-spacing:.01em;margin:0 0 clamp(28px,5vw,48px);
+}
+.h2 em{font-style:normal;color:var(--wine);}
+.sec--dark .h2 em,.sec--wine .h2 em{color:#E8A9B4}
+.lead{font-size:clamp(15px,1.9vw,17px);color:var(--muted);line-height:2.1;margin:-24px 0 40px}
+.sec--dark .lead,.sec--wine .lead{color:rgba(255,255,255,.72)}
+
+/* ---------- photo frame w/ fallback ---------- */
+.ph{position:relative;overflow:hidden;background:
+  linear-gradient(135deg,#1B1B1F 0%,#3A1420 55%,#540E19 100%);}
+.ph img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+.ph::after{
+  content:attr(data-label);position:absolute;inset:0;z-index:0;display:flex;
+  align-items:center;justify-content:center;text-align:center;padding:24px;
+  font-family:var(--num);font-size:11px;letter-spacing:.28em;
+  color:rgba(255,255,255,.42);white-space:pre-line;line-height:2.2;
+}
+.ph.is-missing img{display:none}
+
+/* ---------- buttons ---------- */
+.cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:.7em;
+  background:var(--wine);color:#fff;text-decoration:none;font-weight:700;
+  font-size:clamp(15px,2.1vw,17.5px);letter-spacing:.05em;
+  padding:1.15em 2.4em;border-radius:999px;position:relative;overflow:hidden;
+  box-shadow:0 12px 34px -14px rgba(122,21,36,.85);
+  transition:transform .25s cubic-bezier(.2,.8,.3,1),background .25s,box-shadow .25s;
+}
+.cta::before{
+  content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.22) 50%,transparent 80%);
+  transform:translateX(-120%);transition:transform .7s ease;
+}
+.cta:hover{background:var(--wine-bright);transform:translateY(-3px);box-shadow:0 18px 40px -14px rgba(160,34,54,.9)}
+.cta:hover::before{transform:translateX(120%)}
+.cta:focus-visible{outline:3px solid #E8A9B4;outline-offset:3px}
+.cta--ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55);box-shadow:none}
+.cta--ghost:hover{background:#fff;color:var(--wine-deep);border-color:#fff}
+.cta-note{font-size:13px;color:var(--muted);letter-spacing:.04em;margin-top:16px;line-height:1.9}
+.sec--dark .cta-note,.sec--wine .cta-note{color:rgba(255,255,255,.66)}
+.cta-block{text-align:center}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;background:#0B0B0D;color:#fff;overflow:hidden;isolation:isolate}
+.hero__media{position:absolute;inset:0;z-index:0}
+.hero__media .ph{width:100%;height:100%}
+.hero__media img{object-position:52% 32%;filter:saturate(.86) contrast(1.05)}
+.hero__scrim{
+  position:absolute;inset:0;z-index:2;
+  background:
+    linear-gradient(180deg,rgba(11,11,13,.72) 0%,rgba(11,11,13,.34) 32%,rgba(11,11,13,.86) 78%,#0B0B0D 100%),
+    linear-gradient(92deg,rgba(84,14,25,.55) 0%,rgba(11,11,13,.15) 62%);
+}
+.hero__inner{position:relative;z-index:3;padding:clamp(104px,17vw,168px) 0 clamp(64px,9vw,96px)}
+.hero__kicker{
+  display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.2em;
+  border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:.62em 1.5em;
+  margin:0 0 clamp(24px,4vw,34px);backdrop-filter:blur(6px);background:rgba(0,0,0,.22);
+}
+.hero__pre{
+  font-family:var(--serif);font-size:clamp(17px,2.7vw,23px);line-height:2.05;
+  font-weight:600;margin:0 0 clamp(26px,4vw,38px);color:rgba(255,255,255,.92);
+  text-shadow:0 2px 18px rgba(0,0,0,.55);
+}
+.hero__pre .b{display:block}
+.hero__pre .accent{color:#F0B9C3}
+.hero__title{
+  margin:0 0 clamp(24px,4vw,32px);font-weight:900;letter-spacing:.005em;
+  font-size:clamp(30px,6.4vw,60px);line-height:1.32;
+  text-shadow:0 4px 26px rgba(0,0,0,.6);
+}
+.hero__title .sm{display:block;font-size:.52em;font-weight:700;letter-spacing:.12em;
+  color:#E8A9B4;margin-bottom:.55em}
+.hero__body{
+  max-width:640px;font-size:clamp(14.5px,2vw,16.5px);line-height:2.1;
+  color:rgba(255,255,255,.86);margin:0 0 clamp(34px,5vw,44px);
+  text-shadow:0 2px 14px rgba(0,0,0,.5);
+}
+.hero__rule{width:64px;height:3px;background:var(--wine-bright);margin:0 0 clamp(26px,4vw,34px);border-radius:2px}
+.hero__scroll{
+  position:absolute;left:50%;bottom:22px;z-index:4;transform:translateX(-50%);
+  font-family:var(--num);font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.5);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.hero__scroll span::after{content:"";display:block;width:1px;height:36px;margin:8px auto 0;
+  background:linear-gradient(rgba(255,255,255,.6),transparent);animation:drop 2.1s ease-in-out infinite}
+@keyframes drop{0%,100%{transform:scaleY(.4);transform-origin:top;opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+/* ---------- problem list ---------- */
+.probs{list-style:none;margin:0;padding:0;display:grid;gap:2px;background:var(--line);border-block:1px solid var(--line)}
+.probs li{
+  background:var(--paper);padding:clamp(20px,3.4vw,26px) clamp(18px,3vw,30px);
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2.4vw,20px);align-items:start;
+  font-size:clamp(14.5px,1.95vw,16.5px);line-height:1.95;font-weight:500;
+  transition:background .3s,transform .3s;
+}
+.probs li:hover{background:#FCF9F9}
+.probs .chk{
+  flex:none;width:24px;height:24px;border-radius:50%;background:var(--wine);color:#fff;
+  display:grid;place-items:center;font-size:12px;font-weight:700;margin-top:.35em;
+}
+.turn{
+  margin-top:clamp(40px,6vw,58px);padding:clamp(30px,5vw,44px);
+  background:var(--ink);color:#fff;border-radius:4px;text-align:center;
+  border-left:5px solid var(--wine-bright);
+}
+.turn p{font-size:clamp(15px,2.1vw,17px);line-height:2.15;color:rgba(255,255,255,.82)}
+.turn .punch{
+  font-family:var(--serif);font-weight:700;font-size:clamp(19px,3.4vw,30px);
+  line-height:1.75;color:#fff;margin:0;
+}
+.turn .punch u{text-decoration:none;color:#F0B9C3;
+  background:linear-gradient(transparent 62%,rgba(160,34,54,.75) 62%)}
+
+/* ---------- 3 changes ---------- */
+.changes{display:grid;gap:clamp(28px,4.4vw,44px)}
+.change{
+  display:grid;grid-template-columns:clamp(56px,9vw,84px) 1fr;gap:clamp(18px,3vw,30px);
+  padding-bottom:clamp(28px,4.4vw,44px);border-bottom:1px solid rgba(255,255,255,.14);
+}
+.changes .change:last-child{border-bottom:0;padding-bottom:0}
+.change__no{
+  font-family:var(--num);font-size:clamp(38px,7.6vw,68px);font-weight:600;line-height:.9;
+  color:transparent;-webkit-text-stroke:1.5px rgba(232,169,180,.85);
+}
+.change__t{font-size:clamp(18px,2.9vw,25px);font-weight:700;line-height:1.6;margin:0 0 .8em;letter-spacing:.01em}
+.change__t .mk{color:#E8A9B4}
+.change__b{font-size:clamp(14.5px,1.95vw,16px);line-height:2.1;color:rgba(255,255,255,.76);margin:0}
+.change__b + .change__b{margin-top:1em}
+.change__quote{
+  margin:1.2em 0 1.2em;padding-left:18px;border-left:2px solid rgba(232,169,180,.5);
+  font-family:var(--serif);color:rgba(255,255,255,.9);font-size:clamp(14.5px,2vw,16.5px);line-height:2
+}
+
+/* ---------- spec table ---------- */
+.spec{border-top:2px solid var(--ink)}
+.spec__row{
+  display:grid;grid-template-columns:clamp(86px,15vw,150px) 1fr;
+  border-bottom:1px solid var(--line);
+}
+.spec__k{
+  padding:clamp(16px,2.6vw,22px) 0;font-weight:700;font-size:14px;letter-spacing:.1em;
+  color:var(--wine);display:flex;align-items:flex-start;
+}
+.spec__v{padding:clamp(16px,2.6vw,22px) 0 clamp(16px,2.6vw,22px) clamp(12px,2.4vw,24px);
+  font-size:clamp(14.5px,1.95vw,16px);line-height:1.95}
+.spec__v strong{font-weight:700}
+.spec__v .sub{display:block;font-size:13.5px;color:var(--muted);margin-top:.5em;line-height:1.9}
+.pace{
+  margin-top:clamp(30px,4.6vw,42px);background:#fff;border:1px solid var(--line);
+  border-left:5px solid var(--wine);padding:clamp(24px,4vw,34px);border-radius:3px;
+}
+.pace h3{margin:0 0 .9em;font-size:clamp(16px,2.3vw,19px);font-weight:700}
+.pace p{font-size:clamp(14px,1.9vw,15.5px);line-height:2.05;color:var(--ink-soft)}
+
+/* ---------- curriculum ---------- */
+.curri{list-style:none;margin:0;padding:0;display:grid;gap:10px;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.curri li{
+  display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;
+  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.11);
+  border-radius:3px;padding:16px 18px;font-size:14.5px;line-height:1.8;
+  color:rgba(255,255,255,.9);transition:background .3s,border-color .3s,transform .3s;
+}
+.curri li:hover{background:rgba(160,34,54,.22);border-color:rgba(232,169,180,.5);transform:translateY(-2px)}
+.curri .n{font-family:var(--num);font-size:12px;font-weight:600;color:#E8A9B4;
+  letter-spacing:.08em;margin-top:.32em;min-width:1.6em}
+
+/* ---------- case study ---------- */
+.case{display:grid;gap:clamp(34px,5vw,60px);align-items:center;
+  grid-template-columns:minmax(0,1fr)}
+.case__media .ph{aspect-ratio:4/5;border-radius:3px}
+.case__media img{object-position:50% 34%}
+.big{
+  font-family:var(--num);font-size:clamp(52px,13vw,120px);font-weight:700;line-height:.88;
+  color:var(--wine);letter-spacing:-.01em;margin:0 0 .12em;
+}
+.big .u{font-size:.34em;letter-spacing:.06em;margin-left:.14em;font-weight:600}
+.case__x{font-size:clamp(15px,2.2vw,18px);font-weight:700;color:var(--muted);margin:0 0 1.5em;letter-spacing:.02em}
+.case__x s{text-decoration-color:var(--wine);text-decoration-thickness:2px}
+.case__b{font-size:clamp(14.5px,1.95vw,16.2px);line-height:2.15}
+.case__b .mk{background:linear-gradient(transparent 62%,rgba(122,21,36,.18) 62%);font-weight:700}
+.voice{
+  margin:1.6em 0;padding:clamp(20px,3.4vw,28px);background:#fff;border:1px solid var(--line);
+  border-radius:3px;font-family:var(--serif);font-size:clamp(15px,2.1vw,17px);
+  line-height:2;color:var(--ink);position:relative;
+}
+.voice::before{content:"”";position:absolute;top:-.05em;right:.3em;font-family:var(--serif);
+  font-size:64px;color:rgba(122,21,36,.14);line-height:1}
+
+/* ---------- profile ---------- */
+.prof{display:grid;gap:clamp(30px,5vw,56px);grid-template-columns:minmax(0,1fr)}
+.prof__media{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.prof__media .ph{aspect-ratio:1/1;border-radius:3px}
+.prof__media .ph:first-child{grid-column:1/-1;aspect-ratio:4/5}
+.prof__media .ph:first-child img{object-position:50% 22%}
+.prof__name{font-size:clamp(22px,3.6vw,30px);font-weight:900;margin:0 0 .3em;letter-spacing:.02em}
+.prof__role{font-family:var(--num);font-size:12px;letter-spacing:.26em;color:#E8A9B4;margin:0 0 1.8em}
+.prof__b{font-size:clamp(14.5px,1.95vw,16px);line-height:2.15;color:rgba(255,255,255,.82)}
+.prof__b strong{color:#fff}
+.creed{
+  margin:1.8em 0;padding:clamp(22px,3.6vw,30px);border:1px solid rgba(232,169,180,.34);
+  border-radius:3px;background:rgba(160,34,54,.14);
+  font-family:var(--serif);font-size:clamp(15.5px,2.3vw,19px);line-height:2;color:#fff;
+}
+.creed span{display:block}
+.creed .hl{color:#F0B9C3;font-weight:700}
+
+/* ---------- steps ---------- */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:clamp(14px,2.4vw,20px);
+  grid-template-columns:1fr}
+.steps li{
+  background:#fff;border:1px solid var(--line);border-top:3px solid var(--wine);
+  padding:clamp(24px,3.6vw,32px);border-radius:3px;
+  transition:transform .3s cubic-bezier(.2,.8,.3,1),box-shadow .3s;
+}
+.steps li:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(20,20,22,.5)}
+.steps .n{font-family:var(--num);font-size:34px;font-weight:600;color:var(--wine);line-height:1;display:block;margin-bottom:.4em}
+.steps p{font-size:clamp(14.5px,1.9vw,15.8px);line-height:1.95;font-weight:500;margin:0}
+
+/* ---------- fit / not fit ---------- */
+.fit{display:grid;gap:clamp(18px,3vw,26px);grid-template-columns:minmax(0,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:3px;padding:clamp(26px,4vw,38px)}
+.card--yes{border-top:4px solid var(--wine)}
+.card--no{border-top:4px solid var(--ink);background:var(--paper-warm)}
+.card h3{margin:0 0 1.2em;font-size:clamp(16px,2.3vw,19px);font-weight:700;display:flex;align-items:center;gap:.6em}
+.card h3 .badge{font-family:var(--num);font-size:11px;letter-spacing:.18em;padding:.4em .9em;border-radius:999px;color:#fff;background:var(--wine)}
+.card--no h3 .badge{background:var(--ink)}
+.card ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.card li{display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:clamp(14.5px,1.9vw,15.8px);line-height:1.9}
+.card li .m{color:var(--wine);font-weight:700;margin-top:-.05em}
+.card--no li .m{color:var(--muted)}
+.card p{margin-top:1.4em;font-size:14px;line-height:2;color:var(--muted)}
+
+/* ---------- closing ---------- */
+.close__media{position:absolute;inset:0;z-index:0}
+.close__media .ph{width:100%;height:100%}
+.close__media img{object-position:50% 30%;filter:grayscale(.35) contrast(1.05)}
+.close__scrim{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(11,11,13,.9),rgba(84,14,25,.86) 55%,rgba(11,11,13,.95))}
+.close{position:relative;overflow:hidden;background:#0B0B0D;color:#fff}
+.close .wrap{position:relative;z-index:2}
+.swap{display:grid;gap:clamp(16px,2.6vw,22px);margin:0 0 clamp(38px,5.6vw,54px)}
+.swap__row{
+  display:grid;gap:6px 18px;padding:clamp(18px,3vw,24px) 0;
+  border-bottom:1px solid rgba(255,255,255,.16);
+}
+.swap__ctx{font-size:13px;letter-spacing:.1em;color:#E8A9B4;font-weight:700}
+.swap__from{font-size:clamp(14px,1.9vw,15.5px);color:rgba(255,255,255,.5);text-decoration:line-through;
+  text-decoration-color:rgba(232,169,180,.6)}
+.swap__to{font-family:var(--serif);font-size:clamp(17px,2.8vw,24px);font-weight:700;line-height:1.7;color:#fff}
+
+/* ---------- FAQ ---------- */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:clamp(20px,3vw,26px) 44px clamp(20px,3vw,26px) 40px;
+  font-size:clamp(15px,2vw,16.8px);font-weight:700;line-height:1.8;position:relative;
+  transition:color .25s;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{
+  content:"Q";position:absolute;left:0;top:calc(clamp(20px,3vw,26px) + .1em);
+  font-family:var(--num);font-weight:700;color:var(--wine);font-size:17px;
+}
+.faq summary::after{
+  content:"";position:absolute;right:8px;top:50%;width:12px;height:12px;
+  border-right:2px solid var(--wine);border-bottom:2px solid var(--wine);
+  transform:translateY(-70%) rotate(45deg);transition:transform .3s;
+}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq summary:hover{color:var(--wine)}
+.faq .a{padding:0 8px clamp(24px,3.4vw,30px) 40px;position:relative;
+  font-size:clamp(14.5px,1.9vw,15.8px);line-height:2.1;color:var(--ink-soft)}
+.faq .a::before{content:"A";position:absolute;left:0;top:-.15em;font-family:var(--num);
+  font-weight:700;color:var(--muted);font-size:17px}
+
+/* ---------- final CTA ---------- */
+.final{background:var(--wine-deep);color:#fff;text-align:center;
+  padding:clamp(64px,10vw,110px) 0 clamp(96px,12vw,120px)}
+.final__t{font-family:var(--serif);font-size:clamp(20px,3.6vw,32px);font-weight:700;
+  line-height:1.8;margin:0 0 clamp(26px,4vw,36px)}
+.final__b{font-size:clamp(14.5px,1.9vw,16px);line-height:2.1;color:rgba(255,255,255,.8);
+  margin:0 0 clamp(32px,4.6vw,42px)}
+
+/* ---------- footer ---------- */
+.foot{background:#0B0B0D;color:rgba(255,255,255,.5);padding:40px 0 92px;font-size:12.5px;
+  letter-spacing:.06em;text-align:center;line-height:2}
+.foot strong{color:#fff;font-weight:700;letter-spacing:.14em;display:block;margin-bottom:.6em;font-size:13.5px}
+
+/* ---------- sticky CTA ---------- */
+.sticky{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px max(12px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom));
+  background:rgba(11,11,13,.9);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  transform:translateY(110%);transition:transform .4s cubic-bezier(.2,.8,.3,1);
+}
+.sticky.on{transform:translateY(0)}
+.sticky .cta{padding:.95em 1.9em;font-size:15px;width:100%;max-width:420px}
+.sticky__txt{display:none;font-size:12.5px;color:rgba(255,255,255,.62);letter-spacing:.06em}
+
+/* ---------- reveal ---------- */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .hero__scroll span::after{animation:none}
+}
+
+/* ---------- responsive ---------- */
+@media(min-width:760px){
+  .case{grid-template-columns:.9fr 1.1fr}
+  .prof{grid-template-columns:.85fr 1.15fr;align-items:start}
+  .fit{grid-template-columns:1fr 1fr;align-items:start}
+  .swap__row{grid-template-columns:120px 1fr}
+  .swap__ctx{grid-row:span 2}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .sticky__txt{display:block}
+  .sticky .cta{width:auto}
+}
+@media(max-width:560px){
+  .change{grid-template-columns:1fr;gap:8px}
+  .change__no{font-size:34px}
+  .prof__media{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero__media">
+    <div class="ph" data-label="images/hero.jpg&#10;スクワット・ボトムの一枚"><img src="images/hero.jpg" alt="試合でスクワットを構えるパワーリフター" fetchpriority="high"></div>
+  </div>
+  <div class="hero__scrim"></div>
+  <div class="hero__inner">
+    <div class="wrap">
+      <span class="hero__kicker">絶対に取りたい記録、勝ちたい試合があるパワーリフターへ。</span>
+      <p class="hero__pre">
+        <span class="b">練習では挙がる。</span>
+        <span class="b">でも、大事な一本になると<span class="accent">怖くなる</span>。</span>
+      </p>
+      <div class="hero__rule"></div>
+      <h1 class="hero__title">
+        <span class="sm">「もっとメンタルを強くしなきゃ」ではなく</span>
+        プレッシャーがあっても、<br>自分がやるべきことを<br>理解し、実践できる選手になる。
+      </h1>
+      <p class="hero__body">
+        パワーリフターのための<strong>実践メンタルトレーニング</strong>。<br>
+        まずは、あなたの次の試合・目標・現在の課題を整理する無料個別相談からご参加ください。
+      </p>
+      <div>
+        <a class="cta" href="https://mosh.jp/services/a83404f4de13474387bddb855afa44d5?openExternalBrowser=1" target="_blank" rel="noopener">▶ 無料個別相談に申し込む</a>
+        <p class="cta-note" style="color:rgba(255,255,255,.72)">オンライン60分｜相談したからといって受講を決める必要はありません</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll"><span>SCROLL</span></div>
+</header>
+
+<!-- ============ 01 悩み ============ -->
+<section class="sec" id="problem">
+  <div class="wrap wrap--narrow">
+    <p class="eyebrow rv">01 &nbsp;Your Struggle</p>
+    <h2 class="h2 rv">こんなことに<em>悩んでいませんか？</em></h2>
+    <ul class="probs rv">
+      <li><span class="chk">✓</span><span>練習では挙がる重量なのに、試合になると取り切れない</span></li>
+      <li><span class="chk">✓</span><span>標準記録や自己ベストがかかった一本ほど「失敗したらどうしよう」と考えてしまう</span></li>
+      <li><span class="chk">✓</span><span>一本失敗すると「今日はダメかも」と、その後の試技まで引きずってしまう</span></li>
+      <li><span class="chk">✓</span><span>ライバルや順位を意識すると、自分の試合に集中できなくなる</span></li>
+      <li><span class="chk">✓</span><span>試合が近づくほど不安になり、予定外の高重量を触ったり、休むことが怖くなったりする</span></li>
+    </ul>
+    <div class="turn rv">
+      <p>もし当てはまるものがあっても、<br>必要なのは単純に「もっと自信を持つこと」ではありません。</p>
+      <p class="punch">メンタルは、生まれ持った性格でも、気合いでもない。<br><u>トレーニングできる“スキル”</u>です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 3つの変化 ============ -->
+<section class="sec sec--dark" id="changes">
+  <div class="wrap wrap--narrow">
+    <p class="eyebrow rv">02 &nbsp;Three Shifts</p>
+    <h2 class="h2 rv">このメンタルトレーニングで<br>目指す<em>3つの変化</em></h2>
+    <div class="changes">
+      <article class="change rv">
+        <div class="change__no">01</div>
+        <div>
+          <h3 class="change__t">「失敗したらどうしよう」から、<span class="mk">今やる一本へ</span></h3>
+          <p class="change__b">不安をゼロにするのではなく、不安があっても、自分がコントロールできることに戻る。</p>
+          <p class="change__b">呼吸、思考、ルーティン、セルフトークなど、自分が力を発揮するための具体的な方法をつくります。</p>
+        </div>
+      </article>
+      <article class="change rv">
+        <div class="change__no">02</div>
+        <div>
+          <h3 class="change__t">一本失敗しても、<span class="mk">試合を終わらせない</span></h3>
+          <p class="change__quote">スクワット3本目を落とした。<br>赤判定が出た。<br>思っていたように重量が動かなかった。</p>
+          <p class="change__b">そんな時でも、「何が起きたか」「何を変えるか」「何は捨てるか」を整理し、次の一本・次の種目へ戻れる力を身につけます。</p>
+        </div>
+      </article>
+      <article class="change rv">
+        <div class="change__no">03</div>
+        <div>
+          <h3 class="change__t">「目標を取る選手」として、<span class="mk">日常から行動できる</span></h3>
+          <p class="change__b">目標は試合当日だけで達成するものではありません。</p>
+          <ul class="curri" style="margin:1.2em 0">
+            <li><span class="n">—</span><span>何をするか</span></li>
+            <li><span class="n">—</span><span>何をしないか</span></li>
+            <li><span class="n">—</span><span>いつ休むか</span></li>
+            <li><span class="n">—</span><span>どこで思考を止めるか</span></li>
+            <li><span class="n">—</span><span>プランAが崩れた時、プランBをどうするか</span></li>
+          </ul>
+          <p class="change__b">「この目標を達成する選手なら、今日どうするか？」から逆算して、自分の行動をつくります。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 講座概要 ============ -->
+<section class="sec sec--warm" id="overview">
+  <div class="wrap wrap--narrow">
+    <p class="eyebrow rv">03 &nbsp;Program</p>
+    <h2 class="h2 rv">講座概要<br><em>パワーリフターのための実践メンタルトレーニング</em></h2>
+    <div class="spec rv">
+      <div class="spec__row"><div class="spec__k">対象</div><div class="spec__v">絶対に取りたい記録、勝ちたい試合がある<strong>中級〜上級パワーリフター</strong></div></div>
+      <div class="spec__row"><div class="spec__k">形式</div><div class="spec__v">1対1・オンライン（Zoom）</div></div>
+      <div class="spec__row"><div class="spec__k">回数</div><div class="spec__v"><strong>全10回</strong></div></div>
+      <div class="spec__row"><div class="spec__k">1回</div><div class="spec__v"><strong>60分</strong><span class="sub">前半：メンタルスキルの習得／後半：個別コーチング・実践設計</span></div></div>
+      <div class="spec__row"><div class="spec__k">期間</div><div class="spec__v">最長3か月</div></div>
+    </div>
+    <div class="pace rv">
+      <h3>一斉スタートではありません。</h3>
+      <p>試合まで3か月ある人ならゆっくり進める。試合まで1か月なら短期間に集中する。<br>あなたの大会日と現在地に合わせて進めます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 カリキュラム ============ -->
+<section class="sec sec--dark" id="curriculum">
+  <div class="wrap">
+    <p class="eyebrow rv">04 &nbsp;Curriculum</p>
+    <h2 class="h2 rv">講座で<em>扱うこと</em></h2>
+    <ul class="curri rv">
+      <li><span class="n">01</span><span>自分がどんな時に崩れやすいのかを知る</span></li>
+      <li><span class="n">02</span><span>不安の原因を整理する</span></li>
+      <li><span class="n">03</span><span>目標を「結果・パフォーマンス・行動」の3種類に分ける</span></li>
+      <li><span class="n">04</span><span>コントロールできることだけに戻る</span></li>
+      <li><span class="n">05</span><span>プレッシャーとの付き合い方</span></li>
+      <li><span class="n">06</span><span>ストレスを「脅威」ではなく「挑戦」と捉える</span></li>
+      <li><span class="n">07</span><span>思考停止を身につける</span></li>
+      <li><span class="n">08</span><span>自分だけの一本前ルーティンをつくる</span></li>
+      <li><span class="n">09</span><span>失敗後のリセット方法</span></li>
+      <li><span class="n">10</span><span>ライバルや順位から「自分の試合」へ戻る</span></li>
+      <li><span class="n">11</span><span>ONとOFFを切り替える</span></li>
+      <li><span class="n">12</span><span>やること・やらないことを決める</span></li>
+      <li><span class="n">13</span><span>結果に左右されない自己信頼をつくる</span></li>
+      <li><span class="n">14</span><span>初志貫徹にこだわらず、プランBを持つ</span></li>
+      <li><span class="n">15</span><span>自分の価値観をどこに置くかを考える</span></li>
+      <li><span class="n">16</span><span>あえてグレーゾーンをつくる</span></li>
+      <li><span class="n">17</span><span>試合当日のメンタルプランを完成させる</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 05 CASE 710 ============ -->
+<section class="sec sec--warm" id="case">
+  <div class="wrap">
+    <p class="eyebrow rv">05 &nbsp;Case</p>
+    <div class="case">
+      <div class="case__media rv">
+        <div class="ph" data-label="images/case.jpg&#10;ラックアウトの一枚"><img src="images/case.jpg" alt="バーをラックアウトするパワーリフター"></div>
+      </div>
+      <div class="rv">
+        <p class="big">710<span class="u">kg</span></p>
+        <p class="case__x"><s>「700kgを取れるだろうか」ではなく、</s><br>「710kgを余裕で挙げる自分をつくる」</p>
+        <p class="case__b">実際に、700kgという大きな目標を持つ選手から、こんな相談がありました。</p>
+        <div class="voice">スクワット3本目を失敗したら、その後のメンタルが崩れてしまいそう。</div>
+        <p class="case__b">そこで考えたのは、「失敗しないようにしよう」でも、「自信を持とう」でもありません。</p>
+        <p class="case__b"><span class="mk">余裕で710kgを挙げられる選手なら、今日何をするのか。</span></p>
+        <p class="case__b">そこから、「やること」だけではなく「やらないこと」まで具体的に決めていく。<br>これが、この講座で大切にしている考え方です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 講師 ============ -->
+<section class="sec sec--dark" id="profile">
+  <div class="wrap">
+    <p class="eyebrow rv">06 &nbsp;Coach</p>
+    <div class="prof">
+      <div class="prof__media rv">
+        <div class="ph" data-label="images/coach-1.jpg&#10;試合前の一枚（縦）"><img src="images/coach-1.jpg" alt="試合で台へ向かうしおりん"></div>
+        <div class="ph" data-label="images/coach-2.jpg&#10;表彰台"><img src="images/coach-2.jpg" alt="表彰台に立つしおりん"></div>
+        <div class="ph" data-label="images/coach-3.jpg&#10;デッドリフト"><img src="images/coach-3.jpg" alt="デッドリフトをロックアウトするしおりん"></div>
+      </div>
+      <div class="rv">
+        <h2 class="prof__name">しおりん</h2>
+        <p class="prof__role">POWERLIFTER / TRAINER</p>
+        <p class="prof__b">パワーリフティング競技を続けながら、選手・トレーニーの目標達成をサポート。</p>
+        <p class="prof__b">自身も、<strong>日本一、日本記録、世界大会</strong>など、「絶対に取りたい一本」と向き合う競技経験を重ねてきました。</p>
+        <div class="creed">
+          <span>だからこそ伝えたいのは、</span>
+          <span class="hl">メンタルが強い人になる必要はない。</span>
+          <span>本番で何が起きても、「自分はどうすればいいか」を知っている選手になること。</span>
+        </div>
+        <p class="prof__b">競技者としての実体験と、目標設定・メンタルコーチングを掛け合わせ、パワーリフティングの実際の試合場面まで落とし込んでサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 無料個別相談 ============ -->
+<section class="sec" id="consult">
+  <div class="wrap wrap--narrow">
+    <p class="eyebrow rv">07 &nbsp;Free Session</p>
+    <h2 class="h2 rv">まずは無料個別相談で、<br><em>「あなたの場合」</em>を整理します</h2>
+    <p class="lead rv">この相談では、次の3つを一緒に整理します。</p>
+    <ol class="steps rv">
+      <li><span class="n">1</span><p>次の試合で、本当に取りたい結果は何か</p></li>
+      <li><span class="n">2</span><p>今、その目標を邪魔しているメンタルの課題は何か</p></li>
+      <li><span class="n">3</span><p>どんなスキルを身につければ、次の試合で変えられそうか</p></li>
+    </ol>
+    <div class="turn rv" style="text-align:left">
+      <p style="margin-bottom:0">「まだ講座を受けるか決めていない」という段階でも大丈夫です。<br>
+      まず、<strong style="color:#F0B9C3">今の自分に本当にメンタルトレーニングが必要なのか</strong>を確認する時間として使ってください。</p>
+    </div>
+    <div class="cta-block rv" style="margin-top:clamp(36px,5vw,48px)">
+      <a class="cta" href="https://mosh.jp/services/a83404f4de13474387bddb855afa44d5?openExternalBrowser=1" target="_blank" rel="noopener">▶ 無料個別相談に申し込む</a>
+      <p class="cta-note">60分・Zoom｜30秒でお申し込み</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 対象 ============ -->
+<section class="sec sec--warm" id="fit">
+  <div class="wrap">
+    <p class="eyebrow rv">08 &nbsp;Who It's For</p>
+    <h2 class="h2 rv">こんな方に<em>おすすめです</em></h2>
+    <div class="fit">
+      <div class="card card--yes rv">
+        <h3><span class="badge">FOR YOU</span>向いている方</h3>
+        <ul>
+          <li><span class="m">◎</span><span>次の試合で絶対に取りたい記録がある</span></li>
+          <li><span class="m">◎</span><span>標準記録を突破したい</span></li>
+          <li><span class="m">◎</span><span>自己ベストを更新したい</span></li>
+          <li><span class="m">◎</span><span>全国大会・表彰台・優勝を本気で狙っている</span></li>
+          <li><span class="m">◎</span><span>練習の力を、試合でも出し切りたい</span></li>
+          <li><span class="m">◎</span><span>一本失敗しても崩れない自分になりたい</span></li>
+          <li><span class="m">◎</span><span>「メンタルが弱い」で終わらず、具体的な方法を身につけたい</span></li>
+        </ul>
+      </div>
+      <div class="card card--no rv">
+        <h3><span class="badge">NOT FOR</span>向いていない方</h3>
+        <ul>
+          <li><span class="m">—</span><span>「受ければ勝たせてもらえる」と考えている</span></li>
+          <li><span class="m">—</span><span>「必ず記録を更新できる方法」が欲しい</span></li>
+        </ul>
+        <p>この講座でつくるのは、結果を保証する方法ではなく、<br><strong style="color:var(--ink)">結果を本気で狙うために、自分自身を扱える力</strong>です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<section class="sec close" id="closing">
+  <div class="close__media">
+    <div class="ph" data-label="images/closing.jpg&#10;デッドリフト・ロックアウトの一枚"><img src="images/closing.jpg" alt="デッドリフトをロックアウトするパワーリフター"></div>
+  </div>
+  <div class="close__scrim"></div>
+  <div class="wrap wrap--narrow">
+    <h2 class="h2 rv" style="text-align:center">この先の試合で変えたいのは、<br><em>重量だけでしょうか。</em></h2>
+    <div class="swap">
+      <div class="swap__row rv">
+        <div class="swap__ctx">大事な一本の前</div>
+        <div class="swap__from">「失敗したらどうしよう」</div>
+        <div class="swap__to">「やることは決まっている。」</div>
+      </div>
+      <div class="swap__row rv">
+        <div class="swap__ctx">一本を落とした後</div>
+        <div class="swap__from">「今日は終わった」</div>
+        <div class="swap__to">「次に戻ろう。」</div>
+      </div>
+      <div class="swap__row rv">
+        <div class="swap__ctx">試合が近づいた時</div>
+        <div class="swap__from">「もっとやらなきゃ」</div>
+        <div class="swap__to">「この目標を取る選手として、今日は何をする？」</div>
+      </div>
+    </div>
+    <p class="rv" style="text-align:center;font-family:var(--serif);font-size:clamp(17px,2.8vw,24px);line-height:1.9;font-weight:700">
+      そうやって、<br>自分の試合をできる選手へ。
+    </p>
+  </div>
+</section>
+
+<!-- ============ 09 FAQ ============ -->
+<section class="sec" id="faq">
+  <div class="wrap wrap--narrow">
+    <p class="eyebrow rv">09 &nbsp;FAQ</p>
+    <h2 class="h2 rv">よくある<em>質問</em></h2>
+    <div class="faq rv">
+      <details>
+        <summary>「メンタルが弱い」と感じていなくても受けられますか？</summary>
+        <div class="a">はい。むしろこの講座は「メンタルが弱い人を直す」ためのものではありません。今持っている力を大事な試合で発揮するためのスキルを身につけたい方が対象です。</div>
+      </details>
+      <details>
+        <summary>まだ全国大会レベルではありません。</summary>
+        <div class="a">問題ありません。競技レベルではなく、「絶対に取りたい記録・結果があるか」を大切にしています。標準記録や自己ベストを本気で狙っている方も対象です。</div>
+      </details>
+      <details>
+        <summary>試合まで1か月しかありません。</summary>
+        <div class="a">全10回は固定された月間スケジュールではありません。試合日と現在地に合わせて、3か月以内で受講ペースを調整します。</div>
+      </details>
+      <details>
+        <summary>トレーニングプログラムやフォームも見てもらえますか？</summary>
+        <div class="a">この講座ではメンタル・目標設定・思考・行動に特化します。技術やトレーニング設計が必要な場合は、適切なトレーニング指導につなげます。</div>
+      </details>
+      <details>
+        <summary>個別相談をしたら、講座への申込みが必要ですか？</summary>
+        <div class="a">いいえ。相談を通して現在地を整理したうえで、この講座が必要かどうかを判断してください。</div>
+      </details>
+      <details>
+        <summary>試合での記録更新や勝利は保証されますか？</summary>
+        <div class="a">競技結果そのものを保証するサービスではありません。プレッシャー下で自分のやるべきことへ戻る、失敗後に切り替える、試合までの行動を整えるなど、自分でコントロールできるメンタルスキルを身につけることを目的としています。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" id="apply">
+  <div class="wrap wrap--narrow">
+    <h2 class="final__t rv">あなたにとっての<br>「ここぞの一本」を、<br>一緒に整理してみませんか？</h2>
+    <p class="final__b rv">絶対に取りたい記録、勝ちたい試合がある方へ。</p>
+    <div class="rv">
+      <a class="cta cta--ghost" href="https://mosh.jp/services/a83404f4de13474387bddb855afa44d5?openExternalBrowser=1" target="_blank" rel="noopener">▶ 無料個別相談に申し込む</a>
+      <p class="cta-note">オンライン60分｜相談したからといって受講を決める必要はありません</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <strong>パワーリフターのための実践メンタルトレーニング</strong>
+    <div>しおりん｜パワーリフター・トレーナー</div>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <span class="sticky__txt">まずは現在地の整理から。</span>
+  <a class="cta" href="https://mosh.jp/services/a83404f4de13474387bddb855afa44d5?openExternalBrowser=1" target="_blank" rel="noopener">▶ 無料個別相談に申し込む</a>
+</div>
+
+<script>
+// 画像が未配置でも崩れないようにフォールバック表示へ
+document.querySelectorAll('.ph img').forEach(function(img){
+  var mark = function(){ img.closest('.ph').classList.add('is-missing'); };
+  img.addEventListener('error', mark);
+  if (img.complete && img.naturalWidth === 0) mark();
+});
+
+// スクロール表示アニメーション
+var rv = document.querySelectorAll('.rv');
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+  rv.forEach(function(el){ io.observe(el); });
+} else {
+  rv.forEach(function(el){ el.classList.add('in'); });
+}
+
+// 追従CTA（ヒーローを過ぎたら表示 / 最終CTAでは隠す）
+var sticky = document.getElementById('sticky');
+var hero = document.querySelector('.hero');
+var apply = document.getElementById('apply');
+function updateSticky(){
+  var passedHero = window.scrollY > hero.offsetHeight * 0.85;
+  var atApply = apply.getBoundingClientRect().top < window.innerHeight;
+  sticky.classList.toggle('on', passedHero && !atApply);
+}
+window.addEventListener('scroll', updateSticky, {passive:true});
+window.addEventListener('resize', updateSticky);
+updateSticky();
+</script>
+</body>
+</html>
