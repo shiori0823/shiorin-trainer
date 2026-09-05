@@ -42,3 +42,17 @@ cd flyer
 chromium --headless --disable-gpu --no-pdf-header-footer \
   --print-to-pdf=flyer.pdf flyer.html
 ```
+
+## 公開（GitHub Pages）
+
+`lp/` を GitHub Pages で公開しています。
+
+- 公開URL: https://shiori0823.github.io/shiorin-trainer/
+- 公開元ブランチ: `claude/powerlifter-mental-training-lp-1o591b` / フォルダ: `/ (root)`
+
+リポジトリ直下の `index.html` は `lp/` へ転送するだけのページです。
+短いURLで案内できるように置いています。`.nojekyll` は GitHub Pages の
+自動変換を止めるための空ファイルです。
+
+LPを更新したいときは `lp/` の中を編集してこのブランチに push すれば、
+1〜2分で公開ページにも反映されます。
