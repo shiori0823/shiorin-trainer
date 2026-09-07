@@ -101,14 +101,15 @@ async function build() {
   const photo = (s, file) => s.addImage({ path:file, x:5.5, y:0, w:4.5, h:H,
     sizing:{ type:"cover", w:4.5, h:H } });
 
-  s = slide("PHASE 2　しおりんのストーリー", { numLeft:true });
-  photo(s, "../note/images/01-squat.jpg");
-  title(s, "2023年度\n日本グランプリ", { size:33, w:4.6, y:0.9 });
+  s = slide("PHASE 2　しおりんのストーリー");
+  title(s, "2023年度 日本グランプリ", { size:36, w:8.6, y:0.95 });
   s.addText("練習は、とても順調。\nところが試合直前に体調不良。\n\n" +
             "点滴を打ち、なんとか出場できたものの、\n予定していた重量から大幅に下げることに。",
-    T({ x:0.5, y:2.45, w:4.7, h:2, fontSize:17, color:C.soft, lineSpacing:28 }));
-  s.addText("「しょうがない。今じゃなかった。」", T({ x:0.5, y:4.5, w:4.7, h:0.5,
-    fontSize:19, bold:true, color:C.wine }));
+    T({ x:0.5, y:2.1, w:8.6, h:2.1, fontSize:19, color:C.soft, lineSpacing:30 }));
+  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:4.45, w:8.6, h:0.85,
+    fill:{ color:C.deep }, line:{ color:C.deep }, rectRadius:0.08 });
+  s.addText("「しょうがない。今じゃなかった。」", T({ x:0.9, y:4.45, w:8.1, h:0.85,
+    fontSize:21, bold:true, color:C.white, valign:"middle", fontFace:FS }));
 
   s = slide("PHASE 2　しおりんのストーリー", { numLeft:true });
   photo(s, "../note/images/02-podium.jpg");
