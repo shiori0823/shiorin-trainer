@@ -102,30 +102,36 @@ async function build() {
     sizing:{ type:"cover", w:4.5, h:H } });
 
   s = slide("PHASE 2　しおりんのストーリー");
-  title(s, "2023年度 日本グランプリ", { size:36, w:8.6, y:0.95 });
-  s.addText("練習は、とても順調。\nところが試合直前に体調不良。\n\n" +
-            "点滴を打ち、なんとか出場できたものの、\n予定していた重量から大幅に下げることに。",
-    T({ x:0.5, y:2.1, w:8.6, h:2.1, fontSize:19, color:C.soft, lineSpacing:30 }));
-  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:4.45, w:8.6, h:0.85,
+  title(s, "2023年度 日本グランプリ", { size:36, w:8.6, y:0.9 });
+  s.addText("ここで、スクワットの日本記録を取るつもりでした。\n\n" +
+            "練習はとても順調。ところが試合直前に体調不良。\n" +
+            "点滴を打ち、なんとか出場。でも予定していた重量から大幅に下げることに。\n\n" +
+            "日本一にはなれました。でも、狙っていた記録は取れませんでした。",
+    T({ x:0.5, y:1.85, w:8.6, h:2.6, fontSize:18, color:C.soft, lineSpacing:28 }));
+  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:4.55, w:8.6, h:0.8,
     fill:{ color:C.deep }, line:{ color:C.deep }, rectRadius:0.08 });
-  s.addText("「しょうがない。今じゃなかった。」", T({ x:0.9, y:4.45, w:8.1, h:0.85,
+  s.addText("「しょうがない。今じゃなかった。」", T({ x:0.9, y:4.55, w:8.1, h:0.8,
     fontSize:21, bold:true, color:C.white, valign:"middle", fontFace:FS }));
 
   s = slide("PHASE 2　しおりんのストーリー", { numLeft:true });
   photo(s, "../note/images/02-podium.jpg");
-  title(s, "でも、その試合で\n全部が決まった\nわけではなかった", { size:29, w:4.7, y:0.85 });
-  s.addText("その試合が終わっても、\n積み重ねてきたものはなくなりません。\n\n" +
+  title(s, "でも、その試合で\n全部が決まった\nわけではなかった", { size:29, w:4.7, y:0.8 });
+  s.addText("その試合が終わっても、\n積み重ねてきたものはなくなりません。\n" +
             "また自分にできることを続ける。",
-    T({ x:0.5, y:2.8, w:4.7, h:1.5, fontSize:17, color:C.soft, lineSpacing:28 }));
-  s.addText("そして同じ2023年度、日本一に。", T({ x:0.5, y:4.4, w:4.7, h:0.5,
-    fontSize:20, bold:true, color:C.wine }));
+    T({ x:0.5, y:2.7, w:4.7, h:1.3, fontSize:17, color:C.soft, lineSpacing:28 }));
+  s.addText("同じ2023年度のJCPでも日本一に。\nそして翌年、狙っていた日本記録も。",
+    T({ x:0.5, y:4.15, w:4.7, h:1.0, fontSize:18, bold:true, color:C.wine, lineSpacing:28 }));
+  s.addShape(pres.ShapeType.roundRect, { x:5.75, y:4.85, w:2.1, h:0.42,
+    fill:{ color:C.deep }, line:{ color:C.deep }, rectRadius:0.06 });
+  s.addText("2023年度 JCP", T({ x:5.75, y:4.85, w:2.1, h:0.42, fontSize:12, bold:true,
+    color:C.white, align:"center", valign:"middle" }));
 
-  s = slide("PHASE 2　しおりんのストーリー", { numLeft:true });
-  photo(s, "../note/images/03-deadlift.jpg");
-  title(s, "今は、世界大会さえ\n「楽しい」", { size:32, w:4.7, y:0.9 });
-  s.addText("「私は今、この舞台に立っているんだ」\nと思うと、緊張以上にワクワクしていました。\n\n" +
+  s = slide("PHASE 2　しおりんのストーリー");
+  title(s, "今は、世界大会さえ「楽しい」", { size:34, w:8.6, y:0.95 });
+  s.addText("2024年、世界大会に出場しました。\n\n" +
+            "「私は今、この舞台に立っているんだ」\nと思うと、緊張以上にワクワクしていました。\n\n" +
             "不安がゼロになったからではありません。\nその時、自分に何ができるのかが\nわかるようになったからです。",
-    T({ x:0.5, y:2.35, w:4.7, h:2.7, fontSize:16, color:C.soft, lineSpacing:26 }));
+    T({ x:0.5, y:1.95, w:8.6, h:3.2, fontSize:18, color:C.soft, lineSpacing:28 }));
 
   /* ===================== Phase 3｜3つの思い込みを壊す ===================== */
   s = slide("PHASE 3　3つの思い込みを壊す");
