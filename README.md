@@ -4,6 +4,8 @@
 > - `flyer/` … 「私の身体、おつかれさま。」ワークショップのA4チラシ（以下の内容）
 > - `lp/` … パワーリフターのための実践メンタルトレーニング LP（`lp/README.md`）
 > - `flyer-mental/` … 同じ内容のA4チラシ（`flyer-mental/README.md`）
+> - `deck/` … 60分無料個別相談のスライド 全32枚（`deck/README.md`）
+> - `note/` … note記事と写真（`note/README.md`）
 
 A4 1枚のワークショップ告知チラシです。
 
