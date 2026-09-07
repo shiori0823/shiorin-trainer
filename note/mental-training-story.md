@@ -204,4 +204,6 @@
 
 次の試合に向けて、身体だけではなく、メンタルも一緒に準備していきたい方は、こちらから詳細をご覧ください。
 
-[▶ 無料個別相談の詳細を見る](https://mosh.jp/services/a83404f4de13474387bddb855afa44d5?openExternalBrowser=1)
+▼ 無料個別相談の詳細はこちら
+
+https://mosh.jp/services/a83404f4de13474387bddb855afa44d5
