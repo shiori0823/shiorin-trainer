@@ -41,5 +41,5 @@ note以外（LINEやInstagramのプロフィール欄など）に貼る場合は
 外部ブラウザで開かせるための指定です。
 
 ```
-https://mosh.jp/services/a83404f4de13474387bddb855afa44d5?openExternalBrowser=1
+https://mosh.jp/services/404875?openExternalBrowser=1
 ```
