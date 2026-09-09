@@ -248,6 +248,70 @@ async function build() {
     fontSize:18, bold:true, color:C.wine }));
 
   /* ===================== Phase 5｜お客様の変化 ===================== */
+
+  /* --- ケニーさんの声（対談より・掲載許可あり） --- */
+  s = slide("PHASE 5　受講された方の変化", { numLeft:true });
+  s.addImage({ path:"../lp/images/voice-kenny-meet.jpg", x:5.5, y:0, w:4.5, h:H,
+    sizing:{ type:"cover", w:4.5, h:H } });
+  title(s, "「700を取らないと、\n自分に存在意義がない」\nと思っていた", { size:26, w:4.7, y:0.72 });
+  s.addImage({ path:"../lp/images/voice-kenny.jpg", x:0.5, y:2.72, w:1.05, h:1.05,
+    rounding:true, sizing:{ type:"cover", w:1.05, h:1.05 } });
+  s.addText("ケニーさん", T({ x:1.75, y:2.82, w:3.3, h:0.4, fontSize:21, bold:true }));
+  s.addText("パワーリフター・83kg級", T({ x:1.75, y:3.26, w:3.3, h:0.32,
+    fontSize:14, bold:true, color:C.wine }));
+  s.addText("実際にコーチングを受けられた方に、\n受ける前と後のお話を伺いました。",
+    T({ x:0.5, y:4.02, w:4.7, h:0.8, fontSize:16, color:C.soft, lineSpacing:26 }));
+
+  s = slide("PHASE 5　受講された方の変化");
+  title(s, "受ける前｜「PRを出さないと、自分はダメだ」", { size:27, w:9 });
+  s.addText("トレーニングは頑張っている。それなのに、試合の大事な場面で決めきれない。\n" +
+            "デッドリフトの3本目は、ほぼ毎回失敗していました。",
+    T({ x:0.5, y:1.9, w:9, h:1.0, fontSize:18, color:C.soft, lineSpacing:30 }));
+  s.addText("自分の試技なのに、自分にベクトルが向いていない。\n" +
+            "数字ばかりを追いかけていました。",
+    T({ x:0.5, y:3.0, w:9, h:1.0, fontSize:18, color:C.soft, lineSpacing:30 }));
+  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:4.02, w:9, h:0.9,
+    fill:{ color:C.deep }, line:{ color:C.deep }, rectRadius:0.08 });
+  s.addText("階級を上げて、標準記録は700kg。\nその数字が、自分の首を締めていました。",
+    T({ x:0.9, y:4.02, w:8.2, h:0.9, fontSize:18, bold:true, color:C.white,
+      valign:"middle", lineSpacing:26, fontFace:FS }));
+
+  s = slide("PHASE 5　受講された方の変化");
+  title(s, "受けたあと｜「687.5まで行けば、80点で合格点」", { size:27, w:9 });
+  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:1.85, w:9, h:0.85,
+    fill:{ color:C.rose }, line:{ color:C.rose }, rectRadius:0.08 });
+  s.addText("コーチングで言われたのは、この一言でした。", T({ x:0.9, y:1.85, w:8.2, h:0.85,
+    fontSize:18, bold:true, color:C.wine, valign:"middle" }));
+  s.addText("「700を取らないと絶対ダメだ」と思っていた自分のキャパが、広がりました。\n" +
+            "根拠のない自信ではなく、ここまで行けたら自分はこれだけできたんだ、\n" +
+            "という明確なゴールができたからです。",
+    T({ x:0.5, y:2.95, w:9, h:1.3, fontSize:18, color:C.soft, lineSpacing:30 }));
+  s.addText("練習の一回一回に目的を持てるようになって、トレーニングが楽しくなりました。\n" +
+            "切羽詰まらなくなったぶん、周りの人にも優しくなれました。",
+    T({ x:0.5, y:4.32, w:9, h:0.95, fontSize:18, color:C.soft, lineSpacing:30 }));
+
+  s = slide("PHASE 5　受講された方の変化", { dark:true });
+  title(s, "一番変わったのは、\n人のせいにしなくなったこと。",
+    { size:32, w:9, y:1.15, color:C.white });
+  s.addText("以前は、プログラムが悪い、コーチが悪い、環境が悪いと、\n" +
+            "何かに言い訳をつけていました。",
+    T({ x:0.5, y:3.15, w:9, h:1.0, fontSize:19, color:"F2E7E9", lineSpacing:32 }));
+  s.addText("振り返れば、自分の成長の機会を逃していただけでした。",
+    T({ x:0.5, y:4.3, w:9, h:0.5, fontSize:19, bold:true, color:C.pink }));
+
+  s = slide("PHASE 5　受講された方の変化");
+  title(s, "「2、3年前の自分に、受けさせたいです」", { size:29, w:9 });
+  s.addText("こんな人におすすめしたい", T({ x:0.5, y:1.9, w:9, h:0.35,
+    fontSize:13, bold:true, charSpacing:2, color:C.muted }));
+  card(s, ["練習ではPRが出せているのに、試合では結果が出ない人",
+           "身体の強さは伴っているのに、メンタルが伴っていない人"],
+    { x:0.5, y:2.35, w:9, size:18, gap:0.75 });
+  s.addText("「僕自身、2〜3年苦しみました。今振り返ると、体は良くなっていたのに、\n" +
+            "メンタルが伴っていなかったから伸びていなかったんだと思います。」",
+    T({ x:0.5, y:3.95, w:9, h:1.0, fontSize:17, color:C.soft, lineSpacing:28 }));
+  s.addText("受講された方の体験であり、同じ結果を保証するものではありません。",
+    T({ x:0.5, y:5.05, w:9, h:0.3, fontSize:11, color:C.muted }));
+
   const beforeAfter = async (label, before, after, quote) => {
     const s = slide("PHASE 5　受講された方の変化");
     title(s, label, { size:30, w:9 });
