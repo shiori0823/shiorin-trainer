@@ -269,6 +269,25 @@ section{position:relative}
 .voice::before{content:"”";position:absolute;top:-.05em;right:.3em;font-family:var(--serif);
   font-size:64px;color:rgba(122,21,36,.14);line-height:1}
 
+/* ---------- 受講された方の声 ---------- */
+.voice__who{font-size:clamp(14px,1.9vw,16px);font-weight:700;color:var(--wine);
+  margin:-14px 0 clamp(26px,4vw,36px);letter-spacing:.04em}
+.voice__grid{display:grid;gap:clamp(18px,3vw,26px);grid-template-columns:minmax(0,1fr)}
+.voice__col,.voice__rec{background:#fff;border:1px solid var(--line);border-radius:3px;
+  padding:clamp(24px,3.8vw,34px)}
+.voice__k{margin:0 0 1em;font-size:clamp(15px,2.1vw,17px);font-weight:700;
+  color:var(--wine);letter-spacing:.04em}
+.voice__col p,.voice__rec p{font-size:clamp(14.5px,1.9vw,15.8px);line-height:2.05;
+  color:var(--ink-soft);margin:0 0 1.1em}
+.voice__col p:last-child,.voice__rec p:last-child{margin-bottom:0}
+.voice__rec strong{color:var(--wine)}
+.pull{margin:clamp(24px,4vw,34px) 0;padding:clamp(26px,4vw,38px);
+  background:var(--wine-deep);border-radius:3px}
+.pull p{margin:0;font-family:var(--serif);font-size:clamp(16px,2.6vw,21px);
+  line-height:1.95;color:#fff;font-weight:700}
+.pull u{text-decoration:none;border-bottom:2px solid rgba(255,255,255,.7);padding-bottom:.1em}
+.voice__note{margin:clamp(18px,3vw,24px) 0 0;font-size:12.5px;line-height:1.9;color:var(--muted)}
+
 /* ---------- profile ---------- */
 .prof{display:grid;gap:clamp(30px,5vw,56px);grid-template-columns:minmax(0,1fr)}
 .prof__media{display:grid;gap:12px;grid-template-columns:1fr 1fr}
@@ -398,6 +417,7 @@ section{position:relative}
   .swap__row{grid-template-columns:120px 1fr}
   .swap__ctx{grid-row:span 2}
   .steps{grid-template-columns:repeat(3,1fr)}
+  .voice__grid{grid-template-columns:1fr 1fr}
   .hero__media img{object-position:10% 45%}
   .sticky__txt{display:block}
   .sticky .cta{width:auto}
@@ -560,10 +580,44 @@ section{position:relative}
   </div>
 </section>
 
-<!-- ============ 06 講師 ============ -->
+<!-- ============ 06 受講された方の声 ============ -->
+<section class="sec sec--rose" id="voice">
+  <div class="wrap">
+    <p class="eyebrow rv">06 &nbsp;Voice</p>
+    <h2 class="h2 rv">「700を取らないと、<em>自分に存在意義がない</em>」<br>と思っていた</h2>
+    <p class="voice__who rv">ケイさん（83kg級）</p>
+    <div class="voice__grid">
+      <div class="voice__col rv">
+        <h3 class="voice__k">受ける前</h3>
+        <p>トレーニングは頑張っている。それなのに、試合の大事な場面で決めきれない。デッドリフトの3本目は、ほぼ毎回失敗していました。</p>
+        <p>自分の試技なのに、自分にベクトルが向いていない。数字ばかりを追いかけて、「PRを出さないと自分はダメだ」と思っていました。</p>
+        <p>階級を上げて、標準記録は700kg。その数字が、自分の首を締めていました。</p>
+      </div>
+      <div class="voice__col rv">
+        <h3 class="voice__k">受けたあと</h3>
+        <p>コーチングで言われたのは、「700に届かなくても、687.5まで行けば80点で合格点」という言葉でした。</p>
+        <p>「700を取らないと絶対ダメだ」と思っていた自分のキャパが、広がりました。根拠のない自信ではなく、ここまで行けたら自分はこれだけできたんだ、という明確なゴールができたからです。</p>
+        <p>練習の一回一回に目的を持てるようになって、トレーニングが楽しくなりました。切羽詰まらなくなったぶん、周りの人にも優しくなれました。</p>
+      </div>
+    </div>
+    <div class="pull rv">
+      <p>一番変わったのは、<u>人のせいにしなくなったこと</u>。<br>
+      以前は、プログラムが悪い、コーチが悪い、環境が悪いと、何かに言い訳をつけていました。<br>
+      振り返れば、自分の成長の機会を逃していただけでした。</p>
+    </div>
+    <div class="voice__rec rv">
+      <h3 class="voice__k">こんな人におすすめしたい</h3>
+      <p>練習ではPRが出せているのに、試合では結果が出ない人。身体の強さは伴っているのに、メンタルが伴っていない人。</p>
+      <p>僕自身、2〜3年苦しみました。今振り返ると、体は良くなっていたのに、メンタルが伴っていなかったから伸びていなかったんだと思います。<strong>2、3年前の自分に、受けさせたいです。</strong></p>
+    </div>
+    <p class="voice__note rv">受講された方の体験であり、同じ結果を保証するものではありません。</p>
+  </div>
+</section>
+
+<!-- ============ 07 講師 ============ -->
 <section class="sec sec--rose" id="profile">
   <div class="wrap">
-    <p class="eyebrow rv">06 &nbsp;Coach</p>
+    <p class="eyebrow rv">07 &nbsp;Coach</p>
     <div class="prof">
       <div class="prof__media rv">
         <div class="ph" data-label="images/coach-1.jpg&#10;試合前の一枚（縦）"><img src="images/coach-1.jpg" alt="試合で台へ向かうしおりん"></div>
@@ -586,10 +640,10 @@ section{position:relative}
   </div>
 </section>
 
-<!-- ============ 07 無料個別相談 ============ -->
+<!-- ============ 08 無料個別相談 ============ -->
 <section class="sec" id="consult">
   <div class="wrap wrap--narrow">
-    <p class="eyebrow rv">07 &nbsp;Free Session</p>
+    <p class="eyebrow rv">08 &nbsp;Free Session</p>
     <h2 class="h2 rv">まずは無料個別相談で、<br><em>「あなたの場合」</em>を整理します</h2>
     <p class="lead rv">この相談では、次の3つを一緒に整理します。</p>
     <ol class="steps rv">
@@ -608,10 +662,10 @@ section{position:relative}
   </div>
 </section>
 
-<!-- ============ 08 対象 ============ -->
+<!-- ============ 09 対象 ============ -->
 <section class="sec sec--warm" id="fit">
   <div class="wrap">
-    <p class="eyebrow rv">08 &nbsp;Who It's For</p>
+    <p class="eyebrow rv">09 &nbsp;Who It's For</p>
     <h2 class="h2 rv">こんな方に<em>おすすめです</em></h2>
     <div class="fit">
       <div class="card card--yes rv">
@@ -669,10 +723,10 @@ section{position:relative}
   </div>
 </section>
 
-<!-- ============ 09 FAQ ============ -->
+<!-- ============ 10 FAQ ============ -->
 <section class="sec" id="faq">
   <div class="wrap wrap--narrow">
-    <p class="eyebrow rv">09 &nbsp;FAQ</p>
+    <p class="eyebrow rv">10 &nbsp;FAQ</p>
     <h2 class="h2 rv">よくある<em>質問</em></h2>
     <div class="faq rv">
       <details>
