@@ -286,7 +286,11 @@ section{position:relative}
   color:var(--ink-soft);margin:0 0 1.1em}
 .voice__col p:last-child,.voice__rec p:last-child{margin-bottom:0}
 .voice__rec strong{color:var(--wine)}
-.pull{margin:clamp(24px,4vw,34px) 0;padding:clamp(26px,4vw,38px);
+.voice__proof{display:grid;gap:clamp(18px,3vw,26px);grid-template-columns:minmax(0,1fr);
+  margin:clamp(24px,4vw,34px) 0}
+.voice__act{aspect-ratio:1/1;border-radius:3px}
+.voice__act img{object-position:center 44%}
+.pull{margin:0;padding:clamp(26px,4vw,38px);display:flex;align-items:center;
   background:var(--wine-deep);border-radius:3px}
 .pull p{margin:0;font-family:var(--serif);font-size:clamp(16px,2.6vw,21px);
   line-height:1.95;color:#fff;font-weight:700}
@@ -423,6 +427,8 @@ section{position:relative}
   .swap__ctx{grid-row:span 2}
   .steps{grid-template-columns:repeat(3,1fr)}
   .voice__grid{grid-template-columns:1fr 1fr}
+  .voice__proof{grid-template-columns:.82fr 1.18fr;align-items:stretch}
+  .voice__proof .pull p{font-size:clamp(15px,1.55vw,18px)}
   .hero__media img{object-position:10% 45%}
   .sticky__txt{display:block}
   .sticky .cta{width:auto}
@@ -611,10 +617,13 @@ section{position:relative}
         <p>練習の一回一回に目的を持てるようになって、トレーニングが楽しくなりました。切羽詰まらなくなったぶん、周りの人にも優しくなれました。</p>
       </div>
     </div>
+    <div class="voice__proof">
+      <div class="ph voice__act rv" data-label="images/voice-kenny-meet.jpg&#10;試合でのデッドリフト"><img src="images/voice-kenny-meet.jpg" alt="試合でデッドリフトを引き切るケニーさん"></div>
     <div class="pull rv">
       <p>一番変わったのは、<u>人のせいにしなくなったこと</u>。<br>
       以前は、プログラムが悪い、コーチが悪い、環境が悪いと、何かに言い訳をつけていました。<br>
       振り返れば、自分の成長の機会を逃していただけでした。</p>
+    </div>
     </div>
     <div class="voice__rec rv">
       <h3 class="voice__k">こんな人におすすめしたい</h3>
