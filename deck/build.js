@@ -366,11 +366,30 @@ async function build() {
       bold:true, color:C.wine, valign:"middle" }));
   });
 
+  s = slide("PHASE 6　あなたの場合を整理する");
+  title(s, "今日、持ち帰るものを1つ決めましょう", { size:30, w:9 });
+  s.addText("講座を受けても、受けなくても。次の試合まで、これはやってみてください。",
+    T({ x:0.5, y:1.88, w:9, h:0.45, fontSize:17, color:C.soft }));
+  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:2.5, w:4.3, h:1.6,
+    fill:{ color:C.wine }, line:{ color:C.wine }, rectRadius:0.08 });
+  s.addText("やること　1つ", T({ x:0.5, y:2.72, w:4.3, h:0.5, fontSize:21, bold:true,
+    color:C.white, align:"center" }));
+  s.addText("例）3本目の前に、呼吸を3回", T({ x:0.7, y:3.3, w:3.9, h:0.6, fontSize:15,
+    color:"F2C9D0", align:"center" }));
+  s.addShape(pres.ShapeType.roundRect, { x:5.2, y:2.5, w:4.3, h:1.6,
+    fill:{ color:C.warm }, line:{ color:C.line }, rectRadius:0.08 });
+  s.addText("やらないこと　1つ", T({ x:5.2, y:2.72, w:4.3, h:0.5, fontSize:21, bold:true,
+    color:C.soft, align:"center" }));
+  s.addText("例）他の選手の重量を見にいかない", T({ x:5.35, y:3.3, w:4.0, h:0.6, fontSize:15,
+    color:C.muted, align:"center" }));
+  s.addText("小さく1つで十分です。続けられることが、一番大事です。",
+    T({ x:0.5, y:4.45, w:9, h:0.5, fontSize:18, bold:true, color:C.wine }));
+
   /* ===================== Phase 7｜講座案内 ===================== */
   s = slide("PHASE 7　講座のご案内", { dark:true, numLeft:true });
   s.addImage({ path:"../lp/images/hero.jpg", x:5.0, y:0, w:5.0, h:H, sizing:{ type:"cover", w:5.0, h:H } });
   s.addShape(pres.ShapeType.rect, { x:0, y:0, w:6.2, h:H, fill:{ color:C.deep }, line:{ color:C.deep } });
-  s.addText("25", T({ x:0.5, y:H-0.62, w:0.6, h:0.3, fontSize:11, color:"8A6870" }));
+  s.addText(String(no), T({ x:0.5, y:H-0.62, w:0.6, h:0.3, fontSize:11, color:"8A6870" }));
   s.addText("PHASE 7　講座のご案内", T({ x:0.5, y:0.26, w:6, h:0.3, fontSize:12, bold:true,
     charSpacing:2, color:C.pink }));
   s.addText("パワーリフターのための\n実践メンタルトレーニング", T({ x:0.5, y:1.15, w:5.3, h:1.7,
@@ -447,6 +466,21 @@ async function build() {
     fontSize:14, color:C.muted }));
 
   /* ===================== Phase 8｜クロージング ===================== */
+  s = slide("PHASE 8　クロージング");
+  title(s, "今日、決めなくて大丈夫です", { size:33 });
+  s.addText("持ち帰って、考えてください。\n" +
+            "ご家族やコーチに相談してからでも、まったく問題ありません。",
+    T({ x:0.5, y:1.95, w:9, h:1.0, fontSize:18, color:C.soft, lineSpacing:30 }));
+  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:3.05, w:9, h:0.8,
+    fill:{ color:C.rose }, line:{ color:C.rose }, rectRadius:0.07 });
+  s.addText("「やっぱり聞きたい」が出てきたら、いつでも連絡してください。",
+    T({ x:0.9, y:3.05, w:8.2, h:0.8, fontSize:18, bold:true, color:C.wine, valign:"middle" }));
+  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:4.1, w:9, h:0.95,
+    fill:{ color:C.deep }, line:{ color:C.deep }, rectRadius:0.08 });
+  s.addText("今日いちばん大事なのは、\nあなたが次の試合に向けて動き出せることです。",
+    T({ x:0.9, y:4.1, w:8.2, h:0.95, fontSize:18, bold:true, color:C.white,
+      valign:"middle", lineSpacing:26, fontFace:FS }));
+
   s = slide("PHASE 8　クロージング");
   title(s, "今日話してみて、\n何が一番印象に残りましたか？", { size:34, w:8.6, y:1.0 });
   card(s, ["今の自分に必要だと思ったこと", "次の試合までに変えたいこと", "聞いておきたいこと"],
