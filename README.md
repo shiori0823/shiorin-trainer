@@ -7,6 +7,7 @@
 > - `deck/` … 60分無料個別相談のスライド 全39枚（`deck/README.md`）
 > - `note/` … note記事と写真（`note/README.md`）
 > - `interview/` … 対談動画の編集・活用プラン（`interview/plan-01-kenny.md`）
+> - `nurture/` … 個別相談の申し込み〜当日までのステップメール3通（`nurture/README.md`）
 > - `followup/` … 無料個別相談のあとに送る文面6種（`followup/README.md`）
 
 A4 1枚のワークショップ告知チラシです。
