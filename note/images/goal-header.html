@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1280px;height:670px}
+  body{
+    background:#F6F1F0;
+    font-family:"IPAPGothic",sans-serif;
+    color:#17151A;
+    position:relative;overflow:hidden;
+  }
+  /* thin wine rule down the left edge */
+  .edge{position:absolute;left:0;top:0;width:10px;height:670px;background:#7A1524}
+  .sheet{display:flex;height:670px;padding:70px 78px 70px 88px;gap:64px;align-items:center}
+
+  .left{flex:0 0 480px}
+  .eyebrow{
+    font-size:15px;font-weight:bold;letter-spacing:.18em;color:#7A1524;
+    margin-bottom:30px;
+  }
+  h1{
+    font-family:"IPAMincho",serif;font-weight:bold;
+    font-size:74px;line-height:1.34;letter-spacing:.03em;color:#17151A;
+  }
+  .rule{width:76px;height:3px;background:#7A1524;margin:46px 0 34px}
+  .sub{font-size:19px;line-height:1.95;color:#4A423F;letter-spacing:.02em}
+
+  .right{flex:1;display:flex;flex-direction:column;gap:0}
+  .row{
+    display:flex;align-items:baseline;gap:20px;
+    padding:33px 26px;border-bottom:1px solid #DDD2D1;
+  }
+  .row:first-child{border-top:1px solid #DDD2D1}
+  .num{
+    font-family:"IPAMincho",serif;font-weight:bold;
+    font-size:72px;line-height:1;letter-spacing:.01em;
+    min-width:176px;text-align:right;
+  }
+  .ten{font-family:"IPAMincho",serif;font-size:26px;font-weight:bold;margin-left:-8px}
+  .role{
+    margin-left:auto;font-size:26px;font-weight:bold;letter-spacing:.06em;
+  }
+
+  .r120 .num,.r120 .ten{color:#C9A3AA}
+  .r120 .role{color:#A98E92}
+  .r100 .num,.r100 .ten{color:#7A1524}
+  .r100 .role{color:#7A1524}
+  .r80{background:#540E19;border-bottom-color:#540E19;border-radius:3px}
+  .r80 .num,.r80 .ten,.r80 .role{color:#FFFFFF}
+</style></head><body>
+<div class="edge"></div>
+<div class="sheet">
+  <div class="left">
+    <div class="eyebrow">パワーリフターのための実践メンタルトレーニング</div>
+    <h1>目標は、<br>3つ持つ。</h1>
+    <div class="rule"></div>
+    <div class="sub">高い目標が、<br>自信を奪わないために。</div>
+  </div>
+  <div class="right">
+    <div class="row r120"><span class="num">120</span><span class="ten">点</span><span class="role">夢</span></div>
+    <div class="row r100"><span class="num">100</span><span class="ten">点</span><span class="role">狙う</span></div>
+    <div class="row r80"><span class="num">80</span><span class="ten">点</span><span class="role">評価する</span></div>
+  </div>
+</div>
+</body></html>
