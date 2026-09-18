@@ -634,6 +634,151 @@ async function build() {
     T({ x:0.9, y:4.2, w:8.2, h:0.95, fontSize:22, bold:true, color:C.white,
       valign:"middle", fontFace:FS }));
 
+  /* ============ 特典（50–52） ============ */
+  s = slide("今日の続き");
+  title(s, "今日の続きは、一人でもできます", { size:32 });
+  body(s, "今日やったことは、今日だけで終わりません。\n" +
+          "持ち帰って続けられるように、2つのシートをお渡しします。",
+    { y:1.9, h:1.1, size:19, ls:32 });
+  [["特典 01","できたのかけら 見つけるワークシート"],
+   ["特典 02","「できた」を結果につなげるチェックシート"]].forEach(([tag,name],i)=>{
+    const y = 3.15 + i*0.92;
+    s.addShape(pres.ShapeType.roundRect, { x:0.5, y, w:9, h:0.8,
+      fill:{ color: i===0 ? C.wine : C.deep }, line:{ color: i===0 ? C.wine : C.deep }, rectRadius:0.07 });
+    s.addText(tag, T({ x:0.9, y, w:1.5, h:0.8, fontSize:14, bold:true, charSpacing:2,
+      color:C.pink, valign:"middle" }));
+    s.addText(name, T({ x:2.5, y, w:6.7, h:0.8, fontSize:19, bold:true, color:C.white,
+      valign:"middle", fontFace:FS }));
+  });
+
+  s = slide("今日の続き");
+  s.addText("特典 01", T({ x:0.5, y:0.8, w:3, h:0.4, fontSize:16, bold:true,
+    charSpacing:2, color:C.bright }));
+  title(s, "できたのかけら 見つけるワークシート", { y:1.1, size:28 });
+  s.addText("「できた」を見つけるための、振り返りワークシートです。",
+    T({ x:0.5, y:1.85, w:9, h:0.4, fontSize:18, color:C.soft }));
+  ["最近できたこと","続けられたこと","挑戦したこと",
+   "休めたこと","失敗した後にできたこと"].forEach((t,i)=>{
+    const col = i % 3, row = Math.floor(i/3);
+    s.addShape(pres.ShapeType.roundRect, { x:0.5 + col*3.05, y:2.4 + row*0.72, w:2.85, h:0.6,
+      fill:{ color:C.rose }, line:{ color:C.rose }, rectRadius:0.07 });
+    s.addText(t, T({ x:0.5 + col*3.05, y:2.4 + row*0.72, w:2.85, h:0.6, fontSize:15,
+      bold:true, color:C.wine, align:"center", valign:"middle" }));
+  });
+  s.addText("を振り返りながら、「自分はどうやって進んできたか」を見つけます。",
+    T({ x:0.5, y:3.88, w:9, h:0.4, fontSize:17, color:C.soft }));
+  s.addText("ワークショップのあとも、練習や試合の振り返りに繰り返し使えます。",
+    T({ x:0.5, y:4.26, w:9, h:0.32, fontSize:14, color:C.muted }));
+  band(s, "「できた」は、探せば増える。", { y:4.68, h:0.55, size:19 });
+
+  s = slide("今日の続き");
+  s.addText("特典 02", T({ x:0.5, y:0.8, w:3, h:0.4, fontSize:16, bold:true,
+    charSpacing:2, color:C.bright }));
+  title(s, "「できた」を結果につなげるチェックシート", { y:1.1, size:27 });
+  s.addText("「できた」で終わらず、次の行動につなげるためのチェックシートです。",
+    T({ x:0.5, y:1.85, w:9, h:0.4, fontSize:18, color:C.soft }));
+  ["今回、何ができた？","なぜできた？","自分のどんな力を使った？",
+   "次の目標にも使える？","次に何をする？","何をやらない？"].forEach((t,i)=>{
+    const col = i % 3, row = Math.floor(i/3);
+    s.addShape(pres.ShapeType.roundRect, { x:0.5 + col*3.05, y:2.4 + row*0.72, w:2.85, h:0.6,
+      fill:{ color:C.rose }, line:{ color:C.rose }, rectRadius:0.07 });
+    s.addText(t, T({ x:0.5 + col*3.05, y:2.4 + row*0.72, w:2.85, h:0.6, fontSize:15,
+      bold:true, color:C.wine, align:"center", valign:"middle" }));
+  });
+  s.addText("「私、ちゃんと進んでた」を「じゃあ次、こうしよう」に変えるための1枚です。",
+    T({ x:0.5, y:3.95, w:9, h:0.4, fontSize:17, color:C.soft }));
+  band(s, "振り返りを、次の一本へ。", { y:4.55, h:0.68, size:20 });
+
+  /* ============ 個別相談へ（53–56） ============ */
+  s = slide("ここから先");
+  title(s, "ここから先は、一人ひとり違います", { size:32 });
+  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:1.9, w:9, h:0.85,
+    fill:{ color:C.deep }, line:{ color:C.deep }, rectRadius:0.07 });
+  s.addText("同じ「試合で怖くなる」でも、原因は同じではありません。",
+    T({ x:0.9, y:1.9, w:8.2, h:0.85, fontSize:20, bold:true, color:C.white,
+      valign:"middle", fontFace:FS }));
+  ["失敗経験","目標設定","他人との比較","準備不足への不安","試技前の思考"].forEach((t,i)=>{
+    const col = i % 3, row = Math.floor(i/3);
+    s.addShape(pres.ShapeType.roundRect, { x:0.5 + col*3.05, y:3.05 + row*0.75, w:2.85, h:0.63,
+      fill:{ color:C.rose }, line:{ color:C.rose }, rectRadius:0.07 });
+    s.addText(t, T({ x:0.5 + col*3.05, y:3.05 + row*0.75, w:2.85, h:0.63, fontSize:16,
+      bold:true, color:C.wine, align:"center", valign:"middle" }));
+  });
+  s.addText("だから、必要なトレーニングも変わります。", T({ x:0.5, y:4.72, w:8.2, h:0.45,
+    fontSize:19, bold:true, color:C.wine }));
+
+  s = slide("ここから先", { dark:true });
+  s.addText("次の試合で絶対に取りたい一本がある方へ", T({ x:0.5, y:0.9, w:9, h:0.4,
+    fontSize:17, color:C.pink }));
+  s.addText([
+    { text:"60分", options:{ fontSize:46, bold:true, color:C.white, fontFace:FS } },
+    { text:"　無料個別相談", options:{ fontSize:34, bold:true, color:C.white, fontFace:FS } },
+  ], T({ x:0.5, y:1.4, w:9, h:1.0, valign:"middle" }));
+  s.addText("あなたの", T({ x:0.5, y:2.5, w:9, h:0.35, fontSize:16, color:C.pale }));
+  ["次の目標","今困っていること","崩れやすい場面","今必要なメンタルスキル","次にやること"]
+    .forEach((t,i)=>{
+      const col = i % 3, row = Math.floor(i/3);
+      s.addShape(pres.ShapeType.roundRect, { x:0.5 + col*3.05, y:2.95 + row*0.75, w:2.85, h:0.63,
+        fill:{ color:"3A0B12" }, line:{ color:"3A0B12" }, rectRadius:0.07 });
+      s.addText(t, T({ x:0.5 + col*3.05, y:2.95 + row*0.75, w:2.85, h:0.63, fontSize:15,
+        bold:true, color:C.white, align:"center", valign:"middle" }));
+    });
+  s.addText("を、一緒に整理します。", T({ x:0.5, y:4.62, w:8.2, h:0.45,
+    fontSize:19, bold:true, color:C.pink }));
+
+  s = slide("ここから先");
+  title(s, "こんな方に来てほしいです", { size:32 });
+  bullets(s, ["絶対に取りたい記録がある",
+              "勝ちたい試合がある",
+              "練習の力を試合でも出したい",
+              "一本の失敗を引きずりたくない",
+              "試合をもっと楽しみたい",
+              "メンタルもトレーニングしたい"],
+    { y:1.95, size:18, gap:0.52 });
+
+  s = slide("ここから先");
+  title(s, "個別相談で講座の案内をすることもあります", { size:28 });
+  body(s, "必要だと感じた方には、\n「パワーリフターのための実践メンタルトレーニング」\n" +
+          "についてもお話しします。",
+    { y:1.85, h:1.5, size:18, ls:30 });
+  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:3.45, w:9, h:0.8,
+    fill:{ color:C.deep }, line:{ color:C.deep }, rectRadius:0.07 });
+  s.addText("でも、その場で決める必要はありません。", T({ x:0.9, y:3.45, w:8.2, h:0.8,
+    fontSize:21, bold:true, color:C.white, valign:"middle", fontFace:FS }));
+  s.addText("まずは「自分には何が必要か」を整理することが目的です。",
+    T({ x:0.5, y:4.5, w:8.2, h:0.45, fontSize:18, bold:true, color:C.wine }));
+
+  /* ============ おわりに（57–58） ============ */
+  s = slide("おわりに");
+  title(s, "今日のゴールは、もう達成しています", { size:31 });
+  card(s, ["「私、ちゃんと進んでた」　に気づく。",
+           "「じゃあ次、私は何をする？」　を自分で決める。"],
+    { y:2.0, w:9, size:19, gap:0.85, tint:C.rose, col:C.wine, bold:true });
+  band(s, "今日決めた一歩を、ぜひ持ち帰ってください。", { y:4.05, h:0.95, size:22 });
+
+  s = slide(null, { dark:true });
+  title(s, "小さな「できた」は、次の一本につながる", { size:28, color:C.white, y:0.72 });
+  ["できたを見つける。","自分を知る。","目標を決める。","行動を選ぶ。","また、できたが増える。"]
+    .forEach((t,i)=>{
+      const y = 1.6 + i*0.52;
+      s.addShape(pres.ShapeType.roundRect, { x:0.5, y, w:5.6, h:0.44,
+        fill:{ color: i===4 ? C.bright : "3A0B12" }, line:{ color: i===4 ? C.bright : "3A0B12" },
+        rectRadius:0.05 });
+      s.addText(t, T({ x:0.85, y, w:5.1, h:0.44, fontSize:16, bold:true,
+        color:C.white, valign:"middle" }));
+      if (i<4) s.addText("↓", T({ x:0.5, y:y+0.41, w:0.5, h:0.14, fontSize:10,
+        color:"8A6870", align:"center" }));
+    });
+  s.addShape(pres.ShapeType.roundRect, { x:6.35, y:1.6, w:3.15, h:2.44,
+    fill:{ color:"3A0B12" }, line:{ color:"3A0B12" }, rectRadius:0.08 });
+  s.addText("その積み重ねが、\n「私なら次も進める」\nという自己信頼に\nなります。",
+    T({ x:6.65, y:1.6, w:2.55, h:2.44, fontSize:16, bold:true, color:C.pale,
+      valign:"middle", lineSpacing:28 }));
+  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:4.35, w:9, h:0.85,
+    fill:{ color:C.white }, line:{ color:C.white }, rectRadius:0.08 });
+  s.addText("今日はありがとうございました。", T({ x:0.5, y:4.35, w:9, h:0.85,
+    fontSize:22, bold:true, color:C.deep, align:"center", valign:"middle", fontFace:FS }));
+
   await pres.writeFile({ fileName: "seminar-dekita.pptx" });
   console.log("スライド枚数:", no);
 }
