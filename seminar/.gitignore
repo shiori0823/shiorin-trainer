@@ -1,0 +1,7 @@
+node_modules
+package-lock.json
+package.json
+*.pdf
+p-*.jpg
+slide-*.jpg
+sheet*.jpg

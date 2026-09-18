@@ -5,6 +5,7 @@
 > - `lp/` … パワーリフターのための実践メンタルトレーニング LP（`lp/README.md`）
 > - `flyer-mental/` … 同じ内容のA4チラシ（`flyer-mental/README.md`）
 > - `deck/` … 60分無料個別相談のスライド 全39枚（`deck/README.md`）
+> - `seminar/` … フロントセミナー「できたのかけら」90分・全49枚（`seminar/README.md`）
 > - `note/` … note記事と写真（`note/README.md`）
 > - `interview/` … 対談動画の編集・活用プラン（`interview/plan-01-kenny.md`）
 > - `nurture/` … 個別相談の申し込み〜当日までのステップメール3通（`nurture/README.md`）
