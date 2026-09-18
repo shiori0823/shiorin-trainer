@@ -707,24 +707,34 @@ async function build() {
   s.addText("だから、必要なトレーニングも変わります。", T({ x:0.5, y:4.72, w:8.2, h:0.45,
     fontSize:19, bold:true, color:C.wine }));
 
-  s = slide("ここから先", { dark:true });
-  s.addText("次の試合で絶対に取りたい一本がある方へ", T({ x:0.5, y:0.9, w:9, h:0.4,
+  s = slide("ここから先", { dark:true, numLeft:true });
+  s.addText("次の試合で絶対に取りたい一本がある方へ", T({ x:0.5, y:0.85, w:6.3, h:0.4,
     fontSize:17, color:C.pink }));
   s.addText([
-    { text:"60分", options:{ fontSize:46, bold:true, color:C.white, fontFace:FS } },
-    { text:"　無料個別相談", options:{ fontSize:34, bold:true, color:C.white, fontFace:FS } },
-  ], T({ x:0.5, y:1.4, w:9, h:1.0, valign:"middle" }));
-  s.addText("あなたの", T({ x:0.5, y:2.5, w:9, h:0.35, fontSize:16, color:C.pale }));
+    { text:"60分", options:{ fontSize:44, bold:true, color:C.white, fontFace:FS } },
+    { text:"　無料個別相談", options:{ fontSize:32, bold:true, color:C.white, fontFace:FS } },
+  ], T({ x:0.5, y:1.3, w:6.3, h:0.95, valign:"middle" }));
+  s.addText("あなたの", T({ x:0.5, y:2.38, w:6.3, h:0.35, fontSize:16, color:C.pale }));
   ["次の目標","今困っていること","崩れやすい場面","今必要なメンタルスキル","次にやること"]
     .forEach((t,i)=>{
-      const col = i % 3, row = Math.floor(i/3);
-      s.addShape(pres.ShapeType.roundRect, { x:0.5 + col*3.05, y:2.95 + row*0.75, w:2.85, h:0.63,
+      const col = i % 2, row = Math.floor(i/2);
+      s.addShape(pres.ShapeType.roundRect, { x:0.5 + col*3.15, y:2.82 + row*0.66, w:3.0, h:0.56,
         fill:{ color:"3A0B12" }, line:{ color:"3A0B12" }, rectRadius:0.07 });
-      s.addText(t, T({ x:0.5 + col*3.05, y:2.95 + row*0.75, w:2.85, h:0.63, fontSize:15,
+      s.addText(t, T({ x:0.5 + col*3.15, y:2.82 + row*0.66, w:3.0, h:0.56, fontSize:14,
         bold:true, color:C.white, align:"center", valign:"middle" }));
     });
-  s.addText("を、一緒に整理します。", T({ x:0.5, y:4.62, w:8.2, h:0.45,
-    fontSize:19, bold:true, color:C.pink }));
+  s.addText("を、一緒に整理します。", T({ x:0.5, y:4.85, w:6.3, h:0.4,
+    fontSize:18, bold:true, color:C.pink }));
+  // 申し込み用QRコード
+  s.addShape(pres.ShapeType.roundRect, { x:6.95, y:1.3, w:2.55, h:2.95,
+    fill:{ color:C.white }, line:{ color:C.white }, rectRadius:0.08 });
+  s.addImage({ path:"images/qr.png", x:7.3, y:1.55, w:1.85, h:1.85 });
+  s.addText("スマホのカメラで\n読み取ってください", T({ x:6.95, y:3.45, w:2.55, h:0.7,
+    fontSize:12, bold:true, color:C.deep, align:"center", lineSpacing:19 }));
+  s.addText("mosh.jp/services/404875", T({ x:6.95, y:4.4, w:2.55, h:0.32,
+    fontSize:10, color:C.pink, align:"center" }));
+  s.addText("Zoomのチャットにも貼ります", T({ x:6.95, y:4.78, w:2.55, h:0.32,
+    fontSize:10, color:"A5848C", align:"center" }));
 
   s = slide("ここから先");
   title(s, "こんな方に来てほしいです", { size:32 });
