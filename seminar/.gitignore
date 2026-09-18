@@ -5,3 +5,4 @@ package.json
 p-*.jpg
 slide-*.jpg
 sheet*.jpg
+!worksheets/*.pdf

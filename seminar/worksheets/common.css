@@ -1,0 +1,29 @@
+@page{ size:A4; margin:0 }
+*{ margin:0; padding:0; box-sizing:border-box }
+html,body{ width:210mm; height:297mm }
+body{
+  padding:14mm 15mm;
+  background:#fff; color:#1A1719;
+  font-family:"IPAPGothic",sans-serif;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  display:flex; flex-direction:column;
+}
+.mast{ display:flex; align-items:flex-end; justify-content:space-between;
+  border-bottom:1.6mm solid #7A1524; padding-bottom:3mm }
+.mast .tag{ font-size:8.4pt; font-weight:bold; letter-spacing:.14em; color:#7A1524;
+  margin-bottom:2mm }
+h1{ font-family:"IPAMincho",serif; font-size:19pt; font-weight:bold; line-height:1.35;
+  letter-spacing:.02em }
+.fields{ font-size:8pt; color:#6E6360; text-align:right; white-space:nowrap; line-height:2.3 }
+.fields span{ display:inline-block; border-bottom:.35mm solid #D8CFCE; width:32mm;
+  margin-left:2mm }
+.lead{ margin-top:5mm; font-size:9.6pt; line-height:1.85; color:#3B3634 }
+.lead b{ color:#7A1524 }
+.rule{ margin:5mm 0 4mm; display:flex; align-items:center; gap:3mm }
+.rule .lab{ font-size:8.4pt; font-weight:bold; letter-spacing:.12em; color:#fff;
+  background:#7A1524; padding:1.4mm 3.5mm; border-radius:.8mm; white-space:nowrap }
+.rule .ln{ flex:1; height:.3mm; background:#E4DBDA }
+.foot{ margin-top:auto; padding-top:4mm; border-top:.3mm solid #E4DBDA;
+  display:flex; align-items:center; justify-content:space-between }
+.foot .msg{ font-family:"IPAMincho",serif; font-size:12pt; font-weight:bold; color:#7A1524 }
+.foot .src{ font-size:7.4pt; color:#9A908D; text-align:right; line-height:1.7 }
