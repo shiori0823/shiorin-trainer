@@ -396,42 +396,68 @@ async function build() {
     fontSize:30, bold:true, color:C.white, lineSpacing:46, fontFace:FS }));
   s.addText("絶対に取りたい記録、勝ちたい試合がある選手へ。", T({ x:0.5, y:3.05, w:5.3, h:0.45,
     fontSize:17, color:C.pink }));
-  s.addText("プレッシャーがあっても、\n自分がやるべきことがわかり、実践できる選手になる。",
+  s.addText("ここぞの一本を、取り切る。\n怖くても、迷っても、自分を戻せる選手になる。",
     T({ x:0.5, y:3.7, w:5.3, h:1.1, fontSize:18, color:"F2E7E9", lineSpacing:30 }));
 
   s = slide("PHASE 7　講座のご案内");
   title(s, "1対1で、自分の試合に落とし込む", { size:30, w:9 });
-  const spec = [["形式","完全1対1／Zoom"],["回数","全10回（1回60分）"],["期間","最長3か月"],
-                ["ペース","試合日程に合わせて調整"]];
+  const spec = [["期間","3か月"],["回数","個別セッション 最大10回（7〜10回程度）"],
+                ["1回","60分（講義・ワーク30分＋個別コーチング30分）"],
+                ["形式","完全1対1／Zoom"],["ペース","試合日程に合わせて調整"]];
   spec.forEach(([k,v],i)=>{
-    const y = 1.95 + i*0.7;
-    s.addShape(pres.ShapeType.roundRect, { x:0.5, y, w:8.6, h:0.6,
+    const y = 1.9 + i*0.62;
+    s.addShape(pres.ShapeType.roundRect, { x:0.5, y, w:8.6, h:0.54,
       fill:{ color:C.rose }, line:{ color:C.rose }, rectRadius:0.06 });
-    s.addText(k, T({ x:0.85, y, w:1.7, h:0.6, fontSize:17, bold:true, color:C.wine, valign:"middle" }));
-    s.addText(v, T({ x:2.6, y, w:6.3, h:0.6, fontSize:18, color:C.soft, valign:"middle" }));
+    s.addText(k, T({ x:0.85, y, w:1.5, h:0.54, fontSize:16, bold:true, color:C.wine, valign:"middle" }));
+    s.addText(v, T({ x:2.4, y, w:6.5, h:0.54, fontSize:16, color:C.soft, valign:"middle" }));
   });
-  s.addText("知識を聞くだけではなく、\n「あなたならどうする？」まで一緒につくります。",
-    T({ x:0.5, y:4.8, w:8.6, h:0.6, fontSize:18, bold:true, color:C.wine }));
+  s.addText("知識を聞くだけではなく、「あなたならどうする？」まで一緒につくります。",
+    T({ x:0.5, y:5.05, w:8.2, h:0.45, fontSize:17, bold:true, color:C.wine }));
 
   s = slide("PHASE 7　講座のご案内");
-  title(s, "10回で扱うこと", { size:33 });
-  const ten = ["自分の崩れ方を知る","取りたい記録から逆算する","プレッシャーを理解する",
-    "自分だけのルーティン","失敗しても崩れない","自分の試合に集中する","頑張る・休むを選ぶ",
-    "自己信頼を育てる","プランBを持つ","自分だけの大会メンタルプラン"];
-  ten.forEach((t,i)=>{
-    const col = i < 5 ? 0 : 1, row = i % 5;
-    const x = 0.5 + col*4.75, y = 1.95 + row*0.66;
-    s.addShape(pres.ShapeType.ellipse, { x, y:y+0.07, w:0.36, h:0.36,
-      fill:{ color:C.wine }, line:{ color:C.wine } });
-    s.addText(String(i+1), T({ x, y:y+0.07, w:0.36, h:0.36, fontSize:13, bold:true,
-      color:C.white, align:"center", valign:"middle" }));
-    s.addText(t, T({ x:x+0.5, y, w:4.0, h:0.5, fontSize:17, color:C.soft, valign:"middle" }));
+  title(s, "3か月の流れ", { size:33 });
+  [["1","勝ちたい試合・取りたい一本を明確にする"],
+   ["2","自分が崩れるパターンを知る"],
+   ["3","自分に合ったメンタルスキルをつくる"],
+   ["4","自分専用の試合ルーティンをつくる"],
+   ["5","本番を想定して使ってみる"],
+   ["6","MY BEST LIFT PLAN 完成"]].forEach(([n,t],i)=>{
+    const y = 1.95 + i*0.52;
+    const last = i === 5;
+    s.addShape(pres.ShapeType.roundRect, { x:0.5, y, w:8.6, h:0.46,
+      fill:{ color: last ? C.deep : C.rose }, line:{ color: last ? C.deep : C.rose }, rectRadius:0.06 });
+    s.addText("STEP " + n, T({ x:0.85, y, w:1.3, h:0.46, fontSize:12.5, bold:true,
+      charSpacing:1, color: last ? C.pink : C.wine, valign:"middle" }));
+    s.addText(t, T({ x:2.3, y, w:6.6, h:0.46, fontSize:16, bold:last,
+      color: last ? C.white : C.soft, valign:"middle" }));
   });
+  s.addText("一斉スタートではありません。あなたの大会日と現在地に合わせて進めます。",
+    T({ x:0.5, y:5.12, w:8.2, h:0.4, fontSize:15, color:C.muted }));
+
+  s = slide("PHASE 7　講座のご案内", { dark:true });
+  s.addText("この3か月で完成するもの", T({ x:0.5, y:0.92, w:8.6, h:0.42,
+    fontSize:16, bold:true, charSpacing:2, color:C.pink }));
+  s.addText("MY BEST LIFT PLAN", T({ x:0.5, y:1.4, w:8.6, h:0.85,
+    fontSize:40, bold:true, color:C.white, fontFace:FS, charSpacing:1 }));
+  s.addText("「私はこうすれば試合で力を出せる」をまとめた、自分専用の勝負の設計図。",
+    T({ x:0.5, y:2.3, w:8.6, h:0.4, fontSize:16, color:"E8D3D7" }));
+  ["試合前に整えておく思考と行動","試合当日のルーティン",
+   "重量を前にしたときのセルフトーク","怖くなったときの切り替え方",
+   "失敗した直後のリセット方法","他人の記録や順位との付き合い方",
+   "1・2・3本目それぞれの考え方","ここぞの一本で使う「自分のスイッチ」"].forEach((t,i)=>{
+    const col = i % 2, row = Math.floor(i/2);
+    s.addShape(pres.ShapeType.roundRect, { x:0.5 + col*4.4, y:2.85 + row*0.6, w:4.2, h:0.5,
+      fill:{ color:"3A0B12" }, line:{ color:"3A0B12" }, rectRadius:0.05 });
+    s.addText(t, T({ x:0.7 + col*4.4, y:2.85 + row*0.6, w:3.9, h:0.5, fontSize:13.5,
+      color:C.white, valign:"middle" }));
+  });
+  s.addText("正解を押しつけるのではなく、あなた自身の勝負の型を一緒につくります。",
+    T({ x:0.5, y:5.32, w:8.2, h:0.35, fontSize:14, color:C.pink }));
 
   s = slide("PHASE 7　講座のご案内", { dark:true });
   title(s, "最終的に目指すのは", { size:24, color:C.pink, y:0.95 });
-  s.addText("「緊張しない選手」ではありません。", T({ x:0.5, y:1.5, w:8.6, h:0.6, fontSize:22, color:"E8D3D7" }));
-  s.addText("何が起きても、\n「自分が何をすればいいかわかる」", T({ x:0.5, y:2.25, w:8.6, h:1.3,
+  s.addText("「怖くならない自分」ではありません。", T({ x:0.5, y:1.5, w:8.6, h:0.6, fontSize:22, color:"E8D3D7" }));
+  s.addText("怖くても、迷っても、\n自分を戻せる選手になる。", T({ x:0.5, y:2.25, w:8.6, h:1.3,
     fontSize:27, bold:true, color:C.white, lineSpacing:42, isTextBox:true, fontFace:FS, margin:0 }));
   s.addShape(pres.ShapeType.roundRect, { x:0.5, y:3.95, w:8.6, h:0.95,
     fill:{ color:C.bright }, line:{ color:C.bright }, rectRadius:0.08 });
@@ -444,7 +470,7 @@ async function build() {
     { text:"98,000", options:{ fontSize:82, bold:true, color:C.wine, fontFace:FS } },
     { text:"　円（税込）", options:{ fontSize:24, bold:true, color:C.wine, fontFace:FS } },
   ], T({ x:0.5, y:1.6, w:8.6, h:1.5, valign:"bottom" }));
-  ["全10回","1回60分","完全1対1","最長3か月"].forEach((t,i)=>{
+  ["3か月","最大10回","1回60分","完全1対1"].forEach((t,i)=>{
     s.addShape(pres.ShapeType.roundRect, { x:0.5 + i*2.3, y:3.5, w:2.1, h:0.72,
       fill:{ color:C.rose }, line:{ color:C.rose }, rectRadius:0.36 });
     s.addText(t, T({ x:0.5 + i*2.3, y:3.5, w:2.1, h:0.72, fontSize:17, bold:true,
@@ -452,9 +478,9 @@ async function build() {
   });
 
   s = slide("PHASE 7　講座のご案内");
-  title(s, "今回は5名限定です", { size:33 });
-  s.addText("たくさんの方へ一斉に教える講座ではありません。",
-    T({ x:0.5, y:1.9, w:8.6, h:0.45, fontSize:18, color:C.soft }));
+  title(s, "一人ひとり、中身が違います", { size:33 });
+  s.addText("たくさんの方へ一斉に教える講座ではありません。次の5つを見て、組み立てます。",
+    T({ x:0.5, y:1.9, w:8.6, h:0.45, fontSize:17, color:C.soft }));
   s.addText(["次の大会","取りたい記録","過去の試合","考え方の特徴","その人に必要なメンタルスキル"]
     .map((t,i,a)=>({ text:t, options:{ bullet:true, breakLine:i<a.length-1 } })),
     T({ x:0.7, y:2.45, w:8.4, h:1.7, fontSize:18, color:C.soft, paraSpaceAfter:6 }));
@@ -462,8 +488,6 @@ async function build() {
     fill:{ color:C.deep }, line:{ color:C.deep }, rectRadius:0.08 });
   s.addText("一人ひとりを把握し、じっくり関わりたいから。", T({ x:0.9, y:4.3, w:8.1, h:0.75,
     fontSize:18, bold:true, color:C.white, valign:"middle" }));
-  s.addText("5名に達した時点で、今回の受付は終了します。", T({ x:0.5, y:5.15, w:8.6, h:0.35,
-    fontSize:14, color:C.muted }));
 
   /* ===================== Phase 8｜クロージング ===================== */
   s = slide("PHASE 8　クロージング");

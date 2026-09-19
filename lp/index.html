@@ -244,6 +244,37 @@ section{position:relative}
 .topics .n{font-family:var(--num);font-size:clamp(19px,2.8vw,25px);font-weight:600;
   color:var(--wine);line-height:1;letter-spacing:.02em}
 .topics .t{font-size:clamp(15.5px,2.2vw,18.5px);font-weight:700;line-height:1.8;letter-spacing:.01em}
+.topics--step li{align-items:start}
+.topics--step .n{display:flex;flex-direction:column;align-items:center;gap:2px;
+  font-size:10px;font-weight:700;letter-spacing:.14em;line-height:1.2;min-width:2.6em;
+  font-family:var(--sans);padding-top:.35em}
+.topics--step .n b{font-family:var(--num);font-size:clamp(22px,3.2vw,29px);
+  font-weight:600;letter-spacing:0;line-height:1}
+.topics--step .t{display:block}
+.topics--step .t .d{display:block;margin-top:.5em;font-size:clamp(13.5px,1.9vw,15px);
+  font-weight:400;line-height:1.95;color:var(--muted)}
+.topics--step li:last-child{background:var(--paper-rose)}
+.topics--step li:last-child .t strong{color:var(--wine)}
+
+/* ---------- MY BEST LIFT PLAN ---------- */
+.plan{margin:clamp(34px,5vw,50px) 0 0;background:var(--wine-deep);border-radius:3px;
+  padding:clamp(28px,4.4vw,44px)}
+.plan__lab{margin:0 0 .5em;font-size:11px;font-weight:700;letter-spacing:.18em;
+  color:#F0B9C3}
+.plan__t{margin:0 0 .35em;font-family:var(--num);font-size:clamp(26px,4.6vw,40px);
+  font-weight:600;letter-spacing:.03em;color:#fff;line-height:1.2}
+.plan__s{margin:0 0 clamp(22px,3.4vw,30px);font-size:clamp(14.5px,2vw,16px);
+  line-height:1.95;color:#E8D3D7}
+.plan__list{list-style:none;margin:0;padding:0;display:grid;gap:10px 26px;
+  grid-template-columns:minmax(0,1fr)}
+.plan__list li{position:relative;padding-left:1.15em;font-size:clamp(14px,1.9vw,15.5px);
+  line-height:1.8;color:#fff;font-weight:500}
+.plan__list li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;
+  border-radius:50%;background:var(--wine-bright)}
+.plan__note{margin:clamp(22px,3.4vw,30px) 0 0;padding-top:clamp(18px,2.6vw,22px);
+  border-top:1px solid rgba(255,255,255,.18);font-size:clamp(14px,1.9vw,15.5px);
+  line-height:1.95;color:#F2E7E9}
+.plan__note strong{color:#fff}
 
 /* ---------- case study ---------- */
 .case{display:grid;gap:clamp(34px,5vw,60px);align-items:center;
@@ -427,6 +458,7 @@ section{position:relative}
   .swap__ctx{grid-row:span 2}
   .steps{grid-template-columns:repeat(3,1fr)}
   .voice__grid{grid-template-columns:1fr 1fr}
+  .plan__list{grid-template-columns:1fr 1fr}
   .voice__proof{grid-template-columns:.82fr 1.18fr;align-items:stretch}
   .voice__proof .pull p{font-size:clamp(15px,1.55vw,18px)}
   .hero__media img{object-position:10% 45%}
@@ -461,10 +493,11 @@ section{position:relative}
       <div class="hero__rule"></div>
       <h1 class="hero__title">
         <span class="sm">「もっとメンタルを強くしなきゃ」ではなく</span>
-        プレッシャーがあっても、<br>自分がやるべきことを<br>理解し、実践できる選手になる。
+        ここぞの一本を、<br>取り切る。
       </h1>
       <p class="hero__body">
-        パワーリフターのための<strong>実践メンタルトレーニング</strong>。<br>
+        パワーリフターのための<strong>3か月実践メンタルトレーニング</strong>。<br>
+        怖くても、迷っても、自分を戻せる選手になる。<br>
         まずは、あなたの次の試合・目標・現在の課題を整理する無料個別相談からご参加ください。
       </p>
       <div>
@@ -544,9 +577,10 @@ section{position:relative}
     <div class="spec rv">
       <div class="spec__row"><div class="spec__k">対象</div><div class="spec__v">絶対に取りたい記録、勝ちたい試合がある<strong>中級〜上級パワーリフター</strong></div></div>
       <div class="spec__row"><div class="spec__k">形式</div><div class="spec__v">1対1・オンライン（Zoom）</div></div>
-      <div class="spec__row"><div class="spec__k">回数</div><div class="spec__v"><strong>全10回</strong></div></div>
-      <div class="spec__row"><div class="spec__k">1回</div><div class="spec__v"><strong>60分</strong><span class="sub">前半：メンタルスキルの習得／後半：個別コーチング・実践設計</span></div></div>
-      <div class="spec__row"><div class="spec__k">期間</div><div class="spec__v">最長3か月</div></div>
+      <div class="spec__row"><div class="spec__k">期間</div><div class="spec__v"><strong>3か月</strong></div></div>
+      <div class="spec__row"><div class="spec__k">回数</div><div class="spec__v"><strong>個別セッション 最大10回</strong><span class="sub">進行状況に合わせて7〜10回程度で実施します</span></div></div>
+      <div class="spec__row"><div class="spec__k">1回</div><div class="spec__v"><strong>60分</strong><span class="sub">講義・ワーク30分＋個別コーチング30分を基本に実施</span></div></div>
+      <div class="spec__row"><div class="spec__k">完成するもの</div><div class="spec__v"><strong>MY BEST LIFT PLAN</strong><span class="sub">「私はこうすれば試合で力を出せる」をまとめた、自分専用の勝負の設計図</span></div></div>
     </div>
     <div class="pace rv">
       <h3>一斉スタートではありません。</h3>
@@ -559,14 +593,34 @@ section{position:relative}
 <section class="sec sec--warm" id="curriculum">
   <div class="wrap wrap--narrow">
     <p class="eyebrow rv">04 &nbsp;Curriculum</p>
-    <h2 class="h2 rv">講座で<em>扱うこと</em></h2>
-    <ol class="topics rv">
-      <li><span class="n">01</span><span class="t">不安の原因を整理する</span></li>
-      <li><span class="n">02</span><span class="t">目標を「結果・パフォーマンス・行動」の3種類に分ける</span></li>
-      <li><span class="n">03</span><span class="t">コントロールできることだけに戻る</span></li>
-      <li><span class="n">04</span><span class="t">結果に左右されない自己信頼をつくる</span></li>
-      <li><span class="n">05</span><span class="t">試合当日のメンタルプランを完成させる</span></li>
+    <h2 class="h2 rv">3か月の<em>流れ</em></h2>
+    <ol class="topics topics--step rv">
+      <li><span class="n">STEP<b>1</b></span><span class="t"><strong>勝ちたい試合・取りたい一本を明確にする</strong><span class="d">記録、順位、標準記録。あなたにとって本当に取りたい一本を決めます。</span></span></li>
+      <li><span class="n">STEP<b>2</b></span><span class="t"><strong>自分が崩れるパターンを知る</strong><span class="d">どんな場面で不安になるのか、どんなときにひるむのか。必要に応じて試合映像も一緒に振り返ります。</span></span></li>
+      <li><span class="n">STEP<b>3</b></span><span class="t"><strong>自分に合ったメンタルスキルをつくる</strong><span class="d">「知っている」ではなく、試合で使える状態にすることを重視します。</span></span></li>
+      <li><span class="n">STEP<b>4</b></span><span class="t"><strong>自分専用の試合ルーティンをつくる</strong><span class="d">試合前からプラットフォームに立つまで、何を考え、何をするかを具体的に決めます。</span></span></li>
+      <li><span class="n">STEP<b>5</b></span><span class="t"><strong>本番を想定して使ってみる</strong><span class="d">練習や試合形式の中で実際に試し、うまくいかなかった部分を修正します。</span></span></li>
+      <li><span class="n">STEP<b>6</b></span><span class="t"><strong>MY BEST LIFT PLAN 完成</strong><span class="d">次の試合だけでなく、その先の競技人生でも使える自分専用の設計図です。</span></span></li>
     </ol>
+
+    <div class="plan rv">
+      <p class="plan__lab">この3か月で完成するもの</p>
+      <p class="plan__t">MY BEST LIFT PLAN</p>
+      <p class="plan__s">「私はこうすれば試合で力を出せる」をまとめた、自分専用の勝負の設計図です。</p>
+      <ul class="plan__list">
+        <li>試合前に整えておく思考と行動</li>
+        <li>試合当日のルーティン</li>
+        <li>アップ中に意識すること</li>
+        <li>重量を前にしたときのセルフトーク</li>
+        <li>怖くなったときの切り替え方</li>
+        <li>他人の記録や順位との付き合い方</li>
+        <li>失敗した直後のリセット方法</li>
+        <li>1本目、2本目、3本目それぞれの考え方</li>
+        <li>自分が力を発揮しやすい条件</li>
+        <li>ここぞの一本で使う「自分のスイッチ」</li>
+      </ul>
+      <p class="plan__note">一人ひとり違うからこそ、「こう考えればいい」という正解を押しつけるのではなく、<strong>あなた自身の勝負の型を一緒につくっていきます。</strong></p>
+    </div>
   </div>
 </section>
 
@@ -759,7 +813,7 @@ section{position:relative}
       </details>
       <details>
         <summary>試合まで1か月しかありません。</summary>
-        <div class="a">全10回は固定された月間スケジュールではありません。試合日と現在地に合わせて、3か月以内で受講ペースを調整します。</div>
+        <div class="a">固定された月間スケジュールではありません。試合日と現在地に合わせて、3か月の中で受講ペースを調整します。セッションは最大10回で、進行状況に合わせて7〜10回程度になります。</div>
       </details>
       <details>
         <summary>トレーニングプログラムやフォームも見てもらえますか？</summary>
