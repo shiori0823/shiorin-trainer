@@ -1,0 +1,11 @@
+from playwright.sync_api import sync_playwright
+import pathlib
+HERE = pathlib.Path(__file__).parent
+with sync_playwright() as p:
+    b = p.chromium.launch(executable_path="/opt/pw-browsers/chromium-1194/chrome-linux/chrome")
+    pg = b.new_page()
+    pg.goto("file://" + str(HERE / "poster.html")); pg.wait_for_timeout(600)
+    pg.pdf(path=str(HERE/"seminar-poster.pdf"), format="A4", print_background=True,
+           margin={"top":"0","right":"0","bottom":"0","left":"0"})
+    print("本文の高さ(mm):", round(pg.evaluate("()=>document.body.scrollHeight")/(96/25.4),1))
+    b.close()

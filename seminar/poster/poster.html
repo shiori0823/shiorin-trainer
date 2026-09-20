@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<style>
+@page{ size:A4; margin:0 }
+*{ margin:0; padding:0; box-sizing:border-box }
+html,body{ width:210mm; height:297mm }
+body{
+  background:#fff; color:#17151A;
+  font-family:"IPAPGothic",sans-serif;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  padding:9mm; display:flex;
+}
+.sheet{ flex:1; display:flex; flex-direction:column; border:.5mm solid #E4DBDA }
+
+/* ---- 上の帯 ---- */
+.top{ background:#540E19; color:#fff; padding:5mm 8mm 5.5mm; position:relative }
+.top .for{ font-size:2.9mm; font-weight:bold; letter-spacing:.1em; color:#F0B9C3;
+  margin-bottom:2.6mm }
+.top h1{ font-family:"IPAMincho",serif; font-size:9.6mm; font-weight:bold;
+  line-height:1.32; letter-spacing:.02em }
+.top h1 small{ display:block; font-size:4.4mm; font-weight:bold; letter-spacing:.04em;
+  color:#F0B9C3; margin-bottom:2mm; font-family:"IPAPGothic",sans-serif }
+.top .lead{ margin-top:3.6mm; font-size:3.5mm; line-height:1.75; color:#F2E7E9 }
+.top .lead b{ color:#fff }
+.freetag{ position:absolute; right:7mm; top:6mm; width:26mm; height:26mm; border-radius:50%;
+  background:#A02236; display:flex; flex-direction:column; align-items:center;
+  justify-content:center; line-height:1.2; box-shadow:0 0 0 1.2mm rgba(255,255,255,.18) }
+.freetag .s{ font-size:2.5mm; font-weight:bold; letter-spacing:.06em }
+.freetag .b{ font-family:"IPAMincho",serif; font-size:8.4mm; font-weight:bold }
+.freetag .t{ font-size:2.3mm; font-weight:bold }
+
+/* ---- 日時バー ---- */
+.when{ display:flex; align-items:stretch; border-bottom:.4mm solid #E4DBDA }
+.when div{ flex:1; padding:4mm 6mm; border-left:.4mm solid #E4DBDA }
+.when div:first-child{ border-left:0; flex:1.5; background:#FAF3F4 }
+.when .k{ font-size:2.5mm; font-weight:bold; letter-spacing:.1em; color:#7A1524;
+  margin-bottom:1.6mm }
+.when .v{ font-family:"IPAMincho",serif; font-size:6.2mm; font-weight:bold; line-height:1.15 }
+.when .v small{ font-family:"IPAPGothic",sans-serif; font-size:3.2mm; font-weight:bold }
+.when .n{ font-size:2.6mm; color:#6E6360; margin-top:1.4mm }
+
+/* ---- 共通セクション ---- */
+.sec{ padding:5mm 8mm }
+.eyebrow{ font-size:2.6mm; font-weight:bold; letter-spacing:.14em; color:#7A1524;
+  margin-bottom:3mm; display:flex; align-items:center; gap:3mm }
+.eyebrow::after{ content:""; flex:1; height:.25mm; background:#E4DBDA }
+
+.pain{ background:#FAF3F4 }
+.pain ul{ list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:2mm 7mm }
+.pain li{ display:grid; grid-template-columns:auto 1fr; gap:2.4mm; align-items:start;
+  font-size:3.2mm; line-height:1.55 }
+.pain .c{ width:3.6mm; height:3.6mm; border-radius:.6mm; background:#7A1524; color:#fff;
+  font-size:2.4mm; text-align:center; line-height:3.6mm; font-weight:bold; margin-top:.4mm }
+.pain .msg{ margin-top:3.6mm; padding-top:3.2mm; border-top:.3mm solid #E4DBDA;
+  font-size:3.4mm; font-weight:bold; color:#7A1524; line-height:1.6 }
+
+.does ol{ list-style:none; display:grid; grid-template-columns:repeat(3,1fr); gap:0 4mm }
+.does li{ border-top:.9mm solid #7A1524; padding-top:2.6mm }
+.does .n{ font-size:2.4mm; font-weight:bold; letter-spacing:.1em; color:#7A1524;
+  margin-bottom:1.4mm }
+.does .t{ font-size:3.5mm; font-weight:bold; line-height:1.5; margin-bottom:1.6mm }
+.does .d{ font-size:2.8mm; line-height:1.6; color:#4A423F }
+
+.gift{ background:#540E19; color:#fff; padding:4.6mm 8mm; display:flex; gap:6mm;
+  align-items:center }
+.gift .lab{ font-size:2.5mm; font-weight:bold; letter-spacing:.12em; color:#F0B9C3;
+  white-space:nowrap; line-height:1.5 }
+.gift ul{ list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:1.4mm 6mm; flex:1 }
+.gift li{ font-size:3.1mm; font-weight:bold; line-height:1.45; position:relative;
+  padding-left:3.4mm }
+.gift li::before{ content:""; position:absolute; left:0; top:1.5mm; width:1.4mm; height:1.4mm;
+  border-radius:50%; background:#A02236 }
+.gift li span{ display:block; font-size:2.5mm; font-weight:normal; color:#E8D3D7; margin-top:.4mm }
+
+.coach{ display:flex; gap:5mm; align-items:center; padding:4.6mm 8mm;
+  border-top:.4mm solid #E4DBDA }
+.coach__ph{ width:20mm; height:20mm; border-radius:50%; overflow:hidden; flex:none;
+  background:#EFE8E7 }
+.coach__ph img{ width:100%; height:100%; object-fit:cover; object-position:50% 25% }
+.coach__n{ font-size:4mm; font-weight:bold; margin-bottom:1.2mm }
+.coach__n span{ font-size:2.7mm; font-weight:bold; color:#7A1524; margin-left:2.6mm }
+.coach__b{ font-size:2.9mm; line-height:1.6; color:#4A423F }
+.coach__b b{ color:#7A1524 }
+
+/* ---- 申込 ---- */
+.apply{ margin-top:auto; background:#7A1524; color:#fff; padding:5.5mm 8mm;
+  display:flex; gap:6mm; align-items:center }
+.apply__l{ flex:1 }
+.apply__t{ font-family:"IPAMincho",serif; font-size:5.6mm; font-weight:bold;
+  margin-bottom:2.6mm }
+.code{ background:#fff; color:#7A1524; border-radius:1.2mm; padding:2.6mm 4mm;
+  display:inline-block; margin-bottom:2.4mm }
+.code .k{ font-size:2.4mm; font-weight:bold; letter-spacing:.1em; color:#A0645F;
+  margin-bottom:1mm }
+.code .v{ font-family:"IPAMincho",serif; font-size:6.4mm; font-weight:bold;
+  letter-spacing:.14em; line-height:1 }
+.apply__n{ font-size:2.7mm; line-height:1.65; color:#F2E7E9 }
+.apply__n b{ color:#fff }
+.qr{ width:30mm; text-align:center; flex:none }
+.qr__box{ width:30mm; height:30mm; background:#fff; border-radius:1.2mm; padding:1.6mm;
+  display:flex; align-items:center; justify-content:center }
+.qr__box img{ width:100%; height:100%; object-fit:contain }
+.qr__ph{ width:100%; height:100%; border:.6mm dashed #C9A3AA; border-radius:.8mm;
+  display:flex; align-items:center; justify-content:center; color:#A0645F;
+  font-size:2.4mm; font-weight:bold; line-height:1.5; text-align:center }
+.qr__c{ margin-top:1.6mm; font-size:2.4mm; font-weight:bold; color:#F0B9C3 }
+</style></head><body>
+<div class="sheet">
+
+  <div class="top">
+    <div class="freetag"><span class="s">クーポンで</span><span class="b">無料</span><span class="t">3,300円 → 0円</span></div>
+    <p class="for">練習では挙がるのに、試合で取り切れないパワーリフターへ</p>
+    <h1><small>「私、ちゃんと進んでた」に気づく90分</small>できたのかけら<br>ワークショップ</h1>
+    <p class="lead">メンタルを気合いで強くする話ではありません。<br><b>自分のメンタルをどう扱うか</b>を、その場で手を動かしながら見つける90分です。</p>
+  </div>
+
+  <div class="when">
+    <div>
+      <p class="k">日時</p>
+      <p class="v">9月26日<small>（土）</small><br>9:30 – 11:00</p>
+      <p class="n">90分／1回限りの開催です</p>
+    </div>
+    <div>
+      <p class="k">形式</p>
+      <p class="v" style="font-size:5mm">Zoom</p>
+      <p class="n">オンライン。<br>顔出しなしでも参加できます</p>
+    </div>
+    <div>
+      <p class="k">参加費</p>
+      <p class="v" style="font-size:5mm">3,300円<small> → 無料</small></p>
+      <p class="n">下のクーポンコードで<br>0円になります</p>
+    </div>
+  </div>
+
+  <div class="sec pain">
+    <p class="eyebrow">Your Struggle　ひとつでも当てはまったら</p>
+    <ul>
+      <li><span class="c">✓</span><span>練習では挙がるのに、試合では取れない</span></li>
+      <li><span class="c">✓</span><span>大事な一本ほど「失敗したら」と考える</span></li>
+      <li><span class="c">✓</span><span>3本目が、毎回こわい</span></li>
+      <li><span class="c">✓</span><span>一本落とすと、その後まで引きずる</span></li>
+      <li><span class="c">✓</span><span>ライバルや順位を見ると焦る</span></li>
+      <li><span class="c">✓</span><span>結果が出ないと、自分まで否定したくなる</span></li>
+    </ul>
+    <p class="msg">体は強くなっているのに、自信だけが減っていく。<br>その状態を止めるための90分です。</p>
+  </div>
+
+  <div class="sec does">
+    <p class="eyebrow">What You Do　当日、手を動かすこと</p>
+    <ol>
+      <li>
+        <p class="n">WORK 1</p>
+        <p class="t">できたのかけらを<br>10個書き出す</p>
+        <p class="d">自己ベストだけが「できた」ではありません。休むと決めた、失敗後に切り替えた、も全部です。</p>
+      </li>
+      <li>
+        <p class="n">WORK 2</p>
+        <p class="t">目標を<br>120・100・80に分ける</p>
+        <p class="d">高すぎる目標が自信を奪います。狙う数字と、確実に取る数字を分けて置きます。</p>
+      </li>
+      <li>
+        <p class="n">WORK 3</p>
+        <p class="t">MY DO と<br>MY DON'T を決める</p>
+        <p class="d">次の試合までに「やること3つ」と「やらないこと3つ」。ここまで決めて帰ります。</p>
+      </li>
+    </ol>
+  </div>
+
+  <div class="gift">
+    <p class="lab">参加特典<br>A4×2枚</p>
+    <ul>
+      <li>できたのかけら 見つけるワークシート<span>当日も、そのあとの練習・試合の振り返りにも使えます</span></li>
+      <li>「できた」を結果につなげるチェックシート<span>振り返りを、次の一本につなげるための1枚</span></li>
+    </ul>
+  </div>
+
+  <div class="coach">
+    <div class="coach__ph"><img src="coach.jpg" alt="しおりん"></div>
+    <div>
+      <p class="coach__n">佐藤 栞（しおりん）<span>パワーリフター／メンタルコーチ</span></p>
+      <p class="coach__b">競技歴11年以上。<b>日本一・日本記録・世界大会出場</b>。「1位じゃなきゃ意味がない」と思っていた時期を経て、結果と自分の価値を切り離せるようになるまでにやったことを、そのままお話しします。</p>
+    </div>
+  </div>
+
+  <div class="apply">
+    <div class="apply__l">
+      <p class="apply__t">お申し込みはこちらから</p>
+      <div class="code">
+        <p class="k">COUPON CODE</p>
+        <p class="v">【クーポンコード】</p>
+      </div>
+      <p class="apply__n">お申し込み画面でこのコードを入力すると、<b>3,300円が0円</b>になります。<br>定員になり次第、受付を終了します。</p>
+    </div>
+    <div class="qr">
+      <div class="qr__box"><div class="qr__ph">申込URLが<br>決まり次第<br>QRを入れます</div></div>
+      <p class="qr__c">スマホで読み取り</p>
+    </div>
+  </div>
+
+</div>
+</body></html>
