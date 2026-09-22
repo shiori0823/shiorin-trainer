@@ -9,6 +9,14 @@ with sync_playwright() as p:
     pg = b.new_page(viewport={"width": int(97*K), "height": int(61*K)})
     pg.goto("file://" + str(HERE / "card.html")); pg.wait_for_timeout(500)
 
+    # メールアドレスは mail.txt から差し込む（このリポジトリは公開なので入れない）
+    mf = HERE / "mail.txt"
+    addr = mf.read_text().strip() if mf.exists() else ""
+    if addr:
+        pg.evaluate("a=>{document.getElementById('mail').textContent=a}", addr)
+    else:
+        print("※ mail.txt がないので、メール欄は空のまま書き出します")
+
     pg.pdf(path=str(HERE / "meishi.pdf"), width="97mm", height="61mm",
            print_background=True,
            margin={"top":"0","right":"0","bottom":"0","left":"0"})

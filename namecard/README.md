@@ -7,7 +7,7 @@
 | 仕上がり | 91×55mm（日本の標準サイズ） |
 | データ | 97×61mm＝**塗り足し3mm込み** |
 | 色 | ワイン `#7A1524` / `#540E19`。LP・チラシ・ジム掲示と同じ |
-| QRの行き先 | `https://instagram.com/nolimits.shiorin` |
+| QRの行き先 | `https://mosh.jp/surikuki_suski0823/profile`（MOSHのプロフィール） |
 
 ## 誰に渡す名刺か
 
@@ -28,11 +28,31 @@
 1マス約0.72mm あるので、印刷してもスマホで読めます。
 `build-pdf.py` が600dpiで書き出して実際にデコードし、確認しています。
 
-**QRはInstagramに向けてあります。** セミナーのページに向けると9/26で死にますし、
-LPはパワーリフター向けなので、企業の人が読み取ると話が合いません。
+**QRはMOSHのプロフィールに向けてあります。**
+Instagramは「見つけてもらう場所」ですが、名刺はもう手渡しているので
+見つけてもらう必要がありません。必要なのは**申し込める場所**です。
 
-→ **Instagramのプロフィール文に、競技のことだけでなく
-「研修・講演」も1行入れておいてください。** そこが名刺の続きになります。
+セミナーの個別ページに向けなかったのは、9/26で切れるからです。
+LPに向けなかったのは、パワーリフター向けなので企業の人が読むと話が合わないからです。
+
+Instagramは文字（`@nolimits.shiorin`）で載せてあります。
+見たい人だけが見にいける、という位置づけです。
+
+### ★ 印刷する前に決めること
+
+**MOSHのユーザー名（`surikuki_suski0823`）を変えるなら、印刷前に変えてください。**
+刷ったあとに変えると、配った名刺のQRが全部つながらなくなります。
+
+## メールアドレスについて
+
+このリポジトリは**公開**なので、メールアドレスは `card.html` に書いていません。
+`namecard/mail.txt` に1行だけ書いておくと、`build-pdf.py` が差し込みます。
+`mail.txt` と `meishi.pdf`、`preview.png` は `.gitignore` で除外してあります。
+
+```
+echo 'あなたのアドレス' > mail.txt
+python3 build-pdf.py
+```
 
 ## 直すとき
 
@@ -50,10 +70,5 @@ python3 build-pdf.py
 QRを作り直すとき:
 
 ```
-python3 -c "import segno; segno.make('https://instagram.com/nolimits.shiorin', error='m').save('qr.png', scale=40, border=2, dark='#540E19')"
+python3 -c "import segno; segno.make('https://mosh.jp/surikuki_suski0823/profile', error='m').save('qr.png', scale=40, border=2, dark='#540E19')"
 ```
-
-## まだ入っていないもの
-
-- **メールアドレス**。法人相手だと、あったほうが問い合わせが来ます。
-  裏の「研修・講演・個別コーチング」の下に1行入る余白があります。
