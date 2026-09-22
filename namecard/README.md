@@ -86,7 +86,7 @@ Instagram @nolimits.shiorin
 **MOSHのプロフィール** に向けてあります。
 
 ```
-https://mosh.jp/surikuki_suski0823/profile
+https://mosh.jp/nolimits-shiorin/profile
 ```
 
 ## なぜInstagramではないか
@@ -104,12 +104,16 @@ Instagramに送ると、そこからまたプロフィールのリンクを踏�
 - **セミナーの個別ページ** … 9/26で切れる。名刺のほうが長生きする
 - **LP** … パワーリフター向け。学校の先生が読み取ると話が合わない
 
-## ★ 刷る前に決めること
+## ユーザー名は変更済み
 
-**MOSHのユーザー名（`surikuki_suski0823`）を変えるなら、印刷の前に変えてください。**
+2026-09-22に `surikuki_suski0823` → **`nolimits-shiorin`** に変更済み。
+QRも新しいURLで作り直してあります。Instagram（`@nolimits.shiorin`）と揃いました。
 
-刷ったあとに変えると、**配った名刺のQRが全部つながらなくなります。**
-変えるなら `nolimits-shiorin` のような形が、Instagramとも揃います。
+**今後これを変えると、配った名刺のQRが全部つながらなくなります。**
+名刺は2年後も相手の名刺入れにあるので、ここはもう動かさないでください。
+
+※ サービスの個別ページ（`mosh.jp/services/404875` など）はユーザー名と
+無関係なIDなので、この変更の影響を受けません。LPやチラシの直しは不要です。
 
 ## MOSH側に必要なこと
 
@@ -200,7 +204,7 @@ QRは **21mm角の白い箱**に入れています。地色が濃いので、白
 
 | | |
 |---|---|
-| 中身 | `https://mosh.jp/surikuki_suski0823/profile` |
+| 中身 | `https://mosh.jp/nolimits-shiorin/profile` |
 | 規格 | バージョン3・誤り訂正M・**29マス** |
 | 大きさ | 21mm角（白箱込み） |
 | 1マス | **約0.72mm** |
@@ -227,7 +231,7 @@ python3 build-pdf.py
 QRを作り直すとき:
 
 ```
-python3 -c "import segno; segno.make('https://mosh.jp/surikuki_suski0823/profile', error='m').save('qr.png', scale=40, border=2, dark='#540E19')"
+python3 -c "import segno; segno.make('https://mosh.jp/nolimits-shiorin/profile', error='m').save('qr.png', scale=40, border=2, dark='#540E19')"
 ```
 
 ## メールアドレスの扱い
@@ -249,7 +253,7 @@ python3 build-pdf.py
 
 # 第5部　刷る前のチェックリスト
 
-- [ ] **MOSHのユーザー名**を変えるか決めた（変えるなら先に変えてQRを作り直す）
+- [x] ~~MOSHのユーザー名~~ → `nolimits-shiorin` に変更済み。QRも作り直し済み
 - [ ] **メールアドレス**を決めた（法人用に別のを作るかどうか）
 - [ ] MOSHに**法人向けの枠**を1つ作った
 - [ ] `python3 build-pdf.py` が **安全領域OK・QR読み取りOK** を出した
