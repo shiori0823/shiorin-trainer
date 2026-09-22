@@ -255,7 +255,7 @@ python3 build-pdf.py
 
 - [x] ~~MOSHのユーザー名~~ → `nolimits-shiorin` に変更済み。QRも作り直し済み
 - [x] ~~メールアドレス~~ → 現行のGmailのままでいく（2026-09-22決定）
-- [ ] MOSHに**法人向けの枠**を1つ作る（文面は `mosh/service-corporate.md`。※名刺の入稿は待たなくてよい）
+- [x] ~~MOSHに法人向けの枠を1つ作る~~ → 2026-09-22 作成済み
 - [ ] `python3 build-pdf.py` が **安全領域OK・QR読み取りOK** を出した
 - [ ] 用紙と部数を決めた（→ 下）
 
