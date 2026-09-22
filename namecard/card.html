@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<title>名刺</title>
+<style>
+/* 仕上がり 91×55mm ＋ 塗り足し3mm ＝ 97×61mm */
+@page{ size:97mm 61mm; margin:0 }
+*{ margin:0; padding:0; box-sizing:border-box }
+html,body{ width:97mm }
+body{ font-family:"IPAPGothic",sans-serif; -webkit-print-color-adjust:exact;
+      print-color-adjust:exact; color:#17151A }
+
+.card{ width:97mm; height:61mm; position:relative; overflow:hidden;
+       page-break-after:always; break-after:page }
+.card:last-child{ page-break-after:auto; break-after:auto }
+
+/* 安全領域：塗り足し3mm ＋ 内側マージン3mm = 6mm */
+.in{ position:absolute; inset:6mm; display:flex; flex-direction:column }
+
+/* ============ 表 ============ */
+.front{ background:#fff }
+/* 左のワインの柱。塗り足しまで伸ばしてあるので、裁断が1mmずれても幅は変わらない */
+.bar{ position:absolute; left:0; top:0; bottom:0; width:9mm; background:#7A1524 }
+.front .in{ left:14mm }
+
+.role{ font-size:2.7mm; font-weight:bold; letter-spacing:.12em; color:#7A1524;
+       line-height:1.55 }
+.role small{ font-size:2.45mm; color:#5A514E; letter-spacing:.09em; font-weight:bold }
+
+.name{ margin-top:3.2mm; display:flex; align-items:baseline; gap:3.2mm }
+.name .ja{ font-family:"IPAMincho",serif; font-size:8.4mm; font-weight:bold;
+           letter-spacing:.08em; line-height:1 }
+.name .yomi{ font-size:2.45mm; color:#6E6360; letter-spacing:.1em; line-height:1.6 }
+.name .yomi b{ display:block; color:#7A1524; font-size:2.8mm; letter-spacing:.06em }
+
+.catch{ margin-top:4mm; font-family:"IPAMincho",serif; font-size:4.5mm;
+        font-weight:bold; letter-spacing:.02em; line-height:1.5; color:#540E19 }
+
+.cred{ margin-top:auto; padding-top:2.3mm; border-top:.3mm solid #E4DBDA;
+       font-size:2.45mm; font-weight:bold; letter-spacing:.03em; color:#4A4340;
+       line-height:1.5 }
+.cred span{ color:#C9BFBE; margin:0 1.1mm; font-weight:normal }
+
+/* ============ 裏 ============ */
+.back{ background:#540E19; color:#fff }
+/* 右下のQRを避けて本文を流す */
+.back .in{ padding-right:24mm }
+
+.philo{ font-size:3.05mm; line-height:1.74; color:#EFE0E3; letter-spacing:.01em }
+.philo b{ display:block; color:#fff; font-weight:bold; font-size:3.3mm;
+          letter-spacing:.02em; margin-bottom:1.3mm }
+
+.svc{ margin-top:auto; padding-top:2.8mm;
+      border-top:.25mm solid rgba(255,255,255,.22) }
+.svc .k{ font-size:2.2mm; font-weight:bold; letter-spacing:.14em; color:#F0B9C3;
+         margin-bottom:1.6mm }
+.svc .v{ font-size:3.3mm; font-weight:bold; letter-spacing:.03em; line-height:1.5 }
+
+.sns{ position:absolute; right:6mm; bottom:6mm; width:21mm; text-align:center }
+.qrbox{ width:21mm; height:21mm; background:#fff; border-radius:.8mm; padding:1mm }
+.qrbox img{ width:100%; height:100%; display:block }
+.sns .h{ margin-top:1.4mm; font-size:1.95mm; font-weight:bold; letter-spacing:.09em;
+         color:#F0B9C3 }
+.sns .a{ font-size:2.2mm; font-weight:bold; color:#F4E9EB; letter-spacing:0;
+         line-height:1.35 }
+</style></head><body>
+
+<section class="card front">
+  <div class="bar"></div>
+  <div class="in">
+    <p class="role">メンタルトレーナー<br><small>パワーリフター</small></p>
+
+    <div class="name">
+      <span class="ja">佐藤　栞</span>
+      <span class="yomi">さとう　しおり<b>しおりん</b></span>
+    </div>
+
+    <p class="catch">ここぞの場面で、<br>自分の力を出しきる。</p>
+
+    <p class="cred">競技歴11年<span>｜</span>日本一2回<span>｜</span>スクワット日本記録<span>｜</span>世界大会出場</p>
+  </div>
+</section>
+
+<section class="card back">
+  <div class="in">
+    <p class="philo"><b>メンタルは強さではなく、鍛えられるスキル。</b>
+      小さな「できた」を積み重ねて、<br>自分を信頼できるようにする。</p>
+
+    <div class="svc">
+      <p class="k">ご依頼いただけること</p>
+      <p class="v">研修・講演・個別コーチング</p>
+    </div>
+  </div>
+  <div class="sns">
+    <div class="qrbox"><img src="qr.png" alt="Instagram"></div>
+    <p class="h">INSTAGRAM</p>
+    <p class="a">@nolimits.shiorin</p>
+  </div>
+</section>
+
+</body></html>
