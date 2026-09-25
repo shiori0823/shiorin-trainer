@@ -747,18 +747,117 @@ async function build() {
     { y:1.95, size:18, gap:0.52 });
 
   s = slide("ここから先");
-  title(s, "個別相談で講座の案内をすることもあります", { size:28 });
-  body(s, "必要だと感じた方には、\n「パワーリフターのための実践メンタルトレーニング」\n" +
-          "についてもお話しします。",
-    { y:1.85, h:1.5, size:18, ls:30 });
-  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:3.45, w:9, h:0.8,
+  title(s, "講座の話も、今日しておきます", { size:30 });
+  body(s, "「パワーリフターのための実践メンタルトレーニング」という\n" +
+          "3か月の講座をやっています。",
+    { y:1.8, h:1.2, size:18, ls:30 });
+  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:3.1, w:9, h:0.85,
     fill:{ color:C.deep }, line:{ color:C.deep }, rectRadius:0.07 });
-  s.addText("でも、その場で決める必要はありません。", T({ x:0.9, y:3.45, w:8.2, h:0.8,
+  s.addText("あとで探さなくていいように、先にお見せします。", T({ x:0.9, y:3.1, w:8.2, h:0.85,
     fontSize:21, bold:true, color:C.white, valign:"middle", fontFace:FS }));
-  s.addText("まずは「自分には何が必要か」を整理することが目的です。",
-    T({ x:0.5, y:4.5, w:8.2, h:0.45, fontSize:18, bold:true, color:C.wine }));
+  s.addText("今日申し込む必要はまったくありません。\n「そういうものがあるんだな」で大丈夫です。",
+    T({ x:0.5, y:4.15, w:8.6, h:0.9, fontSize:17, bold:true, color:C.wine, lineSpacing:28 }));
 
-  /* ============ おわりに（57–58） ============ */
+  /* ============ 講座のご案内（57–61） ============ */
+  s = slide("講座のご案内");
+  s.addText("パワーリフターのための", T({ x:0.5, y:0.82, w:8.6, h:0.4,
+    fontSize:18, bold:true, color:C.muted }));
+  s.addText("実践メンタルトレーニング", T({ x:0.5, y:1.2, w:8.6, h:0.75,
+    fontSize:34, bold:true, color:C.ink, fontFace:FS }));
+  s.addText("ここぞの一本を、取り切る。", T({ x:0.5, y:2.0, w:8.6, h:0.42,
+    fontSize:19, bold:true, color:C.wine, fontFace:FS }));
+  [["期間","3か月"],
+   ["回数","個別セッション 最大10回（7〜10回程度）"],
+   ["1回","60分（講義・ワーク30分＋個別コーチング30分）"],
+   ["形式","完全1対1／Zoom　※試合日程に合わせて調整"]].forEach(([k,v],i)=>{
+    const y = 2.62 + i*0.6;
+    s.addShape(pres.ShapeType.roundRect, { x:0.5, y, w:8.6, h:0.52,
+      fill:{ color:C.rose }, line:{ color:C.rose }, rectRadius:0.06 });
+    s.addText(k, T({ x:0.85, y, w:1.4, h:0.52, fontSize:15, bold:true, color:C.wine, valign:"middle" }));
+    s.addText(v, T({ x:2.3, y, w:6.6, h:0.52, fontSize:15, color:C.soft, valign:"middle" }));
+  });
+
+  s = slide("講座のご案内");
+  title(s, "3か月の流れ", { size:32, y:0.8, h:0.8 });
+  [["1","勝ちたい試合・取りたい一本を明確にする"],
+   ["2","自分が崩れるパターンを知る"],
+   ["3","自分に合ったメンタルスキルをつくる"],
+   ["4","自分専用の試合ルーティンをつくる"],
+   ["5","本番を想定して使ってみる"],
+   ["6","MY BEST LIFT PLAN 完成"]].forEach(([n,t],i)=>{
+    const y = 1.78 + i*0.5;
+    const last = i === 5;
+    s.addShape(pres.ShapeType.roundRect, { x:0.5, y, w:8.6, h:0.44,
+      fill:{ color: last ? C.deep : C.rose }, line:{ color: last ? C.deep : C.rose }, rectRadius:0.06 });
+    s.addText("STEP " + n, T({ x:0.85, y, w:1.3, h:0.44, fontSize:12, bold:true,
+      charSpacing:1, color: last ? C.pink : C.wine, valign:"middle" }));
+    s.addText(t, T({ x:2.3, y, w:6.6, h:0.44, fontSize:15.5, bold:last,
+      color: last ? C.white : C.soft, valign:"middle" }));
+  });
+  s.addText("一斉スタートではありません。あなたの大会日と現在地に合わせて進めます。",
+    T({ x:0.5, y:4.86, w:8.6, h:0.36, fontSize:14, color:C.muted }));
+
+  s = slide("講座のご案内", { dark:true });
+  s.addText("この3か月で完成するもの", T({ x:0.5, y:0.88, w:8.6, h:0.4,
+    fontSize:17, bold:true, color:C.pink }));
+  s.addText("MY BEST LIFT PLAN", T({ x:0.5, y:1.28, w:8.6, h:0.8,
+    fontSize:40, bold:true, color:C.white, fontFace:FS, charSpacing:1 }));
+  s.addText("「私はこうすれば試合で力を出せる」をまとめた、自分専用の勝負の設計図。",
+    T({ x:0.5, y:2.12, w:8.6, h:0.4, fontSize:15, color:C.pale }));
+  ["試合当日の過ごし方","緊張したときに戻る手順",
+   "失敗した直後のリセット方法","他人の記録や順位との付き合い方",
+   "1・2・3本目それぞれの考え方","ここぞの一本で使う「自分のスイッチ」"].forEach((t,i)=>{
+    const col = i % 2, row = Math.floor(i/2);
+    s.addShape(pres.ShapeType.roundRect, { x:0.5 + col*4.4, y:2.72 + row*0.58, w:4.2, h:0.48,
+      fill:{ color:"3A0B12" }, line:{ color:"3A0B12" }, rectRadius:0.05 });
+    s.addText(t, T({ x:0.7 + col*4.4, y:2.72 + row*0.58, w:3.9, h:0.48, fontSize:13,
+      color:C.white, valign:"middle" }));
+  });
+  s.addText("正解を押しつけるのではなく、あなた自身の勝負の型を一緒につくります。",
+    T({ x:0.5, y:4.62, w:8.6, h:0.35, fontSize:14, color:C.pink }));
+
+  s = slide("講座のご案内");
+  title(s, "一人ひとり、中身が違います", { size:32, y:0.8, h:0.8 });
+  s.addText("たくさんの方へ一斉に教える講座ではありません。次の5つを見て、組み立てます。",
+    T({ x:0.5, y:1.72, w:8.6, h:0.4, fontSize:16, color:C.soft }));
+  ["次の大会","取りたい記録","過去の試合","考え方の特徴","必要なメンタルスキル"]
+    .forEach((t,i)=>{
+      const col = i % 3, row = Math.floor(i/3);
+      s.addShape(pres.ShapeType.roundRect, { x:0.5 + col*2.95, y:2.3 + row*0.72, w:2.75, h:0.6,
+        fill:{ color:C.rose }, line:{ color:C.rose }, rectRadius:0.07 });
+      s.addText(t, T({ x:0.5 + col*2.95, y:2.3 + row*0.72, w:2.75, h:0.6, fontSize:15,
+        bold:true, color:C.wine, align:"center", valign:"middle" }));
+    });
+  band(s, "だから、同じ内容を全員には渡しません。", { y:4.0, h:0.85, size:21 });
+
+  s = slide("講座のご案内");
+  title(s, "受講料", { size:22, color:C.muted, y:0.85, h:0.5 });
+  s.addText([
+    { text:"98,000", options:{ fontSize:64, bold:true, color:C.wine, fontFace:FS } },
+    { text:"　円（税込）", options:{ fontSize:20, bold:true, color:C.wine, fontFace:FS } },
+  ], T({ x:0.5, y:1.3, w:6.2, h:1.1, valign:"bottom" }));
+  ["3か月","最大10回","1回60分","完全1対1"].forEach((t,i)=>{
+    const col = i % 2, row = Math.floor(i/2);
+    s.addShape(pres.ShapeType.roundRect, { x:0.5 + col*1.7, y:2.62 + row*0.68, w:1.55, h:0.56,
+      fill:{ color:C.rose }, line:{ color:C.rose }, rectRadius:0.28 });
+    s.addText(t, T({ x:0.5 + col*1.7, y:2.62 + row*0.68, w:1.55, h:0.56, fontSize:14,
+      bold:true, color:C.wine, align:"center", valign:"middle" }));
+  });
+  s.addShape(pres.ShapeType.roundRect, { x:0.5, y:4.15, w:5.9, h:0.82,
+    fill:{ color:C.deep }, line:{ color:C.deep }, rectRadius:0.07 });
+  s.addText("お申し込みの前に、まず無料個別相談へ。", T({ x:0.8, y:4.15, w:5.3, h:0.82,
+    fontSize:17, bold:true, color:C.white, valign:"middle", fontFace:FS }));
+  s.addShape(pres.ShapeType.roundRect, { x:6.75, y:1.15, w:2.75, h:3.1,
+    fill:{ color:C.rose }, line:{ color:C.rose }, rectRadius:0.08 });
+  s.addImage({ path:"images/qr.png", x:7.2, y:1.45, w:1.85, h:1.85 });
+  s.addText("60分・無料個別相談", T({ x:6.75, y:3.4, w:2.75, h:0.32,
+    fontSize:13, bold:true, color:C.wine, align:"center" }));
+  s.addText("自分に必要かどうかを\n確かめる時間です", T({ x:6.75, y:3.72, w:2.75, h:0.5,
+    fontSize:11, color:C.soft, align:"center", lineSpacing:16 }));
+  s.addText("Zoomのチャットにも貼ります", T({ x:6.75, y:4.42, w:2.75, h:0.3,
+    fontSize:10, color:C.muted, align:"center" }));
+
+  /* ============ おわりに（62–63） ============ */
   s = slide("おわりに");
   title(s, "今日のゴールは、もう達成しています", { size:31 });
   card(s, ["「私、ちゃんと進んでた」　に気づく。",
