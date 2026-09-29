@@ -8,6 +8,65 @@ const F  = "Yu Gothic";   // 本文＝ゴシック体
 const FS = "Yu Mincho";   // 見出し＝明朝体
 const W = 10, H = 5.625;
 
+/* ---- 版の切り替え ----
+   node build.js            … 通常版（できたのかけらワークショップ）
+   node build.js kokusupo   … 国スポ振り返り編                        */
+const EDITIONS = {
+  default: {
+    file: "seminar-dekita.pptx",
+    tag:  "「私、ちゃんと進んでた」に気づく90分",
+    edition: null,
+    sub:  "絶対に取りたい記録、勝ちたい試合があるパワーリフターへ。",
+    lead: "今日は、「メンタルを強くする方法」ではなく、\n" +
+          "「自分のメンタルをどう扱うか」を一緒に考えていきます。",
+    painTitle: "こんな経験、ありませんか？",
+    pains: ["練習では挙がったのに、試合では取れない",
+            "大事な一本ほど「失敗したらどうしよう」と思う",
+            "一本落とすと、その後まで引きずる",
+            "ライバルや順位を見ると焦る",
+            "試合前になると「もっとやらなきゃ」と不安になる",
+            "結果が出ないと、自分まで否定したくなる"],
+    span: "最近1か月",
+    count: 10,
+    prompts: ["続けたことは？", "やめたことは？", "挑戦したことは？", "休むと決めたことは？",
+              "誰かに頼れたことは？", "失敗したあとにやったことは？",
+              "以前より少しできるようになったことは？"],
+    b1title: "できたのかけら 見つけるワークシート",
+    b1chips: ["最近できたこと","続けられたこと","挑戦したこと",
+              "休めたこと","失敗した後にできたこと"],
+    b2title: "「できた」を結果につなげるチェックシート",
+  },
+  kokusupo: {
+    file: "seminar-kokusupo.pptx",
+    tag:  "国スポ振り返り編",
+    edition: "あの期間から、次の一本を決める90分",
+    sub:  "国スポに向けて、ここまで積み上げてきた選手へ。",
+    lead: "今日は「結果の反省」をしません。\n" +
+          "あの期間に積み上げたものを拾い直して、次の一本を決めます。",
+    painTitle: "ピーキング中、こんなことありませんでしたか？",
+    pains: ["これで合っているのか、分からなくなった",
+            "調子が上がらない日に、焦って余計なことをした",
+            "重量を下げる判断に、納得できないまま進んだ",
+            "試合が近づくほど、練習が怖くなった",
+            "終わってみて、何がよかったのか分からない",
+            "結果だけ見て、あの期間ごと否定したくなる"],
+    span: "国スポまでのピーキング期間",
+    count: 6,
+    prompts: ["試合前の準備で、できたことは？",
+              "下げる・休む・やめるの判断をしたことは？",
+              "調子が悪い日に、やれたことは？",
+              "誰かに頼れたことは？",
+              "前の試合までと比べて、変えられたことは？",
+              "当日、予定どおりにできたことは？"],
+    b1title: "あの期間の「できたのかけら」振り返りシート",
+    b1chips: ["準備でできたこと","続けられたこと","判断できたこと",
+              "休めたこと","失敗した後にできたこと"],
+    b2title: "「次の一本」につなげるチェックシート",
+  },
+};
+const ED = EDITIONS[process.argv[2] || "default"];
+if (!ED) { console.error("版が見つかりません:", process.argv[2]); process.exit(1); }
+
 const pres = new pptxgen();
 pres.layout = "LAYOUT_16x9";
 pres.author = "しおりん";
@@ -103,26 +162,21 @@ async function build() {
 
   /* ============ はじめに（1–5） ============ */
   s = slide(null, { bg:C.warm });
-  s.addText("「私、ちゃんと進んでた」に気づく90分", T({ x:0.7, y:0.85, w:8.6, h:0.45,
+  s.addText(ED.tag, T({ x:0.7, y:0.8, w:8.6, h:0.45,
     fontSize:18, bold:true, color:C.wine, charSpacing:1 }));
-  title(s, "できたのかけら\nワークショップ", { x:0.7, y:1.45, w:8.6, size:46 });
-  s.addShape(pres.ShapeType.rect, { x:0.7, y:3.55, w:1.3, h:0.04,
+  title(s, "できたのかけら\nワークショップ", { x:0.7, y:1.32, w:8.6, size:44 });
+  if (ED.edition) s.addText(ED.edition, T({ x:0.7, y:3.18, w:8.6, h:0.4,
+    fontSize:16, bold:true, color:C.bright }));
+  s.addShape(pres.ShapeType.rect, { x:0.7, y:3.66, w:1.3, h:0.04,
     fill:{ color:C.wine }, line:{ color:C.wine } });
-  s.addText("絶対に取りたい記録、勝ちたい試合があるパワーリフターへ。",
-    T({ x:0.7, y:3.85, w:8.6, h:0.45, fontSize:18, bold:true, color:C.soft }));
-  s.addText("今日は、「メンタルを強くする方法」ではなく、\n" +
-            "「自分のメンタルをどう扱うか」を一緒に考えていきます。",
-    T({ x:0.7, y:4.4, w:8.6, h:0.9, fontSize:17, color:C.muted, lineSpacing:28 }));
+  s.addText(ED.sub,
+    T({ x:0.7, y:3.92, w:8.6, h:0.42, fontSize:17, bold:true, color:C.soft }));
+  s.addText(ED.lead,
+    T({ x:0.7, y:4.42, w:8.6, h:0.9, fontSize:16, color:C.muted, lineSpacing:27 }));
 
   s = slide("はじめに");
-  title(s, "こんな経験、ありませんか？", { size:32 });
-  bullets(s, ["練習では挙がったのに、試合では取れない",
-              "大事な一本ほど「失敗したらどうしよう」と思う",
-              "一本落とすと、その後まで引きずる",
-              "ライバルや順位を見ると焦る",
-              "試合前になると「もっとやらなきゃ」と不安になる",
-              "結果が出ないと、自分まで否定したくなる"],
-    { y:1.82, size:17.5, gap:0.47 });
+  title(s, ED.painTitle, { size:30 });
+  bullets(s, ED.pains, { y:1.82, size:17.5, gap:0.47 });
   band(s, "1つでもあったら、今日の90分はあなたのための時間です。",
     { y:4.68, h:0.57, size:18 });
 
@@ -298,20 +352,17 @@ async function build() {
   s.addText("これも全部「できた」です。", T({ x:0.5, y:4.9, w:8.2, h:0.4,
     fontSize:19, bold:true, color:C.wine }));
 
-  work(1, "最近1か月の「できたのかけら」を\n10個書いてください。", null,
+  work(1, ED.span + "の「できたのかけら」を\n" + ED.count + "個書いてください。", null,
        "ルールは1つ。「こんなの当たり前」は禁止です。");
 
   s = slide("できたのかけら");
   title(s, "見つからなかったら", { size:32 });
   s.addText("この質問を使ってください。", T({ x:0.5, y:1.8, w:9, h:0.4,
     fontSize:17, color:C.muted }));
-  bullets(s, ["続けたことは？", "やめたことは？", "挑戦したことは？", "休むと決めたことは？",
-              "誰かに頼れたことは？", "失敗したあとにやったことは？",
-              "以前より少しできるようになったことは？"],
-    { y:2.15, size:17, gap:0.42 });
+  bullets(s, ED.prompts, { y:2.15, size:17, gap:0.42 });
 
   s = slide("できたのかけら");
-  title(s, "10個の中から1つ選ぶ", { size:34 });
+  title(s, ED.count + "個の中から1つ選ぶ", { size:34 });
   band(s, "「これ、私よくやったな」と思うものを1つ。",
     { y:1.95, h:1.0, size:22 });
   s.addText("そして次に、こう考えます。", T({ x:0.5, y:3.25, w:9, h:0.4,
@@ -654,11 +705,10 @@ async function build() {
   s = slide("今日の続き");
   s.addText("特典 01", T({ x:0.5, y:0.8, w:3, h:0.4, fontSize:16, bold:true,
     charSpacing:2, color:C.bright }));
-  title(s, "できたのかけら 見つけるワークシート", { y:1.1, size:28 });
+  title(s, ED.b1title, { y:1.1, size: ED.b1title.length > 18 ? 25 : 28 });
   s.addText("「できた」を見つけるための、振り返りワークシートです。",
     T({ x:0.5, y:1.85, w:9, h:0.4, fontSize:18, color:C.soft }));
-  ["最近できたこと","続けられたこと","挑戦したこと",
-   "休めたこと","失敗した後にできたこと"].forEach((t,i)=>{
+  ED.b1chips.forEach((t,i)=>{
     const col = i % 3, row = Math.floor(i/3);
     s.addShape(pres.ShapeType.roundRect, { x:0.5 + col*3.05, y:2.4 + row*0.72, w:2.85, h:0.6,
       fill:{ color:C.rose }, line:{ color:C.rose }, rectRadius:0.07 });
@@ -674,7 +724,7 @@ async function build() {
   s = slide("今日の続き");
   s.addText("特典 02", T({ x:0.5, y:0.8, w:3, h:0.4, fontSize:16, bold:true,
     charSpacing:2, color:C.bright }));
-  title(s, "「できた」を結果につなげるチェックシート", { y:1.1, size:27 });
+  title(s, ED.b2title, { y:1.1, size: ED.b2title.length > 18 ? 25 : 27 });
   s.addText("「できた」で終わらず、次の行動につなげるためのチェックシートです。",
     T({ x:0.5, y:1.85, w:9, h:0.4, fontSize:18, color:C.soft }));
   ["今回、何ができた？","なぜできた？","自分のどんな力を使った？",
@@ -888,7 +938,7 @@ async function build() {
   s.addText("今日はありがとうございました。", T({ x:0.5, y:4.35, w:9, h:0.85,
     fontSize:22, bold:true, color:C.deep, align:"center", valign:"middle", fontFace:FS }));
 
-  await pres.writeFile({ fileName: "seminar-dekita.pptx" });
+  await pres.writeFile({ fileName: ED.file });
   console.log("スライド枚数:", no);
 }
 build().catch(e => { console.error(e); process.exit(1); });
