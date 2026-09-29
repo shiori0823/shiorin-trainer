@@ -4,7 +4,26 @@
 https://forms.gle/Cft5DGp4NYwjJKVp9
 ```
 
+長いほう（こちらが確実）：
+```
+https://docs.google.com/forms/d/e/1FAIpQLSf1EaG8LAdXafwJwlfDNy5Bd2WG3k1LEcPHFbskKDNFL7xUqw/viewform
+```
+
+**ポスターのQRはこのフォームです。**（2026-09-29 確認済み）
+
 Googleフォーム。**MOSHではないので、Zoomのリンクは自動送信されません。**
+
+### ★ 記録には長いほうを残すこと
+
+短縮リンク（`forms.gle/…`）は、**見ただけでは中身が分かりません。**
+実際に一度、5DAYSのものと取り違えかけました。
+
+長いほうは ID が入っているので、**並べれば別物だと分かります。**
+
+| | ID |
+|---|---|
+| 国スポ振り返り | `…1FAIpQLS**f1EaG8LA**…` |
+| 5DAYS | `…1FAIpQLS**dfB0aE9m**…` |
 
 | | |
 |---|---|

@@ -86,6 +86,10 @@
 https://docs.google.com/forms/d/e/1FAIpQLSdfB0aE9m57MlNRbJ2ZDBeoWH8cyLJ9xuPM2Jb6_TcsAaXgnw/viewform
 ```
 
+**これは5DAYSのフォームです。**（2026-09-29 確認済み）
+国スポ振り返り（10/7）のものとは別物。IDの頭が `dfB0aE9m` なら5DAYS、
+`f1EaG8LA` なら国スポ。
+
 ※ `?fbclid=…` から後ろは、SNSから開いたときに付く印。消して配ってよい
 ※ みゆきさんに `forms.gle/〜` の短縮版があるか聞くと、ストーリーで見栄えがよくなる
 - [ ] アーカイブがあるかどうかの確認（上の本文では「ある」前提で書いています）
