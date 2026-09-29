@@ -1,8 +1,11 @@
 from playwright.sync_api import sync_playwright
 import pathlib
 HERE = pathlib.Path(__file__).parent
-JOBS = [("story.html","story-1080x1920.png",1080,1920),
-        ("feed.html","feed-1080x1350.png",1080,1350)]
+import sys
+ED = sys.argv[1] if len(sys.argv) > 1 else ""
+SUF = "-" + ED if ED else ""
+JOBS = [("story%s.html" % SUF, "story%s-1080x1920.png" % SUF, 1080, 1920),
+        ("feed%s.html"  % SUF, "feed%s-1080x1350.png"  % SUF, 1080, 1350)]
 with sync_playwright() as p:
     b = p.chromium.launch(executable_path="/opt/pw-browsers/chromium-1194/chrome-linux/chrome")
     for src,out,w,h in JOBS:
