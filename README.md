@@ -58,6 +58,7 @@ namecard/build-pdf.py  ← 書き出すときに差し込む
 | `jv-5days/` | 私ファーストプログラム5DAYS（10/19-23・JV） |
 | `mosh/` | MOSHのプロフィール文・法人向けの枠 |
 | `namecard/` | 名刺（91×55mm） |
+| `form/` | 申し込みフォームの文面と設計 |
 > - `followup/` … 無料個別相談のあとに送る文面6種（`followup/README.md`）
 
 A4 1枚のワークショップ告知チラシです。
