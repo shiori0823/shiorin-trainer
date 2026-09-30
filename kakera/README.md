@@ -1,5 +1,14 @@
 # できたのかけらメソッド（90日間）
 
+| | |
+|---|---|
+| `dekita-shindan.pdf` | **できたのかけら診断**（A4×8）。LINE登録の無料プレゼント |
+| 配布URL | `https://shiori0823.github.io/shiorin-trainer/kakera/dekita-shindan.pdf` |
+
+※ 2026-09-30、Googleドライブから移動。スマホのLINEからドライブを開くと
+　 アプリが切り替わって脱落するため。
+
+
 一般向けのメイン商品。2026-09-25 時点の構成と、運用上の判断。
 
 ## 概要

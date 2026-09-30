@@ -1,5 +1,15 @@
 # LINE
 
+## 配布URL（2つとも、スマホで開くことを確認してから使う）
+
+| | |
+|---|---|
+| 選手向け　ここぞの一本 準備シート | `https://shiori0823.github.io/shiorin-trainer/ichihon/ichihon-sheet.pdf` |
+| 一般向け　できたのかけら診断 | `https://shiori0823.github.io/shiorin-trainer/kakera/dekita-shindan.pdf` |
+
+**Googleドライブのリンクは使わないこと。** スマホのLINEから開くとアプリが切り替わり、
+そこで脱落します（8/24の配信で返信ゼロだった原因のひとつ）。
+
 **→ 設定するときは `line/setup.md` を見てください。手順が1枚にまとまっています。**
 
 ## いまの状況（2026-09-26）
