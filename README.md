@@ -48,6 +48,7 @@ namecard/build-pdf.py  ← 書き出すときに差し込む
 | `seminar/poster/` | ジム掲示のポスター |
 | `seminar/social/` | Instagramのストーリーズ・フィード・投稿文 |
 | `secondo/` | セコンド指示書（A4×2）と60分の進行メモ |
+| `ichihon/` | ここぞの一本 準備シート（選手向けLINEプレゼント・A4×3） |
 | `note/` | note記事 |
 | `interview/` | ケニーさん対談の編集・活用プラン |
 | `nurture/` | 個別相談 申込〜当日のステップメール3通 |
