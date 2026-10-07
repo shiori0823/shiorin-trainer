@@ -1,0 +1,67 @@
+@page{ size:A4; margin:0 }
+*{ margin:0; padding:0; box-sizing:border-box }
+html,body{ width:210mm; height:297mm }
+body{
+  padding:12mm 14mm; background:#fff; color:#1A1719;
+  font-family:"IPAPGothic",sans-serif;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  display:flex; flex-direction:column;
+}
+.mast{ display:flex; align-items:flex-end; justify-content:space-between;
+  border-bottom:1.6mm solid #7A1524; padding-bottom:2.6mm }
+.tag{ font-size:8pt; font-weight:bold; letter-spacing:.14em; color:#7A1524; margin-bottom:1.6mm }
+h1{ font-family:"IPAMincho",serif; font-size:18pt; font-weight:bold; line-height:1.3;
+  letter-spacing:.02em }
+.fields{ font-size:7.6pt; color:#6E6360; text-align:right; white-space:nowrap; line-height:2.2 }
+.fields span{ display:inline-block; border-bottom:.35mm solid #D8CFCE; width:30mm; margin-left:2mm }
+
+.lead{ margin-top:4mm; font-size:9.4pt; line-height:1.82; color:#3B3634 }
+.lead b{ color:#7A1524 }
+
+.cols{ display:grid; grid-template-columns:1.06fr .94fr; gap:0 7mm; margin-top:4.4mm }
+
+.rule{ margin:0 0 2.4mm; display:flex; align-items:center; gap:2.6mm }
+.rule.sp{ margin-top:4.2mm }
+.lab{ font-size:8pt; font-weight:bold; letter-spacing:.12em; color:#fff; background:#7A1524;
+  padding:1.2mm 3mm; border-radius:.8mm; white-space:nowrap }
+.ln{ flex:1; height:.3mm; background:#E4DBDA }
+
+ol.steps{ counter-reset:s; list-style:none }
+ol.steps > li{ position:relative; padding-left:6.2mm; margin-bottom:2.8mm }
+ol.steps > li::before{ counter-increment:s; content:counter(s); position:absolute; left:0; top:.2mm;
+  width:4.4mm; height:4.4mm; border-radius:50%; background:#7A1524; color:#fff;
+  font-size:7.2pt; font-weight:bold; display:grid; place-items:center }
+.h{ font-size:9.2pt; font-weight:bold; color:#3B3634; line-height:1.5 }
+.d{ font-size:8.4pt; line-height:1.66; color:#6E6360; margin-top:.8mm }
+.d b{ color:#7A1524 }
+.d .tri{ color:#7A1524; font-weight:bold }
+
+table.spec{ width:100%; border-collapse:collapse; font-size:8.6pt }
+table.spec th{ background:#FAF3F4; color:#7A1524; font-weight:bold; text-align:left;
+  padding:1.7mm 2.6mm; border:.3mm solid #E4DBDA; white-space:nowrap; width:17mm }
+table.spec td{ padding:1.7mm 2.6mm; border:.3mm solid #E4DBDA; color:#3B3634; line-height:1.55 }
+table.spec td b{ color:#7A1524 }
+.sub{ font-size:7.8pt; color:#6E6360 }
+
+.box{ border:.5mm solid #7A1524; background:#FEFAFA; border-radius:1mm;
+  padding:2.4mm 3.2mm; margin-top:2.6mm }
+.box p{ font-size:8.3pt; line-height:1.66; color:#3B3634 }
+.box p + p{ margin-top:1.6mm }
+.box b{ color:#7A1524 }
+
+ul.li{ list-style:none }
+ul.li li{ font-size:8.6pt; line-height:1.62; color:#3B3634; padding-left:3.6mm;
+  position:relative; margin-top:1.4mm }
+ul.li li:first-child{ margin-top:0 }
+ul.li li::before{ content:"・"; position:absolute; left:0; color:#A89C9A }
+p.inc{ font-size:8.4pt; line-height:1.74; color:#3B3634 }
+
+.foot{ margin-top:auto; padding-top:3mm; border-top:.3mm solid #E4DBDA;
+  display:flex; align-items:flex-end; justify-content:space-between; gap:6mm }
+.foot .msg{ font-family:"IPAMincho",serif; font-size:11.5pt; font-weight:bold; color:#7A1524;
+  line-height:1.4 }
+.foot .who{ font-size:7.8pt; color:#6E6360; text-align:right; line-height:1.72 }
+.foot .who b{ color:#3B3634; font-size:8.6pt }
+
+ol.steps.flow > li{ margin-bottom:2.2mm }
+ol.steps.flow .h{ font-size:8.8pt }
