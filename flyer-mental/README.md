@@ -23,7 +23,7 @@ LPと同じ内容を、A4 1枚（210×297mm）にまとめた配布用チラシ�
 `images/qr.svg` は下記URLのQRコードです。
 
 ```
-https://mosh.jp/services/404875?openExternalBrowser=1
+https://docs.google.com/forms/d/e/1FAIpQLScZVWDQj3nZZGQcNNZjqsTIfQ0QMK9vC4R4doPQkpwmn8FFlw/viewform?openExternalBrowser=1
 ```
 
 URLを変える場合は、QRコードも作り直してください。

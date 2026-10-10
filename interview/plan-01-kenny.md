@@ -146,7 +146,7 @@ https://claude.ai/artifact/6MPWkgaScJKEWUMvXGcdds
 
 ▼ 無料個別相談
 次の試合で絶対に取りたい記録がある方へ。60分・オンラインで、あなたの現在地を一緒に整理します。
-https://mosh.jp/services/404875
+https://line.me/R/ti/p/@741mmsav
 
 ▼ 詳しくはこちら
 https://shiori0823.github.io/shiorin-trainer/

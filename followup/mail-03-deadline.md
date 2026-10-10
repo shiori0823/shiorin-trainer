@@ -40,7 +40,7 @@
 　MY BEST LIFT PLAN を完成させます。
 
 　▼ 詳しい内容とお申し込みはこちら
-　https://mosh.jp/services/404875?openExternalBrowser=1
+　https://docs.google.com/forms/d/e/1FAIpQLScZVWDQj3nZZGQcNNZjqsTIfQ0QMK9vC4R4doPQkpwmn8FFlw/viewform?openExternalBrowser=1
 
 
 【お名前】さんの場合は、【試合名・時期】まで日があるので、
@@ -70,7 +70,7 @@
 　個別セッション 最大10回（1回60分）／98,000円（税込）
 
 ▼ 詳細とお申し込み
-https://mosh.jp/services/404875?openExternalBrowser=1
+https://docs.google.com/forms/d/e/1FAIpQLScZVWDQj3nZZGQcNNZjqsTIfQ0QMK9vC4R4doPQkpwmn8FFlw/viewform?openExternalBrowser=1
 
 見送るということでも全然大丈夫です。
 その場合は一言いただければ、こちらからの連絡は止めますね。

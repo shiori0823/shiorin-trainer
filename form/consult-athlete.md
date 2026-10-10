@@ -265,7 +265,7 @@ PPTXの中に `404875` が残っていないことを確認した。
 
 | ファイル | |
 |---|---|
-| `note/mental-training-story.md` | **公開済み。**CTAが `mosh.jp/services/404875` |
+| note記事すべて | **2026-10-10、CTAをLINE登録に切り替え済み（本人対応）** |
 
 → note上で、末尾のリンクを下のURLに差し替えてから、MOSHを下げる。
 

@@ -20,7 +20,7 @@
 同じURLへ遷移します。
 
 ```
-https://mosh.jp/services/404875?openExternalBrowser=1
+https://docs.google.com/forms/d/e/1FAIpQLScZVWDQj3nZZGQcNNZjqsTIfQ0QMK9vC4R4doPQkpwmn8FFlw/viewform?openExternalBrowser=1
 ```
 
 変更する場合は `index.html` 内の上記URLをすべて置換してください。
