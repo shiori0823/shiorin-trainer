@@ -259,9 +259,31 @@ Googleフォームの「設定 → プレゼンテーション → 確認メッ�
 
 ---
 
-# URL（作成後に記入）
+# URL（2026-10-10 確定）
 
 ```
-短縮：
-長い：
+短縮
+https://forms.gle/bR7GVygVbB3vKzzZA
+
+長い（回答用）
+https://docs.google.com/forms/d/e/1FAIpQLScGAjtA1scpVmBJU0KI1awsJT2yCTOzFmX80mKyshEX0luutQ/viewform
 ```
+
+**MOSHのバナー①のリンク先は、短縮のほうでよい。**
+
+※ もらったURLの末尾に `?usp=publish-editor` が付いていたが、これは
+　 作成画面から開いたときの印。**消してよい。** 上は消したもの。
+
+---
+
+# フォームの見分け方（3つになった）
+
+短縮リンクは、見ただけでは中身が分からない。**長いほうのIDで見分ける。**
+
+| フォーム | IDの頭 |
+|---|---|
+| **企業・学校・チーム向け** | `…1FAIpQLS`**`cGAjtA1s`**`…` |
+| 国スポ振り返り（10/7） | `…1FAIpQLS`**`f1EaG8LA`**`…` |
+| 5DAYS | `…1FAIpQLS`**`dfB0aE9m`**`…` |
+
+10/7に、国スポと5DAYSを取り違えかけた。**3つになったので、より間違えやすい。**
