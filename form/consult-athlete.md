@@ -207,52 +207,90 @@ MOSH
 
 ---
 
-# 作ったあと
+# URL（2026-10-10 確定）
 
 ```
-① 短縮URLと長いほうの両方を控える
-② ★ LPのCTA4か所を、このフォームに差し替える
-③ MOSHの個別相談サービス（404875）をどうするか決める
-④ 自分で一度送信して、通知が届くか確かめる
+短縮
+https://forms.gle/UFiioc2R9Jgg8DSq8
+
+長い（回答用）
+https://docs.google.com/forms/d/e/1FAIpQLScZVWDQj3nZZGQcNNZjqsTIfQ0QMK9vC4R4doPQkpwmn8FFlw/viewform
 ```
 
-## ② LPの差し替え箇所
+## フォームの見分け方（4つになった）
 
-```
-lp/index.html　4か所
-　・ヒーロー（画面いちばん上）
-　・08 無料個別相談
-　・FINAL CTA
-　・下に固定で出ているバー
-```
-
-いまは4か所とも `https://mosh.jp/services/404875?openExternalBrowser=1`。
-
-**URLをもらえたら、こちらで差し替えます。**
-
-## ③ MOSHの個別相談ページ
-
-LPがフォームに変わると、**MOSH側と2つの入口ができる。**
-
-```
-MOSH　→　60分と書いてあるはず（LPは30分に直した）
-```
-
-**どちらかに揃えてください。**
-
-| | |
+| フォーム | IDの頭 |
 |---|---|
-| 案A | MOSHの個別相談を30分に直して、両方残す |
-| 案B | MOSHの個別相談を下げて、フォームに一本化する |
-
-**推すのはB。** 2つあると、どちらに来たか分からなくなる。
-MOSHは「サービス一覧を見せる場所」、申し込みはフォーム、と分けるほうが分かりやすい。
+| 企業・学校・チーム向け | `cGAjtA1s` |
+| **選手向け個別相談** | **`cZVWDQj3`** |
+| 国スポ振り返り（10/7） | `f1EaG8LA` |
+| 5DAYS | `dfB0aE9m` |
 
 ---
 
-# URL（作成後に記入）
+# 差し替え済み（2026-10-10）
+
+## ① LP　CTA 4か所
 
 ```
-短縮：
-長い：
+lp/index.html
+　ヒーロー／08 無料個別相談／FINAL CTA／下に固定のバー
 ```
+
+リンク先：
+```
+https://docs.google.com/forms/d/e/1FAIpQLScZVWDQj3nZZGQcNNZjqsTIfQ0QMK9vC4R4doPQkpwmn8FFlw/viewform?openExternalBrowser=1
+```
+
+※ 末尾の `?openExternalBrowser=1` は、**LINEの中でリンクを開いたときに
+　 外部ブラウザで開かせるための印**。MOSHのときから付けていたもの。
+　 Googleフォームは知らないパラメータを無視するので、付いていて問題ない。
+
+## ② セミナースライドのQRと、その下のURL文字
+
+```
+seminar/images/qr.png　→　forms.gle/UFiioc2R9Jgg8DSq8 に作り直し
+　　　　　　　　　　　　　（37モジュール・誤り訂正レベルH・読み取り確認済み）
+seminar/build.js　　　 →　印字するURLも差し替え
+```
+
+**両方の版（通常・国スポ）を再ビルド済み。各63枚。**
+PPTXの中に `404875` が残っていないことを確認した。
+
+---
+
+# ★ MOSHを下げる前に、まだ残っているもの
+
+**公開済みのnote記事が、MOSHの個別相談を向いている。**
+
+| ファイル | |
+|---|---|
+| `note/mental-training-story.md` | **公開済み。**CTAが `mosh.jp/services/404875` |
+
+→ note上で、末尾のリンクを下のURLに差し替えてから、MOSHを下げる。
+
+```
+https://forms.gle/UFiioc2R9Jgg8DSq8
+```
+
+## まだ公開していないもの（下書きのうちに直す）
+
+```
+note/goal-80ten.md
+note/anxiety-step1.md
+note/chanto.md
+```
+
+公開するときに、同じURLに差し替える。
+
+---
+
+# 順番
+
+```
+① 公開済みのnoteのリンクを差し替える　←　ここが先
+② MOSHの個別相談サービスを下げる
+③ 自分でフォームを送って、通知が届くか確かめる
+```
+
+**①を飛ばすと、公開中の記事からリンク切れのページに飛びます。**

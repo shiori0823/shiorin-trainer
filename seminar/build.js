@@ -781,7 +781,7 @@ async function build() {
   s.addImage({ path:"images/qr.png", x:7.3, y:1.55, w:1.85, h:1.85 });
   s.addText("スマホのカメラで\n読み取ってください", T({ x:6.95, y:3.45, w:2.55, h:0.7,
     fontSize:12, bold:true, color:C.deep, align:"center", lineSpacing:19 }));
-  s.addText("mosh.jp/services/404875", T({ x:6.95, y:4.4, w:2.55, h:0.32,
+  s.addText("forms.gle/UFiioc2R9Jgg8DSq8", T({ x:6.95, y:4.4, w:2.55, h:0.32,
     fontSize:10, color:C.pink, align:"center" }));
   s.addText("Zoomのチャットにも貼ります", T({ x:6.95, y:4.78, w:2.55, h:0.32,
     fontSize:10, color:"A5848C", align:"center" }));
