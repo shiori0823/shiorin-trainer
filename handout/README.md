@@ -4,30 +4,18 @@ A4 1枚の配布用プリントです。チラシ（`../flyer/`）と同じ配�
 
 - `handout.html` … 原稿（HTML/CSS）。文言の修正はこちらを編集します。
 - `handout.pdf` … 印刷・配布用のA4 1ページPDF。
-- `make_qr.py` … QRコードを作るスクリプト。
-- `images/` … 使用している画像とQRコード。
+- `images/qr-instagram.png` … Instagram（@nolimits.shiorin）のQRコード。
+- `images/qr-line.png` … ノーリミッツ岡山 公式LINEのQRコード。
+- `images/shiorin-portrait.jpg` … 講師の丸写真。
 
-## QRコードの入れ方（※現在は仮の枠です）
+## QRコードについて
 
-1. `make_qr.py` を開き、`URLS` の2か所にURLを入れる
+いただいた公式のQR画像（LINE／Instagramそれぞれの配布用画像）から、
+コード部分だけを切り出して、規格どおりの余白（4モジュール分）を付け直したものです。
+紙面では **28mm角** で配置しています。
 
-   ```python
-   URLS = {
-       "qr-instagram": "https://www.instagram.com/xxxxxxxx/",
-       "qr-line":      "https://lin.ee/xxxxxxx",
-   }
-   ```
-
-2. QRコードを作り直す
-
-   ```sh
-   pip install segno
-   python3 make_qr.py
-   ```
-
-3. PDFを作り直す（下記）
-
-URLが空のままだと「QRコード／URLをお待ちしています」という仮の枠が出力されます。
+差し替える場合は、同じファイル名で新しい画像を置いてPDFを作り直してください。
+元画像に余白がほとんどない場合は、周囲に白い余白を足してから使うと読み取りが安定します。
 
 ## PDFの再生成
 
