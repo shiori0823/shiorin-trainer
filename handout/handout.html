@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>正しく立つ</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root{
+    --cream:    #fdf9f4;
+    --cream2:   #f9f1e8;
+    --pink:     #dd8a7b;
+    --pink-dp:  #c9705f;
+    --pink-lt:  #f8ddd5;
+    --sage:     #849a7c;
+    --sage-dp:  #5c7054;
+    --sage-lt:  #e8efe3;
+    --ink:      #504740;
+    --ink-soft: #7f7268;
+    --line:     #eadecf;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ width:210mm; height:297mm; }
+
+  body{
+    font-family:"Zen Maru Gothic", sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+    font-feature-settings:"palt" 1;
+  }
+
+  .page{
+    position:relative;
+    width:210mm; height:297mm;
+    padding:11mm 13mm 8mm;
+    display:flex; flex-direction:column;
+    overflow:hidden;
+  }
+  .page > *{ position:relative; z-index:1; }
+
+  .deco{ position:absolute; z-index:0; border-radius:50%; }
+  .d1{ width:62mm; height:62mm; right:-24mm; top:-22mm; background:var(--pink-lt); opacity:.5; }
+  .d2{ width:38mm; height:38mm; left:-17mm; top:60mm;  background:var(--sage-lt); opacity:.55; }
+  .d3{ width:48mm; height:48mm; right:-20mm; bottom:52mm; background:var(--pink-lt); opacity:.38; }
+  .d4{ width:30mm; height:30mm; left:-13mm; bottom:14mm; background:var(--sage-lt); opacity:.5; }
+
+  /* ---------- header ---------- */
+  header{ text-align:center; padding-bottom:2mm; }
+  .eyebrow{
+    display:inline-block;
+    font-size:8.4pt; font-weight:500; letter-spacing:.16em;
+    color:#fff; background:var(--pink);
+    border-radius:99px; padding:1.4mm 6mm; margin-bottom:4mm;
+  }
+  h1{ font-size:30pt; font-weight:700; letter-spacing:.09em; line-height:1.25; }
+  h1 .dot-c{ color:var(--pink); }
+  .wave{ display:block; margin:2.8mm auto 2.6mm; }
+  .lead{
+    font-family:"Klee One SemiBold", serif;
+    font-size:12pt; letter-spacing:.05em; color:var(--pink-dp);
+  }
+
+  /* ---------- step blocks ---------- */
+  .step{ margin-top:4.6mm; }
+
+  .step-head{ display:flex; align-items:center; gap:3mm; margin-bottom:3.4mm; }
+  .step-no{
+    flex:0 0 auto;
+    width:8.6mm; height:8.6mm; border-radius:50%;
+    background:var(--sage); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11pt; font-weight:700; padding-bottom:.3mm;
+  }
+  .step-head h2{ font-size:14pt; font-weight:700; letter-spacing:.06em; }
+  .step-head::after{ content:""; flex:1; height:0; border-top:1.4px dotted var(--line); }
+
+  .step-body{ display:flex; gap:7mm; align-items:flex-start; }
+  .step-main{ flex:1; }
+
+  .big-line{
+    font-size:13pt; font-weight:700; letter-spacing:.03em; line-height:1.6;
+    color:var(--ink); margin-bottom:3.4mm;
+  }
+  .big-line em{ font-style:normal; color:var(--pink-dp); }
+  .big-line .u{
+    display:inline-block;
+    background:var(--pink-lt);
+    border-radius:1.8mm;
+    padding:.3mm 2.6mm;
+  }
+
+  .same-head{
+    display:inline-flex; align-items:center; gap:2mm;
+    font-size:9.6pt; font-weight:700; letter-spacing:.04em; color:var(--sage-dp);
+    background:var(--sage-lt); border-radius:99px; padding:1.3mm 4.4mm;
+    margin-bottom:2.6mm;
+  }
+  .same-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.6mm 2.6mm; }
+  .same-grid div{
+    display:flex; align-items:center; gap:2.2mm;
+    background:#fff; border:1.2px solid var(--pink-lt); border-radius:99px;
+    padding:1.7mm 4mm; font-size:9.8pt; font-weight:500;
+  }
+  .same-grid div::before{
+    content:""; width:2.2mm; height:2.2mm; border-radius:50%;
+    background:var(--pink); opacity:.6; flex:0 0 auto;
+  }
+
+  .checks{ list-style:none; display:flex; flex-direction:column; gap:2.2mm; }
+  .checks li{
+    display:flex; align-items:flex-start; gap:2.8mm;
+    font-size:10.6pt; font-weight:500; line-height:1.55; letter-spacing:.02em;
+  }
+  .checks li svg{ width:4.4mm; height:4.4mm; flex:0 0 auto; margin-top:.5mm; }
+
+  .figure{ flex:0 0 auto; }
+  .figure figcaption{
+    margin-top:1.6mm; text-align:center;
+    font-size:7.6pt; font-weight:500; letter-spacing:.04em; color:var(--pink-dp);
+  }
+
+  /* breathing */
+  .breath-note{
+    display:flex; align-items:center; gap:2.4mm;
+    background:var(--cream2); border-radius:99px;
+    padding:2mm 5mm; margin-bottom:3.4mm;
+    font-size:10.2pt; font-weight:500; letter-spacing:.03em;
+  }
+  .breath-note svg{ width:4mm; height:4mm; fill:var(--pink); flex:0 0 auto; }
+
+  .breath{ display:grid; grid-template-columns:1fr 1fr; gap:4mm; }
+  .bcard{
+    border-radius:4mm; padding:3.6mm 5mm;
+    border:1.6px dashed var(--pink-lt); background:#fff;
+  }
+  .bcard.in{ background:var(--sage-lt); border-color:#cfdcc8; }
+  .bcard .t{
+    display:inline-flex; align-items:center; gap:2mm;
+    font-size:11pt; font-weight:700; letter-spacing:.08em;
+    margin-bottom:2.2mm;
+  }
+  .bcard.in  .t{ color:var(--sage-dp); }
+  .bcard.out .t{ color:var(--pink-dp); }
+  .bcard .t .mark{
+    width:5.6mm; height:5.6mm; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:8pt; color:#fff;
+  }
+  .bcard.in  .t .mark{ background:var(--sage); }
+  .bcard.out .t .mark{ background:var(--pink); }
+  .bcard ul{ list-style:none; display:flex; flex-direction:column; gap:1.4mm; }
+  .bcard li{
+    display:flex; align-items:flex-start; gap:2.2mm;
+    font-size:9.8pt; line-height:1.55; color:var(--ink);
+  }
+  .bcard li::before{
+    content:""; width:1.8mm; height:1.8mm; border-radius:50%;
+    margin-top:1.9mm; flex:0 0 auto;
+  }
+  .bcard.in  li::before{ background:var(--sage); opacity:.6; }
+  .bcard.out li::before{ background:var(--pink); opacity:.6; }
+
+  /* ---------- footer ---------- */
+  footer{ margin-top:auto; padding-top:5mm; }
+  .fcard{
+    display:flex; align-items:center; gap:6mm;
+    background:#fff; border:1.6px dashed var(--pink-lt);
+    border-radius:4.5mm; padding:4mm 6mm;
+  }
+  .who{ display:flex; align-items:center; gap:4mm; flex:1; }
+  .who img{
+    width:20mm; height:20mm; border-radius:50%;
+    object-fit:cover; border:1.4mm solid var(--pink-lt);
+  }
+  .who .nm{ font-size:12.5pt; font-weight:700; letter-spacing:.05em; }
+  .who .rl{ font-size:8.4pt; color:var(--ink-soft); margin-top:1mm; line-height:1.5; }
+
+  .qrs{ display:flex; gap:5mm; }
+  .qr{ text-align:center; }
+  .qr img{ width:21mm; height:21mm; display:block; }
+  .qr .cap{
+    margin-top:1.4mm; font-size:7.4pt; font-weight:700;
+    letter-spacing:.04em; color:var(--ink);
+  }
+  .qr .sub{ font-size:6.4pt; color:var(--ink-soft); margin-top:.5mm; }
+
+  .closing{
+    margin-top:4mm; text-align:center;
+    font-family:"Klee One SemiBold", serif;
+    font-size:12.5pt; letter-spacing:.08em; color:var(--pink-dp);
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="deco d1"></div>
+  <div class="deco d2"></div>
+  <div class="deco d3"></div>
+  <div class="deco d4"></div>
+
+  <header>
+    <div class="eyebrow">おうちでできる、からだのきほん</div>
+    <h1>正しく立つ</h1>
+    <svg class="wave" width="86" height="10" viewBox="0 0 86 10" fill="none">
+      <path d="M2 6C8 1 14 1 20 6s12 5 18 0 12-5 18 0 12 5 18 0" stroke="#dd8a7b" stroke-width="1.7" stroke-linecap="round" opacity=".55"/>
+    </svg>
+    <p class="lead">足元から積み上げて、呼吸でととのえる。</p>
+  </header>
+
+  <!-- STEP 1 -->
+  <section class="step">
+    <div class="step-head">
+      <span class="step-no">1</span>
+      <h2>足幅をととのえる</h2>
+    </div>
+    <div class="step-body">
+      <div class="step-main">
+        <p class="big-line">足幅は、つま先からかかとまで<br><span class="u"><em>指2本分</em></span>。</p>
+        <div class="same-head">この幅は、ぜんぶ同じ幅です</div>
+        <div class="same-grid">
+          <div>土踏まず</div>
+          <div>股関節</div>
+          <div>手首の幅</div>
+          <div>頭蓋の底の幅</div>
+        </div>
+      </div>
+      <figure class="figure">
+        <svg width="152" height="152" viewBox="0 0 230 230">
+          <text x="112" y="23" text-anchor="middle" font-family="Zen Maru Gothic" font-size="22" font-weight="700" fill="#5c7054">指2本分</text>
+          <g stroke="#849a7c" stroke-width="3" stroke-linecap="round">
+            <line x1="100" y1="41" x2="124" y2="41"/>
+            <line x1="100" y1="34" x2="100" y2="48"/>
+            <line x1="124" y1="34" x2="124" y2="48"/>
+          </g>
+          <g stroke="#849a7c" stroke-width="1.6" stroke-dasharray="5 5" opacity=".45">
+            <line x1="100" y1="48" x2="100" y2="200"/>
+            <line x1="124" y1="48" x2="124" y2="200"/>
+          </g>
+          <path d="M75 58c15 0 25 10 25 26v82c0 19-10 28-25 28s-25-9-25-28V84c0-16 10-26 25-26z" fill="#fff" stroke="#dd8a7b" stroke-width="3.2"/>
+          <path d="M149 58c15 0 25 10 25 26v82c0 19-10 28-25 28s-25-9-25-28V84c0-16 10-26 25-26z" fill="#fff" stroke="#dd8a7b" stroke-width="3.2"/>
+          <text x="112" y="222" text-anchor="middle" font-family="Zen Maru Gothic" font-size="15" fill="#7f7268">つま先からかかとまで</text>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="step">
+    <div class="step-head">
+      <span class="step-no">2</span>
+      <h2>一本の円柱をイメージして、積み上げる</h2>
+    </div>
+    <div class="step-body">
+      <ul class="checks step-main">
+        <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10.5" fill="#f8ddd5"/><path d="M7.5 12.4l3.1 3.1 6-6.4" stroke="#c9705f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>足をまっすぐ踏みます。</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10.5" fill="#f8ddd5"/><path d="M7.5 12.4l3.1 3.1 6-6.4" stroke="#c9705f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>仙骨が垂直になっている。</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10.5" fill="#f8ddd5"/><path d="M7.5 12.4l3.1 3.1 6-6.4" stroke="#c9705f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>肩甲骨も垂直に立っている。</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10.5" fill="#f8ddd5"/><path d="M7.5 12.4l3.1 3.1 6-6.4" stroke="#c9705f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>土踏まずの上に頭があるイメージで。</li>
+      </ul>
+      <figure class="figure">
+        <svg width="182" height="140" viewBox="0 0 260 200">
+          <rect x="18" y="6" width="86" height="188" rx="43" fill="#fff" stroke="#f8ddd5" stroke-width="3.2" stroke-dasharray="7 5"/>
+          <line x1="61" y1="16" x2="61" y2="184" stroke="#849a7c" stroke-width="1.8" stroke-dasharray="5 5" opacity=".6"/>
+          <g fill="#dd8a7b">
+            <circle cx="61" cy="30"  r="6.5"/>
+            <circle cx="61" cy="78"  r="6.5"/>
+            <circle cx="61" cy="120" r="6.5"/>
+            <circle cx="61" cy="172" r="6.5"/>
+          </g>
+          <g stroke="#eadecf" stroke-width="2.2">
+            <line x1="68" y1="30"  x2="112" y2="30"/>
+            <line x1="68" y1="78"  x2="112" y2="78"/>
+            <line x1="68" y1="120" x2="112" y2="120"/>
+            <line x1="68" y1="172" x2="112" y2="172"/>
+          </g>
+          <g font-family="Zen Maru Gothic" font-size="19" font-weight="700" fill="#504740">
+            <text x="118" y="37">頭</text>
+            <text x="118" y="85">肩甲骨</text>
+            <text x="118" y="127">仙骨</text>
+            <text x="118" y="179">土踏まず</text>
+          </g>
+        </svg>
+        <figcaption>まっすぐ、縦に積む</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="step">
+    <div class="step-head">
+      <span class="step-no">3</span>
+      <h2>呼吸でととのえる</h2>
+    </div>
+    <div class="breath-note">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 8 3.4C20 15.8 12 21 12 21z"/></svg>
+      鼻と口、両方から深呼吸します。
+    </div>
+    <div class="breath">
+      <div class="bcard in">
+        <div class="t"><span class="mark">IN</span>吸うとき</div>
+        <ul>
+          <li>肩甲骨が寄るイメージで。</li>
+          <li>身長が1ミリ伸びるように。</li>
+        </ul>
+      </div>
+      <div class="bcard out">
+        <div class="t"><span class="mark">OUT</span>吐くとき</div>
+        <ul>
+          <li>肩甲骨が離れていく。</li>
+          <li>身体を、すっと圧縮。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fcard">
+      <div class="who">
+        <img src="images/shiorin-portrait.jpg" alt="佐藤栞">
+        <div>
+          <div class="nm">佐藤 栞（しおりん）</div>
+          <div class="rl">ウェイトトレーニングジム<br>「ノーリミッツ岡山」トレーナー</div>
+        </div>
+      </div>
+      <div class="qrs">
+        <div class="qr">
+          <img src="images/qr-instagram.svg" alt="Instagram QRコード">
+          <div class="cap">Instagram</div>
+          <div class="sub">しおりん</div>
+        </div>
+        <div class="qr">
+          <img src="images/qr-line.svg" alt="公式LINE QRコード">
+          <div class="cap">公式LINE</div>
+          <div class="sub">ノーリミッツ岡山</div>
+        </div>
+      </div>
+    </div>
+    <p class="closing">気づいたときに、ひと呼吸。</p>
+  </footer>
+</div>
+</body>
+</html>
