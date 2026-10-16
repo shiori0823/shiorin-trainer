@@ -48,23 +48,13 @@
   .d4{ width:30mm; height:30mm; left:-13mm; bottom:14mm; background:var(--sage-lt); opacity:.5; }
 
   /* ---------- header ---------- */
-  header{ text-align:center; padding-bottom:2mm; }
-  .eyebrow{
-    display:inline-block;
-    font-size:8.4pt; font-weight:500; letter-spacing:.16em;
-    color:#fff; background:var(--pink);
-    border-radius:99px; padding:1.4mm 6mm; margin-bottom:4mm;
-  }
-  h1{ font-size:30pt; font-weight:700; letter-spacing:.09em; line-height:1.25; }
+  header{ text-align:center; padding-bottom:4mm; }
+  h1{ font-size:33pt; font-weight:700; letter-spacing:.09em; line-height:1.25; }
   h1 .dot-c{ color:var(--pink); }
-  .wave{ display:block; margin:2.8mm auto 2.6mm; }
-  .lead{
-    font-family:"Klee One SemiBold", serif;
-    font-size:12pt; letter-spacing:.05em; color:var(--pink-dp);
-  }
+  .wave{ display:block; margin:3.4mm auto 0; }
 
   /* ---------- step blocks ---------- */
-  .step{ margin-top:4.6mm; }
+  .step{ margin-top:8.4mm; }
 
   .step-head{ display:flex; align-items:center; gap:3mm; margin-bottom:3.4mm; }
   .step-no{
@@ -102,7 +92,7 @@
   .same-grid div{
     display:flex; align-items:center; gap:2.2mm;
     background:#fff; border:1.2px solid var(--pink-lt); border-radius:99px;
-    padding:1.7mm 4mm; font-size:9.8pt; font-weight:500;
+    padding:1.9mm 4mm; font-size:10.2pt; font-weight:500;
   }
   .same-grid div::before{
     content:""; width:2.2mm; height:2.2mm; border-radius:50%;
@@ -112,7 +102,7 @@
   .checks{ list-style:none; display:flex; flex-direction:column; gap:2.2mm; }
   .checks li{
     display:flex; align-items:flex-start; gap:2.8mm;
-    font-size:10.6pt; font-weight:500; line-height:1.55; letter-spacing:.02em;
+    font-size:11pt; font-weight:500; line-height:1.6; letter-spacing:.02em;
   }
   .checks li svg{ width:4.4mm; height:4.4mm; flex:0 0 auto; margin-top:.5mm; }
 
@@ -126,8 +116,8 @@
   .breath-note{
     display:flex; align-items:center; gap:2.4mm;
     background:var(--cream2); border-radius:99px;
-    padding:2mm 5mm; margin-bottom:3.4mm;
-    font-size:10.2pt; font-weight:500; letter-spacing:.03em;
+    padding:2.2mm 5mm; margin-bottom:3.8mm;
+    font-size:10.6pt; font-weight:500; letter-spacing:.03em;
   }
   .breath-note svg{ width:4mm; height:4mm; fill:var(--pink); flex:0 0 auto; }
 
@@ -154,7 +144,7 @@
   .bcard ul{ list-style:none; display:flex; flex-direction:column; gap:1.4mm; }
   .bcard li{
     display:flex; align-items:flex-start; gap:2.2mm;
-    font-size:9.8pt; line-height:1.55; color:var(--ink);
+    font-size:10.2pt; line-height:1.6; color:var(--ink);
   }
   .bcard li::before{
     content:""; width:1.8mm; height:1.8mm; border-radius:50%;
@@ -164,7 +154,7 @@
   .bcard.out li::before{ background:var(--pink); opacity:.6; }
 
   /* ---------- footer ---------- */
-  footer{ margin-top:auto; padding-top:5mm; }
+  footer{ margin-top:auto; padding-top:7mm; }
   .fcard{
     display:flex; align-items:center; gap:6mm;
     background:#fff; border:1.6px dashed var(--pink-lt);
@@ -197,12 +187,10 @@
   <div class="deco d4"></div>
 
   <header>
-    <div class="eyebrow">おうちでできる、からだのきほん</div>
     <h1>正しく立つ</h1>
     <svg class="wave" width="86" height="10" viewBox="0 0 86 10" fill="none">
       <path d="M2 6C8 1 14 1 20 6s12 5 18 0 12-5 18 0 12 5 18 0" stroke="#dd8a7b" stroke-width="1.7" stroke-linecap="round" opacity=".55"/>
     </svg>
-    <p class="lead">足元から積み上げて、呼吸でととのえる。</p>
   </header>
 
   <!-- STEP 1 -->
