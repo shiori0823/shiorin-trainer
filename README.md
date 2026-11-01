@@ -40,6 +40,7 @@ namecard/build-pdf.py  ← 書き出すときに差し込む
 
 | | |
 |---|---|
+| `brand.md` | **★★ 発信方針。この箱でいちばん上位。`strategy/` より上** |
 | `strategy/` | **★ 方向性。各フォルダと食い違ったら、ここが正しい** |
 | `lp/` | パワーリフター向けLP |
 | `flyer/` `flyer-mental/` | A4チラシ2種 |
